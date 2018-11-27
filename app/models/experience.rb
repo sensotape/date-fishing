@@ -5,6 +5,9 @@ class Experience < ApplicationRecord
                 'Food & Drink', 'Community', 'DIY',
                 'Tourism', 'Wildcard']
 
+  mount_uploaders :photos, PhotoUploader
+  serialize :photos, JSON
+
   belongs_to :user
   has_many :nibbles
 
