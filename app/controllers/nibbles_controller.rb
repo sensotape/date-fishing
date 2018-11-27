@@ -1,0 +1,2 @@
+class NibblesController < ApplicationController
+end
