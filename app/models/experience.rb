@@ -6,7 +6,7 @@ class Experience < ApplicationRecord
                 'Tourism', 'Wildcard']
 
   mount_uploaders :photos, PhotoUploader
-  serialize :photos, JSON
+  # serialize :photos, JSON
 
   belongs_to :user
   has_many :nibbles
