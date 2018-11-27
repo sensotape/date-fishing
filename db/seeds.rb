@@ -3,10 +3,11 @@ require 'date'
 puts 'Dropping database...'
 Experience.destroy_all
 User.destroy_all
+
 puts 'Creating fishes...'
 andrew = User.create!(
   email: 'a.erlanger@gmail.com',
-  avatar: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1542906721/user.jpg'),
+  # photos: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1542906721/user.jpg'),
   first_name: 'Andrew',
   last_name: 'Erlanger',
   password: '123456',
@@ -18,7 +19,7 @@ andrew = User.create!(
 )
 marcel = User.create!(
   email: 'marcelsf23br@gmail.com',
-  avatar: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1542906721/2018-11-22_18.10.49.jpg'),
+  # photos: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1542906721/2018-11-22_18.10.49.jpg'),
   first_name: 'Marcel',
   last_name: 'Fonseca',
   password: '123456',
@@ -33,7 +34,7 @@ marcel = User.create!(
 )
 maylee = User.create!(
   email: 'mayleesia@gmail.com',
-  avatar: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543317707/maylee.jpg'),
+  # photos: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543317707/maylee.jpg'),
   first_name: 'May-Lee',
   last_name: 'Sia',
   password: '123456',
@@ -46,7 +47,7 @@ maylee = User.create!(
 )
 aigerim = User.create!(
   email: 'sensotape@gmail.com',
-  avatar: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1542906723/IMG_2340.jpg'),
+  # photos: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1542906723/IMG_2340.jpg'),
   first_name: 'Aigerim',
   last_name: 'Kalysheva',
   password: '123456',
@@ -67,7 +68,7 @@ tango_date = aigerim.experiences.new(
   category: 'Art & Culture',
   location: 'Gesundbrunnen, Berlin',
   description: 'I learned to tango in Argentina and would like to share my skills in a romantic evening.',
-  photo: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/come_tango_dancing_at_ballroom_berlin.png'),
+  # photo: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/come_tango_dancing_at_ballroom_berlin.png'),
   start_date: Date.new(2018, 12, 12),
   end_date: Date.new(2018, 12, 12)
 )
@@ -77,7 +78,7 @@ matrix_date = marcel.experiences.new(
   category: 'Music',
   location: 'Warschauerstr., Berlin',
   description: 'Wanna dance like crazy with someone SEZY at Matrix?',
-  photo: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543317952/party_like_crazy_at_MATRIX.png'),
+  # photo: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543317952/party_like_crazy_at_MATRIX.png'),
   start_date: Date.new(2018, 12, 7),
   end_date: Date.new(2018, 12, 9)
 )
@@ -87,7 +88,7 @@ copenhagen_date = andrew.experiences.new(
   category: 'Tourism',
   location: 'Copenhagen, Denmark',
   description: 'Hi, I\'d love to go on a romantic trip to Copenhagen by bike',
-  photo: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318234/winter_trip_to_copenhagen.png'),
+  # photo: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318234/winter_trip_to_copenhagen.png'),
   start_date: Date.new(2018, 12, 18),
   end_date: Date.new(2018, 12, 19)
 )
@@ -97,7 +98,7 @@ boardgames_date = marcel.experiences.new(
   category: 'Geek & Nerd',
   location: '77 Rigaerstr., Berlin',
   description: 'A quiet night of boardgames and a bottle of Shafer One Point Five cabernet.',
-  photo: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/boardgames_and_red_wine.png'),
+  # photo: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/boardgames_and_red_wine.png'),
   start_date: Date.new(2018, 12, 17),
   end_date: Date.new(2018, 12, 17)
 )
@@ -107,7 +108,7 @@ skydiving_date = aigerim.experiences.new(
   category: 'Bucketlist',
   location: 'Germany',
   description: 'It\'s time to finally take the plunge! Let\'s go Skydiving this Weekend!',
-  photo: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318234/skydiving.png'),
+  # photo: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318234/skydiving.png'),
   start_date: Date.new(2018, 12, 20),
   end_date: Date.new(2018, 12, 21)
 )
@@ -117,7 +118,7 @@ exploration_date = maylee.experiences.new(
   category: 'Adventure',
   location: 'Berlin, Germany',
   description: 'We meet two hours before dusk. Bring your own gear. Experience required!',
-  photo: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/explore_the_abandoned_brewery_in_pankow.png'),
+  # photo: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/explore_the_abandoned_brewery_in_pankow.png'),
   start_date: Date.new(2018, 12, 26),
   end_date: Date.new(2018, 12, 26)
 )
@@ -127,7 +128,7 @@ sushi_date = maylee.experiences.new(
   category: 'Food & Drink',
   location: 'Prenzlauerberg, Berlin',
   description: 'Let the good times roll! The freshest sushi and sashimi, paired with amazing sakes.',
-  photo: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/cook_sushi_with_me.png'),
+  # photo: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/cook_sushi_with_me.png'),
   start_date: Date.new(2018, 12, 21),
   end_date: Date.new(2018, 12, 21)
 )
@@ -137,7 +138,7 @@ badminton_date = andrew.experiences.new(
   category: 'Sport & Recreation',
   location: 'Sportcenter Wittenau',
   description: 'Up to see if we\'re a match? My record stands at undefeated, but maybe you can change that!',
-  photo: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/beat_me_at_badminton.png'),
+  # photo: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/beat_me_at_badminton.png'),
   start_date: Date.new(2018, 12, 27),
   end_date: Date.new(2018, 12, 27)
 )

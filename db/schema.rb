@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2018_11_27_151606) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.json "photo"
+    t.json "photos"
     t.index ["user_id"], name: "index_experiences_on_user_id"
   end
 
@@ -80,7 +80,7 @@ ActiveRecord::Schema.define(version: 2018_11_27_151606) do
     t.string "seeking", null: false
     t.text "bio"
     t.datetime "birthday", null: false
-    t.json "photo"
+    t.json "photos"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
