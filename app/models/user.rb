@@ -5,7 +5,6 @@ class User < ApplicationRecord
   GENDERS = %w[Male Female Other]
 
   mount_uploaders :photos, PhotoUploader
-  # serialize :photos, JSON
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
