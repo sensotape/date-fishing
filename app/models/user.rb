@@ -2,7 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
 
-  GENDERS = %w[male female other]
+  GENDERS = %w[Male Female Other]
 
   mount_uploaders :photos, PhotoUploader
   serialize :photos, JSON
@@ -20,8 +20,9 @@ class User < ApplicationRecord
   validates :birthday, presence: true
   validates :gender, presence: true, inclusion: { in: GENDERS }
   validates :seeking, presence: true, inclusion: { in: GENDERS }
+  validates :bio, length: { maximum: 500 }
 
   def full_name
-    "#{first_name} #{last_name}"
+    "#{first_name.capitalize} #{last_name.capitalize}"
   end
 end
