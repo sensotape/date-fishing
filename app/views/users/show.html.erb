@@ -1,0 +1,42 @@
+<div class="container">
+
+  <!-- Page One Content --->
+  <h2>1. PROFILE</h2>
+
+  <strong>name</strong>
+  <p><%= @user.full_name %></p><br>
+
+  <strong>bio</strong>
+  <p><%= @user.bio %></p><br>
+
+  <strong>identifies as</strong>
+  <p><%= @user.gender %></p><br>
+
+  <strong>interested in</strong>
+  <p><%= @user.seeking %></p><br>
+
+  <strong>DOB</strong>
+  <p><%= @user.birthday %></p><br>
+
+  <!-- Page Two Content --->
+  <h2>2. MY DATES</h2>
+  <% @user.experiences.each do |experience| %>
+  <strong>title</strong>
+  <p><%= experience.title %></p><br>
+  <strong>category</strong>
+  <p><%= experience.category %></p><br>
+  <strong>location</strong>
+  <p><%= experience.location %></p><br>
+  <strong>description</strong>
+  <p><%= experience.description %></p><br>
+  <hr>
+  <% end %>
+
+
+  <!-- Page Three Content --->
+  <h2>3. MY NIBBLES</h2>
+
+
+  <!-- Page Four Content --->
+  <h2>4. STATISTICS</h2>
+</div>
