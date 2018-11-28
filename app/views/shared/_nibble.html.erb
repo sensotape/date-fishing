@@ -6,6 +6,14 @@
       <%= simple_form_for(:nibble, url: experience_nibbles_path(experience)) do |f| %>
       <%= f.error_notification %>
 
+      <%= f.simple_fields_for :messages do |m| %>
+        <%= m.input :recipient_id, input_html: { value: experience.user.id }, as: :hidden %>
+        <%= m.input :sender_id, input_html: { value: current_user.id }, as: :hidden %>
+        <%= m.input :recipient_name, label: 'Recipient', input_html: { value: experience.user.full_name } , disabled: true, as: :text %>
+        <%= m.input :body, required: false %>
+
+      <% end %>
+
       <div class="form-inputs">
 
       </div>
