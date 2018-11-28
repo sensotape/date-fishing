@@ -2,3 +2,8 @@ input:focus,
 select:focus,
 textarea:focus,
 button:focus { outline: none; }
+
+.btn:focus,.btn:active {
+   outline: none !important;
+   box-shadow: none;
+}

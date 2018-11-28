@@ -4,14 +4,14 @@ class Experience < ApplicationRecord
                 'Art & Culture', 'Sport & Recreation',
                 'Food & Drink', 'Community', 'DIY',
                 'Tourism', 'Wildcard']
-  
-   MONTHS = [nil, 'January', 'February', 'March', 'April',
-           'May', 'June', 'July', 'August', 'September',
-           'October', 'November', 'December']
+
+  MONTHS = [nil, 'January', 'February', 'March', 'April',
+            'May', 'June', 'July', 'August', 'September',
+            'October', 'November', 'December']
 
   include PgSearch
   pg_search_scope :search_by_title_and_category_and_location_and_description,
-    against: [ :title, :category, :location, :description ],
+    against: [:title, :category, :location, :description],
     using: {
       tsearch: { prefix: true } # <-- now `superman batm` will return something!
     }
