@@ -5,10 +5,9 @@ class Experience < ApplicationRecord
                 'Food & Drink', 'Community', 'DIY',
                 'Tourism', 'Wildcard']
 
-  mount_uploaders :photos, PhotoUploader
-
   belongs_to :user
   has_many :nibbles
+  has_many :photos
 
   geocoded_by :location
 
