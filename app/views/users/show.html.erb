@@ -2,22 +2,10 @@
 
   <!-- THE TABS -->
   <div class="all-tabs">
-    <%= button_tag(type: 'button') do %>
-      <%=  content_tag(:strong, 'Ask me!') %>
-    <% end %>
-
-    <div class="tab-item top-tab active">
-      Profile
-    </div>
-    <div class="tab-item">
-      Dates
-    </div>
-    <div class="tab-item">
-      Nibbles
-    </div>
-    <div class="tab-item">
-      Statistics
-    </div>
+    <%= button_tag "Profile", class: 'tab-item top-tab active', id: 'profile-tab' %>
+    <%= button_tag "Dates", class: 'tab-item', id: 'dates-tab' %>
+    <%= button_tag "Nibbles", class: 'tab-item', id: 'nibbles-tab' %>
+    <%= button_tag "Statistics", class: 'tab-item', id: 'statistics-tab' %>
   </div>
 
 
@@ -25,14 +13,14 @@
 <div class="all-content">
 
     <!-- PAGE 1 -->
-    <div class="tab-content">
+    <div class="tab-content" id="profile-content">
       <h2>1. PROFILE</h2>
 
       <strong>name</strong>
       <p><%= @user.full_name %></p><br>
 
-      <strong>image</strong>
-      <%= cl_image_tag @user.photos.first.picture %>
+      <strong>image</strong><br>
+      <%= cl_image_tag @user.photos.first.picture, class: 'avatar avatar-large' %><br><br>
 
       <strong>bio</strong>
       <p><%= @user.bio %></p><br>
@@ -48,7 +36,7 @@
     </div>
 
     <!-- PAGE 2 -->
-    <div class="tab-content hidden">
+    <div class="tab-content hidden" id="dates-content">
       <h2>2. MY DATES</h2>
       <% @user.experiences.each do |experience| %>
         <strong>title</strong>
@@ -61,5 +49,17 @@
         <p><%= experience.description %></p><br>
         <hr>
       <% end %>
+    </div>
+
+    <!-- PAGE 3 -->
+    <div class="tab-content hidden" id="nibbles-content">
+      <h2>3. MY NIBBLES</h2>
+      <p>Nibbles go here</p>
+    </div>
+
+    <!-- PAGE 4 -->
+    <div class="tab-content hidden" id="statistics-content">
+      <h2>4. STATISTICS</h2>
+      <p>Statistics go here</p>
     </div>
 </div>
