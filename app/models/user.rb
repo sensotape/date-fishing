@@ -23,4 +23,9 @@ class User < ApplicationRecord
   def full_name
     "#{first_name.capitalize} #{last_name.capitalize}"
   end
+
+  def age
+    today = Date.today
+    today.year - birthday.year
+  end
 end

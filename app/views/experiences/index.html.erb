@@ -15,9 +15,9 @@
         <h3><%= experience.description %></h3>
         <h4><%= experience.category %></h4>
         <h3><%= experience.location %></h3>
-        <h3><%= experience.start_date %></h3>
-        <h3><%= experience.end_date %></h3>
+        <h3><%= experience.humanize_date %></h3>
         <h3><%= experience.humanize_time %></h3>
+        <h3><%= experience.time_until_date %></h3>
         <div><% experience.photos.each do |photo| %>
           <%= cl_image_tag photo.picture_url(:experience_photo) %>
         <% end %>

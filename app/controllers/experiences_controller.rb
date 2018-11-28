@@ -32,4 +32,5 @@ class ExperiencesController < ApplicationController
     @experience = Experience.find(params[:id])
     authorize @experience
   end
+
 end
