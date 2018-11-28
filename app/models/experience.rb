@@ -5,6 +5,13 @@ class Experience < ApplicationRecord
                 'Food & Drink', 'Community', 'DIY',
                 'Tourism', 'Wildcard']
 
+  include PgSearch
+  pg_search_scope :search_by_title_and_category_and_location_and_description,
+    against: [ :title, :category, :location, :description ],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
+
   belongs_to :user
   has_many :nibbles
   has_many :photos
