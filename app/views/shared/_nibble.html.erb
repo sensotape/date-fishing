@@ -1,0 +1,20 @@
+<div class='modal fade' id="nibble" role="dialog">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content modal-padding modal-background">
+      <h2>Nibble <%= experience.user.full_name %></h2>
+
+      <%= simple_form_for(:nibble, url: experience_nibbles_path(experience)) do |f| %>
+      <%= f.error_notification %>
+
+      <div class="form-inputs">
+
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <%= submit_tag("Nibble!", class: 'btn btn-primary', id: 'nibble-send', data: { disable_with: "Sending..." }) %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

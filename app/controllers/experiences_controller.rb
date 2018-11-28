@@ -1,5 +1,6 @@
 class ExperiencesController < ApplicationController
   before_action :set_experience, only: [:show, :edit, :update, :destroy]
+
   def show
     @markers = Experience.where(id: params[:id]).map do |experience|
       {
@@ -7,7 +8,13 @@ class ExperiencesController < ApplicationController
         lat: experience.latitude
       }
     end
+    @nibble = @experience.nibbles.new
+    @nibble.owner = @experience.user
+    @nibble.interested = current_user
+    authorize @nibble
   end
+
+  private
 
   def set_experience
     @experience = Experience.find(params[:id])
