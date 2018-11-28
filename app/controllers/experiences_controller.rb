@@ -1,5 +1,11 @@
 class ExperiencesController < ApplicationController
   before_action :set_experience, only: [:show, :edit, :update, :destroy]
+
+  def index
+    @experiences = policy_scope(Experience)
+    authorize @experiences
+  end
+
   def show
     @markers = Experience.where(id: params[:id]).map do |experience|
       {

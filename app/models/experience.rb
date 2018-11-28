@@ -17,4 +17,17 @@ class Experience < ApplicationRecord
   validates :description, presence: true
 
   after_validation :geocode, if: :will_save_change_to_location?
+
+  def humanize_time
+    puts self.start_date
+    #take each experience
+    #determine if the start and end times are different
+    #if not, then display only the start time
+    #determine if the time is in the current year, if NOT,
+    #display the year
+    #display all times like so:
+    #MONTH DATE
+    #Day of week, time of day, AM/PM
+    #How many days from now?
+  end
 end
