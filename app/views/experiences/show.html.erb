@@ -12,8 +12,9 @@
     <p><%= @experience.category %></p>
     <p><%= @experience.location %></p>
     <p><%= @experience.description %></p>
-    <p><%= @experience.start_date %></p>
-    <p><%= @experience.end_date %></p>
+    <p><%= @experience.humanize_date %></p>
+    <p><%= @experience.time_until_date %></p>
+    <p><%= @experience.humanize_time %></p>
     <div id="map" style="width: 600px; height: 400px;"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
