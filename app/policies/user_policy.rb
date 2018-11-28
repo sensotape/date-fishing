@@ -16,4 +16,8 @@ class UserPolicy < ApplicationPolicy
   def destroy?
     record == user
   end
+
+  def inbox?
+    true
+  end
 end

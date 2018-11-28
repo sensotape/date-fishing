@@ -6,5 +6,5 @@ Rails.application.routes.draw do
     resources :nibbles, only: [:create, :destroy]
   end
   resources :users, only: [:edit, :update, :show, :destroy]
-  get 'inbox', to: 'conversation#inbox', as: :inbox
+  get 'inbox', to: 'conversations#inbox', as: :inbox
 end
