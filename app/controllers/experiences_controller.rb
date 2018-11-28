@@ -2,7 +2,8 @@ class ExperiencesController < ApplicationController
   before_action :set_experience, only: [:show, :edit, :update, :destroy]
 
   def index
-    @experiences = Experience.all
+    @experiences = policy_scope(Experience)
+    authorize @experiences
   end
 
   def show
