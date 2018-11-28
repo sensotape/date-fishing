@@ -5,15 +5,19 @@ class NibblePolicy < ApplicationPolicy
     end
   end
 
-  def create?
-    record.owner != user || record.interested != user
+  def show?
+    true
   end
 
-  def update?
-    record.interested == user
+  def create?
+    !(record.owner == user || has_nibble)
   end
 
   def destroy?
     record.interested == user
+  end
+
+  def has_nibble
+    user.nibbles.where(experience: record.experience).present?
   end
 end

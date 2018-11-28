@@ -54,7 +54,9 @@
     <!-- PAGE 3 -->
     <div class="tab-content hidden" id="nibbles-content">
       <h2>3. MY NIBBLES</h2>
-      <p>Nibbles go here</p>
+      <% @user.nibbles.each do |nibble| %>
+        <p><%= link_to nibble.experience.title, experience_path(nibble.experience) %></p>
+      <% end %>
     </div>
 
     <!-- PAGE 4 -->
