@@ -1,0 +1,42 @@
+button {
+  border: none;
+}
+
+.profile-page {
+  display: flex;
+  position: relative;
+}
+
+.all-tabs {
+  height: calc(100vh - 70px);
+  width: 25vw;
+  position: fixed;
+}
+
+.tab-item {
+  border-top: white 1px solid;
+  height: 25%;
+  width: 100%;
+  background: black;
+  color: white;
+}
+
+.top-tab {
+  border-top: none;
+}
+
+.active {
+  color: $purple;
+}
+
+.hidden {
+  display: none;
+}
+
+.displayed {
+  display: block;
+}
+
+.tab-content {
+  margin-left: calc(25vw + 30px);
+}
