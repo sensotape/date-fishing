@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  get 'conversations/inbox'
   devise_for :users
   root to: 'pages#home'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :experiences
+  resources :experiences do
+    resources :nibbles, only: [:create, :destroy]
+  end
   resources :users, only: [:edit, :update, :show, :destroy]
+  get 'inbox', to: 'conversations#inbox', as: :inbox
 end

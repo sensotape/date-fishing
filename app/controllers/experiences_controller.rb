@@ -1,7 +1,6 @@
 class ExperiencesController < ApplicationController
   before_action :set_experience, only: [:show, :edit, :update, :destroy]
 
-
   def index
     if params[:query].present?
       sql_query = " \
@@ -26,11 +25,16 @@ class ExperiencesController < ApplicationController
         lat: experience.latitude
       }
     end
+    @nibble = @experience.nibbles.new
+    @nibble.owner = @experience.user
+    @nibble.interested = current_user
+    authorize @nibble
   end
+
+  private
 
   def set_experience
     @experience = Experience.find(params[:id])
     authorize @experience
   end
-
 end
