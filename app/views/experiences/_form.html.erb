@@ -1,0 +1,17 @@
+ <div>
+  <%= simple_form_for experience do |f| -%>
+
+    <%= f.input :title, required: true, error: 'Must have more than 4 or less than 50 characters' %>
+
+    <%= f.input :category, required: true, priority: [], collection: Experience::CATEGORIES %>
+
+    <%= f.input :description, required: true %>
+
+    <%= f.input :location, required: true, error: 'Must be less than 120 characters' %>
+
+    <!-- GEOCODE? -->
+
+    <%= f.submit class: "btn btn-primary"%>
+
+  <% end %>
+</div>

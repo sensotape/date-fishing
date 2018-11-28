@@ -6,6 +6,22 @@ class ExperiencesController < ApplicationController
     authorize @experiences
   end
 
+  def new
+    @experience = current_user.experiences.new
+    authorize @experience
+  end
+
+  def create
+    @experience = current_user.experiences.new(
+      permitted_attributes(Experience))
+    authorize @experience
+    if @experience.save
+      redirect_to experiences_path
+    else
+      render 'new'
+    end
+  end
+
   def show
     @markers = Experience.where(id: params[:id]).map do |experience|
       {
