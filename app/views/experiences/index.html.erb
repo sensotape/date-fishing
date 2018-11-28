@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>It's Date Time</h1>
+    <div class="card">
+       <% @experiences = Experience.order('start_date') %>
+      <% policy_scope(@experiences).each do |experience| %>
+        <p><h2><%= experience.title %></h2></p>
+        <h3><%= experience.description %></h3>
+        <h4><%= experience.category %></h4>
+        <h3><%= experience.location %></h3>
+        <h3><%= experience.start_date %></h3>
+        <h3><%= experience.end_date %></h3>
+          <%= cl_image_tag experience.photos.first%>
+
+        <h2><%= link_to 'Show Details', experience_path(experience.id) %>
+        </h2>
+      <% end %>
+    </div>
+</div>
+

@@ -34,7 +34,7 @@ marcel = User.create!(
 )
 maylee = User.create!(
   email: 'mayleesia@gmail.com',
-  photos: [open('https://avatars0.githubusercontent.com/u/12126401?s=400&v=4.jpg')],
+  #photos: [open('https://avatars0.githubusercontent.com/u/12126401?s=400&v=4.jpg')],
   # photos: [open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543317707/maylee.jpg')],
   first_name: 'May-Lee',
   last_name: 'Sia',

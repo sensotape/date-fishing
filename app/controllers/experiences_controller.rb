@@ -1,5 +1,11 @@
 class ExperiencesController < ApplicationController
   def index
-    @experiences = Experience.all
+    @experiences = policy_scope(Experience)
+    authorize @experiences
+  end
+
+  def show
+    @experience = Experience.find(params[:id])
+    authorize @experience
   end
 end
