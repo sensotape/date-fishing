@@ -1,6 +1,8 @@
 <div class="container">
   <div>
-    <div class="photo"><%= cl_image_tag @experience.photos.first.picture %></div>
+    <div class="photo">
+      <%= cl_image_tag @experience.photos.first.picture %>
+    </div>
     <h1><%= @experience.title %></h1>
     <p><%= @experience.user.full_name %></p>
     <p><%= @experience.category %></p>
@@ -11,8 +13,6 @@
     <div id="map" style="width: 600px; height: 400px;"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-      </div>
-
+    </div>
   </div>
-
 </div>
