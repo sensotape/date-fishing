@@ -3,18 +3,19 @@
     <div class="card">
        <% @experiences = Experience.order('start_date') %>
       <% policy_scope(@experiences).each do |experience| %>
-        <p><h2><%= experience.title %></h2></p>
+        <p><h2><%= link_to "#{experience.title}", experiences_path(experience.id) %></h2></p>
         <h3><%= experience.description %></h3>
         <h4><%= experience.category %></h4>
         <h3><%= experience.location %></h3>
         <h3><%= experience.start_date %></h3>
         <h3><%= experience.end_date %></h3>
         <h3><%= experience.humanize_time %></h3>
-        <%= experience.photos.each do |photo| %>
+        <div><% experience.photos.each do |photo| %>
           <%= cl_image_tag photo.picture_url(:experience_photo) %>
         <% end %>
-        <h2><%= link_to 'Show Details', experience_path(experience.id) %>
-        </h2>
+      </div>
+          <%= button_to 'Show Details', experience_path(experience.id), {class: "btn btn-primary", method: :get}%>
+        </button>
       <% end %>
     </div>
 </div>
