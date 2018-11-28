@@ -1,0 +1,30 @@
+.profile-page {
+  display: flex;
+}
+
+.all-tabs {
+  height: calc(100vh - 70px);
+  width: 25vw;
+  background: black;
+  color: white;
+}
+
+.tab-item {
+  border-top: white 1px solid;
+  height: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-tab {
+  border-top: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.active {
+  color: $purple;
+}
