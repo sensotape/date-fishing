@@ -9,8 +9,10 @@
         <h3><%= experience.location %></h3>
         <h3><%= experience.start_date %></h3>
         <h3><%= experience.end_date %></h3>
-          <%= cl_image_tag experience.photos.first%>
-
+        <h3><%= experience.humanize_time %></h3>
+        <%= experience.photos.each do |photo| %>
+          <%= cl_image_tag photo.picture_url(:experience_photo) %>
+        <% end %>
         <h2><%= link_to 'Show Details', experience_path(experience.id) %>
         </h2>
       <% end %>
