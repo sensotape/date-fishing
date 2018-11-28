@@ -4,8 +4,6 @@ class User < ApplicationRecord
 
   GENDERS = %w[Male Female Other]
 
-  mount_uploaders :photos, PhotoUploader
-
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
@@ -13,6 +11,7 @@ class User < ApplicationRecord
   has_many :nibbles
   has_many :blocked_users
   has_many :messages
+  has_many :photos
 
   validates :first_name, presence: true, length: { in: 2..35 }
   validates :last_name, presence: true, length: { in: 2..35 }
