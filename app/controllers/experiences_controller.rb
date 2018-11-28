@@ -1,10 +1,10 @@
 class ExperiencesController < ApplicationController
   before_action :set_experience, only: [:show, :edit, :update, :destroy]
   def show
-    @markers = Experience.where(id: params[:id]).map do |flat|
+    @markers = Experience.where(id: params[:id]).map do |experience|
       {
-        lng: flat.longitude,
-        lat: flat.latitude
+        lng: experience.longitude,
+        lat: experience.latitude
       }
     end
   end
