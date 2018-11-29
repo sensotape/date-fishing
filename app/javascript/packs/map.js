@@ -1,5 +1,7 @@
 import 'mapbox-gl/dist/mapbox-gl.css'
+import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css'
 import mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
+import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 const MapboxCircle = require('mapbox-gl-circle');
 const mapElement = document.getElementById('map');
 
@@ -55,4 +57,14 @@ if (mapElement) { // only build a map if there's a div#map to inject into
     });
     map.fitBounds(bounds, { duration: 4000, padding: 75 })
   }
+}
+
+// auto-complete for location
+const addressInput = document.getElementById('experience_location');
+
+if (addressInput) {
+  const places = require('places.js');
+  const placesAutocomplete = places({
+    container: addressInput
+  });
 }

@@ -1,0 +1,49 @@
+<div class='modal fade' id="category-filter-modal" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content modal-padding modal-background">
+
+    <h2 class="text-center">What are you into?</h2>
+
+
+      <%= form_tag({}, {method: :get, enforce_utf8: browser.ie?}) do %>
+
+      <div class="flexbox-horizontal">
+      <!-- first column -->
+        <div class="category-column">
+          <% Experience::CATEGORIES.first(4).each do |category| %>
+            <%= check_box_tag 'category[]', category, checked = @categories && @categories.include?(category)%>
+            <%= category %> <br>
+          <% end %>
+        </div>
+
+      <!-- second column -->
+        <div class="category-column">
+          <% Experience::CATEGORIES.slice(4, 4).each do |category| %>
+            <%= check_box_tag 'category[]', category, checked = @categories && @categories.include?(category)%>
+            <%= category %> <br>
+          <% end %>
+        </div>
+
+      <!-- third column -->
+        <div class="category-column">
+          <% Experience::CATEGORIES.last(4).each do |category| %>
+            <%= check_box_tag 'category[]', category, checked = @categories && @categories.include?(category)%>
+            <%= category %> <br>
+          <% end %>
+        </div>
+
+        </div>
+
+        <!-- button to submit -->
+        <div class="button-container">
+        <%= submit_tag("filter", name: nil, class: 'btn btn-primary') %>
+        </div>
+
+      <% end %>
+
+      <!-- button to clear -->
+      <%= render 'shared/clear_filters' %>
+
+    </div>
+  </div>
+</div>

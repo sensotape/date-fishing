@@ -4,14 +4,14 @@ class Experience < ApplicationRecord
                 'Art & Culture', 'Sport & Recreation',
                 'Food & Drink', 'Community', 'DIY',
                 'Tourism', 'Wildcard']
-  
-   MONTHS = [nil, 'January', 'February', 'March', 'April',
-           'May', 'June', 'July', 'August', 'September',
-           'October', 'November', 'December']
+
+  MONTHS = [nil, 'January', 'February', 'March', 'April',
+            'May', 'June', 'July', 'August', 'September',
+            'October', 'November', 'December']
 
   include PgSearch
   pg_search_scope :search_by_title_and_category_and_location_and_description,
-    against: [ :title, :category, :location, :description ],
+    against: [:title, :category, :location, :description],
     using: {
       tsearch: { prefix: true } # <-- now `superman batm` will return something!
     }
@@ -24,8 +24,8 @@ class Experience < ApplicationRecord
 
   validates :title, presence: true, length: { in: 4..50 }
   validates :category, presence: true, inclusion: { in: CATEGORIES }
-  validates :location, length: { maximum: 120 }
   validates :description, presence: true
+  validates :location, length: { maximum: 120 }
 
   after_validation :geocode, if: :will_save_change_to_location?
 
@@ -44,7 +44,7 @@ class Experience < ApplicationRecord
     elsif time == "12:00PM"
       "Midday"
     else
-    "#{time.strftime('%I:%M%p')}"
+      time
     end
   end
 
