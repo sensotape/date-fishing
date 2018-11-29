@@ -12,10 +12,7 @@
       <!-- Links when logged in -->
       <%= link_to "Random", experience_path(Experience.all.sample), class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Explore", experiences_path, class: "navbar-wagon-item navbar-wagon-link" %>
-
-      <div class="navbar-wagon-item navbar-wagon-link" data-toggle="modal" data-target="#new-experience">Create</div>
-      <%= render 'shared/new_experience' %>
-
+      <%= link_to "Create", new_experience_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Messages", inbox_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Profile", user_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
 

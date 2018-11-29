@@ -1,7 +1,11 @@
 <div class="container">
 
     <div class="photo">
-      <%= cl_image_tag @experience.photos.first.picture %>
+      <% if @experience.photos.first == nil %>
+         <h1>No Picture Available</h1>
+      <% else %>
+        <%= cl_image_tag @experience.photos.first.picture %>
+      <% end %>
     </div>
 
     <button data-toggle="modal" data-target="#user-modal" class="btn btn-primary">Creator Profile</button>
