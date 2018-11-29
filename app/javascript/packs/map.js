@@ -60,7 +60,6 @@ if (mapElement) { // only build a map if there's a div#map to inject into
 }
 
 const addressInput = document.getElementById('experience_location');
-console.log(addressInput);
 
 if (addressInput) {
   const places = require('places.js');
