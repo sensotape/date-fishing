@@ -1,4 +1,4 @@
 <h1>Conversations#inbox</h1>
 <% @conversations.each do |conversation| %>
-  <%= link_to conversation.nibble.experience.title, conversation_path(conversation) %>
+  <%= link_to conversation.nibble.experience.title, conversation_path(conversation) %><br/>
 <% end %>
