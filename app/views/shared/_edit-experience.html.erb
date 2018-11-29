@@ -1,0 +1,19 @@
+<div class='modal fade' id="edit-experience-modal-<%= experience.id %>" role=dialog">
+  <div class="modal-dialog">
+    <div class="modal-content modal-padding modal-background">
+
+    <%= simple_form_for experience do |f| -%>
+      <%= f.input :title %>
+      <%= f.input :category %>
+      <%= f.input :location %>
+      <%= f.input :description %>
+      <%= f.input :start_date, required: true %>
+      <%= f.input :end_date, required: true %>
+      <%= f.submit class:"btn btn-primary" %>
+
+    <% end -%>
+
+    </div>
+  </div>
+</div>
+

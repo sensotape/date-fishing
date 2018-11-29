@@ -31,6 +31,16 @@ class ExperiencesController < ApplicationController
     authorize @nibble
   end
 
+  def edit;end
+
+  def update
+    if @experience.update_attributes(permitted_attributes(@experience))
+      redirect_to user_path(current_user)
+    else
+      render 'edit-experience'
+    end
+  end
+
   private
 
   def set_experience

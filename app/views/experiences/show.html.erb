@@ -18,6 +18,9 @@
     <% if policy(@nibble).create? %>
       <button class="btn btn-primary" data-toggle="modal" data-target="#nibble">Nibble!</button>
       <%= render 'shared/nibble', experience: @experience %>
+    <% elsif @experience.user == current_user %>
+      <button data-toggle="modal" data-target="#edit-experience-modal-<%= @experience.id %>" class="btn btn-primary">Edit</button>
+      <%= render 'shared/edit-experience', experience: @experience %>
     <% end %>
     <div id="map" style="width: 600px; height: 400px;"
       data-markers="<%= @markers.to_json %>"
