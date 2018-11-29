@@ -4,6 +4,9 @@ class PhotoUploader < CarrierWave::Uploader::Base
   version :experience_photo do
 
   end
+
+  storage :file
+
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick

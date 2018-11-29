@@ -19,6 +19,7 @@ class Experience < ApplicationRecord
   belongs_to :user
   has_many :nibbles
   has_many :photos
+  accepts_nested_attributes_for :photos
 
   geocoded_by :location
 
