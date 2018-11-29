@@ -13,7 +13,9 @@ class ExperiencesController < ApplicationController
       save_filters
       apply_filters
     end
+    @experience = Experience.new
     authorize @experiences
+    authorize @experience
   end
 
   def new
@@ -72,10 +74,32 @@ class ExperiencesController < ApplicationController
 
   def save_filters
     @categories = params[:category]
+    @date = calculate_date
   end
 
   def apply_filters
-    @experiences.where!(category: params[:category]) if params[:category]
-    @experiences.where!(price: params[:min]..params[:max]) if params[:min] && params[:max]
+    @experiences.where!(category: @categories) if @categories
+    @experiences.where!(start_date: @date[0]..@date[-1]) if @date
+  end
+
+  def calculate_date
+    case params[:date]
+    when 'today' then [Date.today]
+    when 'tomorrow' then [Date.tomorrow]
+    when 'next weekend' then next_weekend
+    when 'custom range' then custom_range
+    end
+  end
+
+  def next_weekend
+    friday = Date.parse('Friday')
+    sunday = Date.parse('Sunday')
+    sunday += 7 if sunday < friday
+    [friday, sunday]
+  end
+
+  def custom_range
+    date_range = params[:range][:date_range].split
+    [date_range.first, date_range.last]
   end
 end

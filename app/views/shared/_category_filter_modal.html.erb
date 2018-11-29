@@ -7,8 +7,8 @@
 
       <%= form_tag({}, {method: :get, enforce_utf8: browser.ie?}) do %>
 
-      <div class="column-container">
-      <!-- first third -->
+      <div class="flexbox-horizontal">
+      <!-- first column -->
         <div class="category-column">
           <% Experience::CATEGORIES.first(4).each do |category| %>
             <%= check_box_tag 'category[]', category, checked = @categories && @categories.include?(category)%>
@@ -16,7 +16,7 @@
           <% end %>
         </div>
 
-      <!-- second third -->
+      <!-- second column -->
         <div class="category-column">
           <% Experience::CATEGORIES.slice(4, 4).each do |category| %>
             <%= check_box_tag 'category[]', category, checked = @categories && @categories.include?(category)%>
@@ -24,7 +24,7 @@
           <% end %>
         </div>
 
-      <!-- third third -->
+      <!-- third column -->
         <div class="category-column">
           <% Experience::CATEGORIES.last(4).each do |category| %>
             <%= check_box_tag 'category[]', category, checked = @categories && @categories.include?(category)%>
