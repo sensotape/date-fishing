@@ -25,7 +25,7 @@ class User < ApplicationRecord
   end
 
   def age
-    today = Date.today
-    today.year - birthday.year
+    today = Time.now.utc.to_date
+    today.year - birthday.year - (today.month > birthday.month || (today.month == birthday.month && today.day >= birthday.day) ? 0 : 1)
   end
 end
