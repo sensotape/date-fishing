@@ -1,0 +1,7 @@
+<%= form_tag({}, {method: :get, enforce_utf8: browser.ie?}) do %>
+  <%# unless @min_max.nil? %>
+    <%#= hidden_field_tag 'min', @min_max.first %>
+    <%#= hidden_field_tag 'max', @min_max.last %>
+  <%# end %>
+  <%= submit_tag("clear", name: nil, class: 'btn btn-primary') %>
+<% end %>

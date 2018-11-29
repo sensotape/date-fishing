@@ -1,13 +1,19 @@
 <div class="container">
   <h1>It's Date Time</h1>
-  <div class="search-bar">
-    <%= form_tag experiences_path, method: :get do %>
-    <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a date!"
-    %>
-    <% end %>
+  <div class="filters-container">
+    <button class="btn btn-primary" data-toggle="modal" data-target="#category-filter-modal">Category</button>
+    <%= render 'shared/category_filter_modal' %>
+    <button class="btn btn-primary" data-toggle="modal" data-target="#time-filter-modal">Time</button>
+    <button class="btn btn-primary" data-toggle="modal" data-target="#location-filter-modal">Location</button>
+    <div class="search-bar">
+      <%= form_tag experiences_path, method: :get do %>
+      <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a date!"
+      %>
+      <% end %>
+    </div>
   </div>
     <div class="card">
         <% @experiences.each do |experience| %>

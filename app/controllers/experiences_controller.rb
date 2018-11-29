@@ -2,20 +2,18 @@ class ExperiencesController < ApplicationController
   before_action :set_experience, only: [:show, :edit, :update, :destroy]
 
   def index
+    # search bar
     if params[:query].present?
-      sql_query = " \
-        experiences.title @@ :query \
-        OR experiences.category @@ :query \
-        OR experiences.location @@ :query \
-        OR experiences.description @@ :query \
-      "
       @experiences = policy_scope(Experience).where(sql_query, query: "%#{params[:query]}%")
       @experiences = @experiences.order('start_date')
-      authorize @experiences
+
+    # filters
     else
       @experiences = policy_scope(Experience)
-      authorize @experiences
+      save_filters
+      apply_filters
     end
+    authorize @experiences
   end
 
   def show
@@ -36,5 +34,23 @@ class ExperiencesController < ApplicationController
   def set_experience
     @experience = Experience.find(params[:id])
     authorize @experience
+  end
+
+  def sql_query
+    " \
+      experiences.title @@ :query \
+      OR experiences.category @@ :query \
+      OR experiences.location @@ :query \
+      OR experiences.description @@ :query \
+    "
+  end
+
+  def save_filters
+    @categories = params[:category]
+  end
+
+  def apply_filters
+    @experiences.where!(category: params[:category]) if params[:category]
+    @experiences.where!(price: params[:min]..params[:max]) if params[:min] && params[:max]
   end
 end
