@@ -1,2 +1,4 @@
 <h1>Conversations#inbox</h1>
-<p>Find me in app/views/conversations/inbox.html.erb</p>
+<% @conversations.each do |conversation| %>
+  <%= link_to conversation.nibble.experience.title, conversation_path(conversation) %>
+<% end %>

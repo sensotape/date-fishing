@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_many :experiences
   has_many :nibbles, foreign_key: 'interested_id'
   has_many :blocked_users
-  has_many :messages
+  has_many :messages, foreign_key: 'sender_id' # right?
   has_many :photos
 
   validates :first_name, presence: true, length: { in: 2..35 }
