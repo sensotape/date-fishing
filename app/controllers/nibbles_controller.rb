@@ -18,13 +18,6 @@ class NibblesController < ApplicationController
 
   private
 
-  def find_conversations
-    Conversation.joins(:messages)
-                .where(messages: { sender: @nibble.owner, recipient: @nibble.interested })
-                .or(Conversation.joins(:messages)
-                .where(messages: { sender: @nibble.interested, recipient: @nibble.owner }))
-  end
-
   def nibble_message_params
     params.require(:nibble).require(:messages).permit(:body, :recipient_id, :sender_id)
   end
