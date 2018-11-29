@@ -8,7 +8,7 @@
 
   <%= f.input :end_date, required: true %>
 
-  <%= f.input :location, required: true, error: 'Must contain at least 8 characters' %>
+  <%= f.input :location, required: true, error: 'Must contain at least 8 characters', id: 'flat_address' %>
 
   <%= f.input :category, required: true, collection: Experience::CATEGORIES %>
 
