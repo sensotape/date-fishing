@@ -20,6 +20,7 @@ class ExperiencesController < ApplicationController
 
   def new
     @experience = current_user.experiences.new
+    @experience.photos.build
     authorize @experience
   end
 
@@ -29,7 +30,7 @@ class ExperiencesController < ApplicationController
     if @experience.save
       redirect_to experience_path(@experience)
     else
-      render '_form_new_experience'
+      render 'form_new_experience'
     end
   end
 

@@ -12,6 +12,11 @@
 
   <%= f.input :category, required: true, collection: Experience::CATEGORIES %>
 
+      <%= f.simple_fields_for :photos do |p| %>
+        <%= p.input :picture %>
+        <%= p.input :picture_cache, as: :hidden %>
+      <% end %>
+
   <%= f.submit class: "btn btn-primary"%>
 
 <% end %>
