@@ -2,15 +2,16 @@
 
   <%= f.input :title, required: true, error: 'Must have between 4 and 50 characters' %>
 
+  <%= f.input :category, required: true, collection: Experience::CATEGORIES %>
+
   <%= f.input :description, required: true %>
 
-  <%= f.input :start_date, required: true %>
+  <%= f.input :location %>
 
-  <%= f.input :end_date, required: true %>
+  <%= f.input :start_date %>
 
-  <%= f.input :location, required: true, error: 'Must contain at least 8 characters' %>
+  <%= f.input :end_date %>
 
-  <%= f.input :category, required: true, collection: Experience::CATEGORIES %>
 
   <%= f.submit class: "btn btn-primary"%>
 
