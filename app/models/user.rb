@@ -8,7 +8,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :experiences
-  has_many :nibbles
+  has_many :nibbles, foreign_key: 'interested_id'
   has_many :blocked_users
   has_many :messages
   has_many :photos
@@ -22,5 +22,10 @@ class User < ApplicationRecord
 
   def full_name
     "#{first_name.capitalize} #{last_name.capitalize}"
+  end
+
+  def age
+    today = Date.today
+    today.year - birthday.year
   end
 end

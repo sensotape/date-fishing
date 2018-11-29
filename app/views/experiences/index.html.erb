@@ -1,0 +1,30 @@
+<div class="container">
+  <h1>It's Date Time</h1>
+  <div class="search-bar">
+    <%= form_tag experiences_path, method: :get do %>
+    <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a date!"
+    %>
+    <% end %>
+  </div>
+    <div class="card">
+        <% @experiences.each do |experience| %>
+        <p><h2><%= link_to "#{experience.title}", experience_path(experience) %></h2></p>
+        <h3><%= experience.description %></h3>
+        <h4><%= experience.category %></h4>
+        <h3><%= experience.location %></h3>
+        <h3><%= experience.humanize_date %></h3>
+        <h3><%= experience.humanize_time %></h3>
+        <h3><%= experience.time_until_date %></h3>
+        <div><% experience.photos.each do |photo| %>
+          <%= cl_image_tag photo.picture_url(:experience_photo) %>
+        <% end %>
+      </div>
+          <%= button_to 'Show Details', experience_path(experience.id), {class: "btn btn-primary", method: :get}%>
+        </button>
+      <% end %>
+    </div>
+</div>
+

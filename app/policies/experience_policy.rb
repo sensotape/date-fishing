@@ -24,4 +24,8 @@ class ExperiencePolicy < ApplicationPolicy
   def destroy?
     record.user == user
   end
+
+  def permitted_attributes
+    [:photos, :title, :category, :location, :description, :start_date, :end_date]
+  end
 end
