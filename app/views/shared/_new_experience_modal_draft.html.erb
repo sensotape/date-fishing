@@ -1,0 +1,27 @@
+<div class='modal fade' id="new-experience" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content modal-padding modal-background">
+      <h2>New Experience</h2>
+
+      <%= simple_form_for(resource, as: resource_name, url: new_experience_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
+
+      <div class="form-inputs">
+
+      </div>
+
+      <div class="form-actions">
+        <%= f.button :submit, "Add Experience" %>
+      </div>
+      <% end %>
+
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>
+
+<!-- Here's the link to the modal you will need in the navbar
+
+    <div class="navbar-wagon-item navbar-wagon-link" data-toggle="modal" data-target="#new-experience">Create</div>
+      <%= #render 'shared/new_experience_modal_draft' %>
+-->
