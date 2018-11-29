@@ -59,6 +59,7 @@ if (mapElement) { // only build a map if there's a div#map to inject into
   }
 }
 
+// auto-complete for location
 const addressInput = document.getElementById('experience_location');
 
 if (addressInput) {
