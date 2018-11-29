@@ -44,7 +44,7 @@ class Experience < ApplicationRecord
     elsif time == "12:00PM"
       "Midday"
     else
-    "#{time}"
+      time
     end
   end
 
