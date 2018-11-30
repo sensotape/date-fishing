@@ -1,10 +1,12 @@
 <div class="container">
 
     <div class="photo">
-      <% if @experience.photos.first == nil %>
+      <% if @experience.photos == nil %>
          <h1>No Picture Available</h1>
       <% else %>
-        <%= cl_image_tag @experience.photos.first.picture %>
+        <% @experience.photos.each do |photo| %>
+          <%= cl_image_tag photo.picture %>
+        <% end %>
       <% end %>
     </div>
 
