@@ -69,8 +69,7 @@ tango_date = aigerim.experiences.new(
   category: 'Art & Culture',
   location: 'Gesundbrunnen, Berlin',
   description: "I learned to tango in Argentina and would like to share my skills in a romantic evening.",
-  start_date: Date.new(2018, 12, 12),
-  end_date: Date.new(2018, 12, 12)
+  date: Date.new(2018, 12, 12)
 )
 tango_date.save!
 tango_date.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/come_tango_dancing_at_ballroom_berlin.png'))
@@ -79,9 +78,7 @@ matrix_date = marcel.experiences.new(
   category: 'Music',
   location: 'Warschauerstr., Berlin',
   description: "Wanna dance like crazy with someone SEZY at Matrix?",
-  start_date: Date.new(2018, 12, 7),
-  end_date: Date.new(2018, 12, 9)
-)
+  date: Date.new(2018, 12, 7))
 matrix_date.save!
 matrix_date.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543317952/party_like_crazy_at_MATRIX.png'))
 copenhagen_date = andrew.experiences.new(
@@ -89,8 +86,7 @@ copenhagen_date = andrew.experiences.new(
   category: 'Tourism',
   location: 'Copenhagen, Denmark',
   description: "Hi, I'd love to go on a romantic trip to Copenhagen by bike",
-  start_date: Date.new(2018, 12, 18),
-  end_date: Date.new(2018, 12, 19)
+  date: Date.new(2018, 12, 18)
 )
 copenhagen_date.save!
 copenhagen_date.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318234/winter_trip_to_copenhagen.png'))
@@ -99,8 +95,7 @@ boardgames_date = marcel.experiences.new(
   category: 'Geek & Nerd',
   location: '77 Rigaerstr., Berlin',
   description: "A quiet night of boardgames and a bottle of Shafer One Point Five cabernet.",
-  start_date: Date.new(2018, 12, 17),
-  end_date: Date.new(2018, 12, 17)
+  date: Date.new(2018, 12, 17)
 )
 boardgames_date.save!
 boardgames_date.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/boardgames_and_red_wine.png'))
@@ -109,8 +104,7 @@ skydiving_date = aigerim.experiences.new(
   category: 'Bucketlist',
   location: 'Germany',
   description: "It's time to finally take the plunge! Let's go Skydiving this Weekend!",
-  start_date: Date.new(2018, 12, 20),
-  end_date: Date.new(2018, 12, 21)
+  date: Date.new(2018, 12, 20)
 )
 skydiving_date.save!
 skydiving_date.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318234/skydiving.png'))
@@ -119,8 +113,7 @@ exploration_date = maylee.experiences.new(
   category: 'Adventure',
   location: 'Berlin, Germany',
   description: "We meet two hours before dusk. Bring your own gear. Experience required!",
-  start_date: Date.new(2018, 12, 26),
-  end_date: Date.new(2018, 12, 26)
+  date: Date.new(2018, 12, 26)
 )
 exploration_date.save!
 exploration_date.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/explore_the_abandoned_brewery_in_pankow.png'))
@@ -129,8 +122,7 @@ sushi_date = maylee.experiences.new(
   category: 'Food & Drink',
   location: 'Prenzlauerberg, Berlin',
   description: "Let the good times roll! The freshest sushi and sashimi, paired with amazing sakes.",
-  start_date: Date.new(2018, 12, 21),
-  end_date: Date.new(2018, 12, 21)
+  date: Date.new(2018, 12, 21)
 )
 sushi_date.save!
 sushi_date.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/cook_sushi_with_me.png'))
@@ -139,8 +131,7 @@ badminton_date = andrew.experiences.new(
   category: 'Sport & Recreation',
   location: 'Sportcenter Wittenau',
   description: "Up to see if we're a match? My record stands at undefeated, but maybe you can change that!",
-  start_date: Date.new(2018, 12, 27),
-  end_date: Date.new(2018, 12, 27)
+  date: Date.new(2018, 12, 27)
 )
 badminton_date.save!
 badminton_date.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/beat_me_at_badminton.png'))
