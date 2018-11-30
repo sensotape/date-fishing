@@ -16,6 +16,19 @@ class NibblesController < ApplicationController
     end
   end
 
+  def update
+    @experience = policy_scope(Experience).find(params[:experience_id])
+    @nibble = policy_scope(Nibble).find(params[:id])
+    authorize @nibble
+    @nibble.status = params[:status]
+    if @nibble.save
+      redirect_to inbox_path
+      flash[:notice] = "You've made your decision"
+    else
+      flash[:alert] = "Oops! Something went wrong 😔 Please try again later"
+    end
+  end
+
   private
 
   def nibble_message_params
