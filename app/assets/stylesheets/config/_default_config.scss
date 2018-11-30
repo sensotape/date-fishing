@@ -6,8 +6,23 @@ body {
   color: $blue;
 }
 
+.flexbox-vertical {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .flexbox-horizontal {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.div-margin {
+  margin: 20px auto;
+}
+
+.item-padding {
+  padding: 5px 10px;
 }
