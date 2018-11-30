@@ -6,13 +6,17 @@
   height: calc(100vh - 70px);
   color: white;
   padding-top: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
 }
 
 .banner-content {
-  h3 {
+  p {
     opacity: 0.85;
   }
+}
+
+.banner-padding {
+  padding-left: 40px;
 }
