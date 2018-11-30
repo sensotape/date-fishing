@@ -4,10 +4,11 @@
       <div class="modal-image-container">
         <%= cl_image_tag @experience.user.photos.first.picture, class: 'modal-image' %>
       </div>
-      <h2><%= @experience.user.first_name  %></h2>
-      <h2><%= @experience.user.last_name  %></h2>
-      <strong>Age: </strong><%= @experience.user.age %>
-      <%= content_tag :p, @experience.user.bio %>
+      <div class="name"><%= "#{@experience.user.first_name} #{@experience.user.last_name} | Age: #{@experience.user.age}" %></div>
+      <!-- <strong>Age: </strong><%= @experience.user.age %> -->
+      <div class="content">
+        <%= content_tag :p, @experience.user.bio %>
+      </div>
     </div>
   </div>
 </div>
