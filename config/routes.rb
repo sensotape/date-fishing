@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   get 'inbox', to: 'conversations#inbox', as: :inbox
   get 'inbox/:id', to: 'conversations#show', as: :conversation
   post 'inbox/:id/messages', to: 'messages#create', as: :new_message
+
+  mount ActionCable.server => "/cable"
 end
