@@ -32,16 +32,25 @@
         <p><%= @experience.description %></p>
       </div>
 
-      <!-- nibble button -->
-      <% if policy(@nibble).create? %>
-        <button class="btn btn-primary" data-toggle="modal" data-target="#nibble">Nibble!</button>
-        <%= render 'shared/nibble', experience: @experience %>
+      <!-- all buttons -->
+      <div class="flexbox-left" style="margin-left: 70px">
 
-      <!-- edit button -->
-      <% elsif @experience.user == current_user %>
-        <button data-toggle="modal" data-target="#edit-experience-modal-<%= @experience.id %>" class="btn btn-primary">Edit</button>
-        <%= render 'shared/edit-experience', experience: @experience %>
-      <% end %>
+        <!-- nibble button -->
+        <% if policy(@nibble).create? %>
+          <button class="item-padding btn btn-primary" data-toggle="modal" data-target="#nibble" style="margin-right: 20px">Nibble</button>
+          <%= render 'shared/nibble', experience: @experience %>
+
+        <!-- edit button -->
+        <% elsif @experience.user == current_user %>
+          <button data-toggle="modal" data-target="#edit-experience-modal-<%= @experience.id %>" class="btn btn-primary">Edit</button>
+          <%= render 'shared/edit-experience', experience: @experience %>
+        <% end %>
+
+        <!-- user profile modal -->
+        <button class="item-padding btn btn-primary" data-toggle="modal" data-target="#user-modal">View Profile</button>
+         <%= render 'shared/user-profile-modal' %>
+
+      </div>
 
     </div>
 
