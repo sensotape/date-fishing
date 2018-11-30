@@ -29,9 +29,8 @@ body {
 .flexbox-left-vertical {
   display: flex;
   flex-direction: column;
-  justify-content: left;
-  align-items: center;
-  width: 100%;
+  justify-content: center;
+  align-items: left;
 }
 
 .div-margin {
@@ -40,4 +39,10 @@ body {
 
 .item-padding {
   padding: 5px 10px;
+}
+
+.index-page-background {
+  background-image: url("https://res.cloudinary.com/dkft9hkkv/image/upload/v1543583133/Date%20Fishing/Background_flipped_copy.png");
+  background-size: cover;
+  z-index: -5;
 }
