@@ -7,7 +7,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '5.2.1'
-gem 'redis'
+gem 'redis', '3.0.0'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
@@ -21,6 +21,7 @@ gem 'pundit'
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
 gem 'pg_search'
+gem 'browser'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

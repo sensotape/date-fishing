@@ -6,6 +6,10 @@ class ConversationPolicy < ApplicationPolicy
   end
 
   def inbox?
-    true
+    true # change later
+  end
+
+  def show?
+    true # change later
   end
 end

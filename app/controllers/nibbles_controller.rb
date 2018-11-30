@@ -4,10 +4,11 @@ class NibblesController < ApplicationController
     @nibble = @experience.nibbles.new
     @nibble.owner = @experience.user
     @nibble.interested = current_user
-    @nibble.messages << Message.new(nibble_message_params)
     authorize @nibble
     if @nibble.save
-      redirect_to experience_path(@experience)
+      @conversation = @nibble.conversations.create
+      @message = @conversation.messages.create(nibble_message_params)
+      redirect_to experiences_path
       flash[:notice] = "You just nibbled #{@nibble.owner.first_name} 😜"
     else
       redirect_to experience_path(@experience)
