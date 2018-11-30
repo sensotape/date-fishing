@@ -17,4 +17,8 @@ class Message < ApplicationRecord
       current_user_id: self.sender.id
     })
   end
+
+  def date
+    created_at.strftime("%b %d")
+  end
 end

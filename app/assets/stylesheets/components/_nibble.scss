@@ -1,0 +1,19 @@
+#create-message {
+  padding: 15px;
+}
+
+#nibble_messages_recipient_name {
+  height: 37px !important;
+  width: 100%;
+}
+
+.refusal {
+  color: $red;
+  border-style: solid red 1px;
+  font-weight: bold;
+}
+
+#nibble_messages_body {
+  height: 100px !important;
+  width: 100%;
+}

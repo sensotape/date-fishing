@@ -1,4 +1,44 @@
-<h1>Conversations#inbox</h1>
-<% @conversations.each do |conversation| %>
-  <%= link_to conversation.nibble.experience.title, conversation_path(conversation) %><br/>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-10 col-md-offset-1">
+      <% @conversations.each do |conversation| %>
+        <% who = conversation.nibble.interested == current_user ? conversation.nibble.owner : conversation.nibble.interested %>
+
+        <div class="message">
+          <%= cl_image_tag who.photos.first.picture,
+              transformation: [{ height: 70, width: 70, crop: :thumb, gravity: :face}],
+              style: "border-radius:50%;",
+              data: {toggle: "modal", target: "#user-modal"} %>
+          <div class="message-name">
+            <h3><%= who.full_name %></h3>
+            <p><%= link_to conversation.nibble.experience.title, conversation_path(conversation) %></p>
+          </div>
+
+          <div class="message-body">
+            <p>
+              <%= link_to conversation.messages.last.body, conversation_path(conversation) %>
+              <div id="date"><%= conversation.messages.last.date %></div>
+            </p>
+          </div>
+
+          <div class="message-status">
+            <p class="status <%= conversation.nibble.status %>" id="status_<%= conversation.nibble.id %> "><%= conversation.nibble.status.capitalize %></p>
+            <% if policy(conversation.nibble).update? %>
+              <div id="status-buttons">
+                <%= link_to '', experience_nibble_path(conversation.nibble.experience, conversation.nibble, status: 'accepted'),
+                    method: :patch, class: 'fas fa-check-circle', style: "color: green;" %>
+                <%= link_to '', experience_nibble_path(conversation.nibble.experience, conversation.nibble, status: 'declined'),
+                    method: :patch, class: 'fas fa-thumbs-down', style: "color: red;" %>
+                <%= link_to '', experience_nibble_path(conversation.nibble.experience, conversation.nibble, status: 'cancelled'),
+                    method: :patch, class: 'fas fa-ban', style: "color: grey;" %>
+              </div>
+            <% else %>
+              <p><em>Patience is a virtue, right?</em></p>
+            <% end %>
+          </div>
+
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

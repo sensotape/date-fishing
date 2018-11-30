@@ -11,7 +11,8 @@ andrew = User.create!(
   last_name: 'Erlanger',
   password: '123456',
   password_confirmation: '123456',
-  bio: "Looking for someone straight up from Down Under? Let's make a date.",
+  bio: "Super seriously totally straight guy from Down Under looking for new experiences.
+  I'll try anything once. No butt stuff.",
   gender: 'Male',
   seeking: 'Female',
   birthday: Date.new(1988, 2, 26)
@@ -22,10 +23,8 @@ marcel = User.create!(
   last_name: 'Fonseca',
   password: '123456',
   password_confirmation: '123456',
-  bio: "Bacon ipsum dolor amet venison andouille short loin leberkas alcatra rump shank tri-tip
-  buffalo. Chuck turkey kielbasa biltong. Cow biltong andouille, shank bacon ball tip tri-tip
-  turkey filet mignon buffalo strip steak porchetta kielbasa burgdoggen sirloin. Meatball bresaola
-  pig pork chop beef sirloin.",
+  bio: "Hi there, I'm new to Berlin from Brazil and looking to meet new people. I'm super chill, love going
+  to the movies and spending time with friends.",
   gender: 'Male',
   seeking: 'Female',
   birthday: Date.new(1987, 10, 30)
@@ -36,8 +35,7 @@ maylee = User.create!(
   last_name: 'Sia',
   password: '123456',
   password_confirmation: '123456',
-  bio: "Fresh out of my dirty thirties, ready for my jorty forties. You're only young once,
-  but you can be immature forever!",
+  bio: "Old enough to know better, young enough not to care :)",
   gender: 'Female',
   seeking: 'Male',
   birthday: Date.new(1978, 5, 18)
@@ -48,11 +46,8 @@ aigerim = User.create!(
   last_name: 'Kalysheva',
   password: '123456',
   password_confirmation: '123456',
-  bio: "Bacon Pancakes\n
-        Making Bacon Pancakes\n
-        Take some bacon and I'll put it in a pancake\n
-        Bacon Pancakes That's what its gonna make\n
-        Bacon Pancakes",
+  bio: "Till death do we part? Looking for my ride or die. Meet for a once-in-a-lifetime experience.
+  Tell your family you went to live in a Buddhist monastery.",
   gender: 'Female',
   seeking: 'Male',
   birthday: Date.new(1993, 3, 4)
@@ -73,14 +68,6 @@ tango_date = aigerim.experiences.new(
 )
 tango_date.save!
 tango_date.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/come_tango_dancing_at_ballroom_berlin.png'))
-matrix_date = marcel.experiences.new(
-  title: 'Hardcore Clubbing at Matrix',
-  category: 'Music',
-  location: 'Warschauerstr., Berlin',
-  description: "Wanna dance like crazy with someone SEZY at Matrix?",
-  date: Date.new(2018, 12, 7))
-matrix_date.save!
-matrix_date.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543317952/party_like_crazy_at_MATRIX.png'))
 copenhagen_date = andrew.experiences.new(
   title: 'Bike Ride to Copenhagen',
   category: 'Tourism',
@@ -90,6 +77,7 @@ copenhagen_date = andrew.experiences.new(
 )
 copenhagen_date.save!
 copenhagen_date.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318234/winter_trip_to_copenhagen.png'))
+
 boardgames_date = marcel.experiences.new(
   title: 'Board Games and Red Wine',
   category: 'Geek & Nerd',
@@ -99,6 +87,7 @@ boardgames_date = marcel.experiences.new(
 )
 boardgames_date.save!
 boardgames_date.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/boardgames_and_red_wine.png'))
+
 skydiving_date = aigerim.experiences.new(
   title: 'Jump out of a Plane with Me',
   category: 'Bucketlist',
@@ -108,6 +97,7 @@ skydiving_date = aigerim.experiences.new(
 )
 skydiving_date.save!
 skydiving_date.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318234/skydiving.png'))
+
 exploration_date = maylee.experiences.new(
   title: 'Explore the Abandoned Brewery',
   category: 'Adventure',
@@ -117,6 +107,7 @@ exploration_date = maylee.experiences.new(
 )
 exploration_date.save!
 exploration_date.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/explore_the_abandoned_brewery_in_pankow.png'))
+
 sushi_date = maylee.experiences.new(
   title: 'Sushi and Sake',
   category: 'Food & Drink',
@@ -126,6 +117,7 @@ sushi_date = maylee.experiences.new(
 )
 sushi_date.save!
 sushi_date.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/cook_sushi_with_me.png'))
+
 badminton_date = andrew.experiences.new(
   title: 'Beat Me at Badminton',
   category: 'Sport & Recreation',
