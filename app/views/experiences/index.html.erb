@@ -1,36 +1,32 @@
 <div class="container">
-  <h1>It's Date Time</h1>
+
+  <!-- FILTERS AT TOP -->
   <div class="filters-container">
-    <button class="btn btn-primary" data-toggle="modal" data-target="#category-filter-modal">Category</button>
+    <button class="btn btn-primary filter-item" data-toggle="modal" data-target="#category-filter-modal">Category</button>
     <%= render 'shared/category_filter_modal' %>
-    <button class="btn btn-primary" data-toggle="modal" data-target="#date-filter-modal">Date</button>
+    <button class="btn btn-primary filter-item" data-toggle="modal" data-target="#date-filter-modal">Date</button>
     <%= render 'shared/date_filter_modal' %>
-    <div class="search-bar">
+    <div class="search-bar search-bar-width filter-item">
       <%= form_tag experiences_path, method: :get do %>
       <%= text_field_tag :query,
       params[:query],
       class: "form-control",
-      placeholder: "Find a date!"
+      placeholder: "Explore an ocean of dates"
       %>
       <% end %>
     </div>
   </div>
-    <div class="card">
-        <% @experiences.each do |experience| %>
-        <p><h2><%= link_to "#{experience.title}", experience_path(experience) %></h2></p>
-        <h3><%= experience.description %></h3>
-        <h4><%= experience.category %></h4>
-        <h3><%= experience.location %></h3>
-        <h3><%= experience.humanize_date %></h3>
-        <h3><%= experience.humanize_time %></h3>
-        <h3><%= experience.time_until_date %></h3>
-        <div><% experience.photos.each do |photo| %>
-          <%= cl_image_tag photo.picture_url(:experience_photo) %>
-        <% end %>
+
+  <!-- CARDS BENEATH -->
+  <div class="row">
+    <% @experiences.each do |experience| %>
+      <div class="col-md-4" align="center">
+        <%= render 'shared/card', experience: experience %>
       </div>
-          <%= button_to 'Show Details', experience_path(experience.id), {class: "btn btn-primary", method: :get}%>
-        </button>
-      <% end %>
-    </div>
+    <% end %>
+  </div>
 </div>
+
+
+
 

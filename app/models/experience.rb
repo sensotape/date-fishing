@@ -30,15 +30,11 @@ class Experience < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_location?
 
   def humanize_date
-    if start_date.to_date == end_date.to_date
-      "#{MONTHS[start_date.month]} #{start_date.day}"
-    else
-      "#{MONTHS[start_date.month]} #{start_date.day} – #{MONTHS[end_date.month]} #{end_date.day}"
-    end
+    "#{MONTHS[date.month]} #{date.day}"
   end
 
   def humanize_time
-    time = start_date.to_time.strftime('%I:%M%p')
+    time = date.to_time.strftime('%I:%M%p')
     if time == "12:00AM"
       "Midnight"
     elsif time == "12:00PM"
@@ -50,7 +46,7 @@ class Experience < ApplicationRecord
 
   def time_until_date
     today = Date.today
-    days = (start_date.to_date - today.to_date).to_i
+    days = (date.to_date - today.to_date).to_i
     case days
     when 0 then "Today"
     when 1 then "Tomorrow"
