@@ -5,7 +5,7 @@
          <h1>No Picture Available</h1>
       <% else %>
         <% @experience.photos.each do |photo| %>
-          <%= cl_image_tag photo.picture %>
+          <%= cl_image_tag photo.picture_url %>
         <% end %>
       <% end %>
     </div>
