@@ -4,6 +4,7 @@
 @import "config/bootstrap_variables";
 @import "config/focus";
 @import "config/text-selection";
+@import "config/default_config";
 
 // External libraries
 @import "bootstrap-sprockets";
@@ -18,3 +19,4 @@
 
 // Specific Pages
 @import "experiences/index";
+@import "experiences/show";

@@ -1,4 +1,14 @@
 .filters-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: left;
+  margin: 30px auto;
+  padding-left: 55px;
+}
+
+.filter-item {
+  margin-right: 20px;
+}
+
+.search-bar-width {
+  width: 50vw;
 }
