@@ -68,7 +68,6 @@ tango_date = aigerim.experiences.new(
 )
 tango_date.save!
 tango_date.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/come_tango_dancing_at_ballroom_berlin.png'))
-
 copenhagen_date = andrew.experiences.new(
   title: 'Bike Ride to Copenhagen',
   category: 'Tourism',

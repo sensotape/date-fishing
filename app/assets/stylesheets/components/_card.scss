@@ -141,6 +141,7 @@
   cursor: pointer;
   -webkit-transition: all 0.65s ease;
   transition: all 0.65s ease;
+  z-index: 10;
 }
 
 .card:hover {
