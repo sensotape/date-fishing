@@ -13,6 +13,11 @@
   <%= f.input :end_date %>
 
 
+      <%= f.simple_fields_for :photos do |p| %>
+        <%= p.input :picture, input_html: { multiple: true} %>
+        <%= p.input :picture_cache, input_html: { multiple: true}, as: :hidden %>
+      <% end %>
+
   <%= f.submit class: "btn btn-primary"%>
 
 <% end %>
