@@ -1,0 +1,34 @@
+<div class="container">
+
+    <div class="photo">
+      <% if @experience.photos.first == nil %>
+         <h1>No Picture Available</h1>
+      <% else %>
+        <%= cl_image_tag @experience.photos.first.picture %>
+      <% end %>
+    </div>
+
+    <button data-toggle="modal" data-target="#user-modal" class="btn btn-primary">Creator Profile</button>
+    <%= render 'shared/user-profile-modal' %>
+
+    <h1><%= @experience.title %></h1>
+    <p><%= @experience.user.full_name %></p>
+    <p><%= @experience.category %></p>
+    <p><%= @experience.location %></p>
+    <p><%= @experience.description %></p>
+    <p><%= @experience.humanize_date %></p>
+    <p><%= @experience.time_until_date %></p>
+    <p><%= @experience.humanize_time %></p>
+    <% if policy(@nibble).create? %>
+      <button class="btn btn-primary" data-toggle="modal" data-target="#nibble">Nibble!</button>
+      <%= render 'shared/nibble', experience: @experience %>
+    <% elsif @experience.user == current_user %>
+      <button data-toggle="modal" data-target="#edit-experience-modal-<%= @experience.id %>" class="btn btn-primary">Edit</button>
+      <%= render 'shared/edit-experience', experience: @experience %>
+    <% end %>
+    <div id="map" style="width: 600px; height: 400px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+
+</div>
