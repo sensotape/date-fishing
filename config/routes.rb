@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   resources :experiences do
-    resources :nibbles, only: [:create, :destroy]
+    resources :nibbles, only: [:create, :update, :destroy]
   end
   resources :users, only: [:edit, :update, :show, :destroy]
   get 'inbox', to: 'conversations#inbox', as: :inbox

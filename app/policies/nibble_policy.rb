@@ -13,6 +13,10 @@ class NibblePolicy < ApplicationPolicy
     !(record.owner == user || has_nibble)
   end
 
+  def update?
+    record.owner == user
+  end
+
   def destroy?
     record.interested == user
   end
