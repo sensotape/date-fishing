@@ -1,21 +1,34 @@
-<%= simple_form_for @experience do |f| -%>
+<div class="new-experience">
+  <div class="headers">
+    <h1>Get creative!</h1>
+    <p>Write a fun description and choose nice photos for your date. Don't forget to set the category as well.</p>
+  </div>
+  <div class="row">
+  <%= simple_form_for @experience do |f| -%>
+    <div class="column left">
+    <%= f.input :title, required: true, error: 'Must have between 4 and 50 characters' %>
 
-  <%= f.input :title, required: true, error: 'Must have between 4 and 50 characters' %>
+    <%= f.input :category, required: true, collection: Experience::CATEGORIES %>
 
-  <%= f.input :category, required: true, collection: Experience::CATEGORIES %>
+    <%= f.input :description, required: true %>
 
-  <%= f.input :description, required: true %>
+    <%= f.input :location %>
 
-  <%= f.input :location %>
 
-  <%= f.input :date, as: :string, input_html: {class: "datepickr"} %>
 
-      <%= f.simple_fields_for :photos do |p| %>
-        <%= p.input :picture, input_html: { multiple: true} %>
-        <%= p.input :picture_cache, input_html: { multiple: true}, as: :hidden %>
-      <% end %>
+    </div>
 
-  <%= f.submit class: "btn btn-primary"%>
+    <div class="column right">
+      <%= f.input :date, as: :string, input_html: {class: "datepickr"} %>
+        <%= f.simple_fields_for :photos do |p| %>
+          <%= p.input :picture, input_html: { multiple: true} %>
+          <%= p.input :picture_cache, input_html: { multiple: true}, as: :hidden %>
+        <% end %>
 
-<% end %>
+      <%= f.submit class: "btn btn-primary"%>
+    </div>
+
+  <% end %>
+</div>
+</div>
 
