@@ -25,7 +25,7 @@
         <h3><%= experience.humanize_time %></h3>
         <h3><%= experience.time_until_date %></h3>
         <div><% experience.photos.each do |photo| %>
-          <%= cl_image_tag photo.picture_url(:experience_photo) %>
+          <%= cl_image_tag photo.picture_url %>
         <% end %>
       </div>
           <%= button_to 'Show Details', experience_path(experience.id), {class: "btn btn-primary", method: :get}%>
