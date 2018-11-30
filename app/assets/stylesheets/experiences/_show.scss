@@ -21,7 +21,7 @@
 .photo-side img:hover {
   -webkit-transform: scale(1, 1);
   transform: scale(1, 1);
-  opacity: 0.8;
+  // opacity: 0.8;
   animation-name: zoom;
   animation-duration: 15s;
   animation-direction: alternate;
@@ -59,6 +59,11 @@
 .details-side {
   width: 60vw;
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
 }
 
 .content-box {
@@ -85,4 +90,8 @@
 
 .interest-modal {
   color: black;
+}
+
+#map {
+  text-align: left;
 }
