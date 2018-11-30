@@ -26,6 +26,6 @@ class ExperiencePolicy < ApplicationPolicy
   end
 
   def permitted_attributes
-    [:photos, :title, :category, :location, :description, :start_date, :end_date]
+    [:photos, :title, :category, :location, :description, :date]
   end
 end
