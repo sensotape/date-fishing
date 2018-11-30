@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Date Fishing</title>
+    <script src="https://cdn.rawgit.com/icons8/titanic/master/dist/js/titanic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.5.9/bodymovin.min.js"></script>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_pack_tag "map" %>
-    <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= favicon_link_tag asset_path('logo.png') %>
+    <%= stylesheet_pack_tag 'application' %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+  </head>
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>

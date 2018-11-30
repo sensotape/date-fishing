@@ -1,0 +1,20 @@
+<a href='/experiences/<%= experience.id %>' style="text-decoration: none;">
+<div class="card" data-effect="zoom">
+  <figure  class="card__image">
+    <%= cl_image_tag experience.photos.first.picture, alt: experience.title %>
+  </figure>
+  <div class="card__header">
+  </div>
+  <div class="card__body">
+    <div class="black-bar">
+      <p class="card__name"><%= experience.title %></p>
+    </div>
+    <p class="card__bio"></p>
+  </div>
+  <div class="card__footer black-bar">
+    <p class="card__date"><%= experience.humanize_date %></p>
+  </div>
+</div>
+</a>
+
+

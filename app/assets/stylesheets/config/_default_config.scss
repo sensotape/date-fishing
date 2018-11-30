@@ -1,0 +1,48 @@
+body {
+  color: $gray;
+}
+
+.primary-color {
+  color: $blue;
+}
+
+.flexbox-vertical {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flexbox-horizontal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flexbox-left {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 100%;
+}
+
+.flexbox-left-vertical {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+}
+
+.div-margin {
+  margin: 20px auto;
+}
+
+.item-padding {
+  padding: 5px 10px;
+}
+
+.index-page-background {
+  background-image: url("https://res.cloudinary.com/dkft9hkkv/image/upload/v1543583133/Date%20Fishing/Background_flipped_copy.png");
+  background-size: cover;
+  z-index: -5;
+}
