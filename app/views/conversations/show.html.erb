@@ -23,7 +23,7 @@
       { channel: 'ConversationsChannel', conversation_id: <%= @conversation.id %> }, {
         received: (data) => {
           if (data.current_user_id !== <%= current_user.id %>) {
-            messagesContainer = document.querySelector('.messages');
+            messagesContainer = document.querySelector('.show-messages');
             messagesContainer.insertAdjacentHTML('beforeend', data.message_partial);
             scrollLastMessageIntoView();
           }
