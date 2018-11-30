@@ -1,40 +1,42 @@
-<div class="banner-container text-center">
-  <div class="banner-content flexbox-vertical">
-    <h1>Date Fishing</h1>
-    <h3>Experiences.</h3>
-    <%= link_to "Explore", experiences_path, class: 'button-main' %>
-  </div>
-</div>
 
-<!-- intro div -->
-
-<div class="homepage-body">
-  <div class="text-center background-white primary-padding black">
-    <h2>Swiping isn't about connection</h2>
-    <p>Find compatible dates by sharing real experiences.<span class=""> Date Fishing</span>:
-       authentic.
-    </p>
-    <div class="icon-container secondary-padding flexbox-horizontal">
-      <div><%= image_tag "", class: 'icon' %>
-        <p class="bold secondary-padding">Search by experiences, not appearances.</p>
-      </div>
-      <div class="titanic titanic-heart" ></div>
-        <p class="bold secondary-padding">Connect by doing things you love.</p>
-
-      <div><%= image_tag "", class: 'icon' %>
-        <p class="bold secondary-padding">Make real connections.</p>
-      </div>
+  <div class="banner-container text-center">
+    <div class="banner-content flexbox-vertical">
+      <h1>Date Fishing</h1>
+      <h3>Experiences.</h3>
+      <%= link_to "Explore", experiences_path, class: 'btn btn-primary' %>
     </div>
   </div>
-  <!-- explore div -->
-  <div class="explore text-center primary-padding white flexbox-vertical">
-    <h2>So what are you waiting for?</h2>
-    <p class="secondary-margin">A whole <strike>pond</strike> <span class="">ocean</span>
-      of underwater pleasure awaits.
-    </p>
-    <%= link_to "Explore", experiences_path, class: 'button-main' %>
+
+  <!-- intro div -->
+
+  <div class="homepage-body">
+    <div class="text-center background-white primary-padding black">
+      <h2>Swiping doesn't lead to real connections</h2>
+      <p>Find compatible dates and share exciting experiences.<span class="">Find dates instead of looking through profiles</span>
+      </p>
+      <div class="icon-container secondary-padding flexbox-horizontal">
+
+        <div><%= cl_image_tag "https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543586343/eye_1.svg", class: 'icon' %>
+          <p class="bold secondary-padding">Search by experiences, not appearances.</p>
+        </div>
+
+        <div><%= cl_image_tag "https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543587901/like.svg", class: 'icon' %>
+          <p class="bold secondary-padding">Connect by doing things you love.</p>
+        </div>
+        <div><%= cl_image_tag "https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543587532/chat_1.svg", class: 'icon' %>
+          <p class="bold secondary-padding">Make real connections.</p>
+        </div>
+      </div>
+    </div>
+    <!-- explore div -->
+    <div class="explore text-center primary-padding white flexbox-vertical">
+      <h2>So what are you waiting for?</h2>
+      <p class="secondary-margin">A whole <strike>pond</strike> <span class="">ocean</span>
+        of exploration awaits.
+      </p>
+      <%= link_to "Explore", experiences_path, class: 'btn btn-primary' %>
+    </div>
   </div>
-</div>
 
 <script>
     var titanic = new Titanic();

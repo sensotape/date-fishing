@@ -1,11 +1,10 @@
 // Specific CSS for your home-page
 .homepage-body {
-
+  padding-top: 400px;
   background-image: url("https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543582223/Background_01_1.png");
   background-size: cover;
   width: 100%;
-  margin: none;
-  float: top;
+  height: 2000px;
 
 }
 
@@ -24,6 +23,10 @@
   margin: none;
 }
 
+h2 {
+  margin-top: 0;
+}
+
 .banner-content {
   h3 {
     opacity: 0.85;
@@ -31,14 +34,17 @@
 }
 
 .explore {
-
+  margin: 50px;
   background-size: cover;
   background-position: center;
   min-height: 350px;
 }
 
 .icon-container {
-  margin-top: 40px;
+  margin: 50px;
+  display: flex;
+  justify-content: space-around;
+
 }
 
 .icon {
