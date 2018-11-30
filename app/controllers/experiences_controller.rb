@@ -20,6 +20,7 @@ class ExperiencesController < ApplicationController
 
   def new
     @experience = current_user.experiences.new
+    @experience.photos.build
     authorize @experience
   end
 
@@ -28,8 +29,11 @@ class ExperiencesController < ApplicationController
     authorize @experience
     if @experience.save
       redirect_to experience_path(@experience)
+      params[:experience][:photos_attributes]["0"][:picture].each do |pic|
+        Photo.create(user: current_user, experience: @experience, picture: pic)
+      end
     else
-      render '_form_new_experience'
+      render 'form_new_experience'
     end
   end
 
