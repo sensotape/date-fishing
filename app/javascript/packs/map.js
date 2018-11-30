@@ -15,10 +15,10 @@ if (mapElement) { // only build a map if there's a div#map to inject into
   const markers = JSON.parse(mapElement.dataset.markers);
     let editableOpts = {
         editable: false,
-        strokeColor: '#29AB87',
+        strokeColor: '#333333',
         strokeWeight: 1,
         strokeOpacity: 0.85,
-        fillColor: 'red',
+        fillColor: '#568cdd',
         fillOpacity: 0.2,
         minRadius: 100,
         maxRadius: 500000,
