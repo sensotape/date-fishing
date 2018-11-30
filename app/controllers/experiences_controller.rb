@@ -30,7 +30,7 @@ class ExperiencesController < ApplicationController
     if @experience.save
       redirect_to experience_path(@experience)
       params[:experience][:photos_attributes]["0"][:picture].each do |pic|
-        Photo.create(user:current_user ,experience: @experience, picture: pic)
+        Photo.create(user: current_user, experience: @experience, picture: pic)
       end
     else
       render 'form_new_experience'
