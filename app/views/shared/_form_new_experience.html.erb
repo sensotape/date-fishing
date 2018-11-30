@@ -8,10 +8,7 @@
 
   <%= f.input :location %>
 
-  <%= f.input :start_date %>
-
-  <%= f.input :end_date %>
-
+  <%= f.input :date, as: :string, input_html: {class: "datepickr"} %>
 
       <%= f.simple_fields_for :photos do |p| %>
         <%= p.input :picture, input_html: { multiple: true} %>
