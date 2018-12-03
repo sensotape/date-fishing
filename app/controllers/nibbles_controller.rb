@@ -29,6 +29,14 @@ class NibblesController < ApplicationController
     end
   end
 
+  def destroy
+    @experience = policy_scope(Experience).find(params[:experience_id])
+    @nibble = policy_scope(Nibble).find(params[:id])
+    authorize @nibble
+    @nibble.destroy
+    redirect_to user_path(current_user)
+  end
+
   private
 
   def nibble_message_params

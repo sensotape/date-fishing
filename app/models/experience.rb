@@ -17,8 +17,8 @@ class Experience < ApplicationRecord
     }
 
   belongs_to :user
-  has_many :nibbles
-  has_many :photos
+  has_many :nibbles, dependent: :destroy
+  has_many :photos, dependent: :destroy
   accepts_nested_attributes_for :photos
 
   geocoded_by :location

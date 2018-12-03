@@ -1,6 +1,10 @@
 require 'date'
 
 puts 'Dropping database...'
+Photo.destroy_all
+Message.destroy_all
+Conversation.destroy_all
+Nibble.destroy_all
 Experience.destroy_all
 User.destroy_all
 
