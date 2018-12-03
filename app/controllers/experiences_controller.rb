@@ -13,9 +13,10 @@ class ExperiencesController < ApplicationController
       save_filters
       apply_filters
     end
-    @experience = Experience.new
+
+    @experiences = @experiences.where("date >= ?", Time.zone.now.beginning_of_day)
+    # @experiences = @experiences.joins(:user).where("user.gender == ?", current_user.seeking)
     authorize @experiences
-    authorize @experience
   end
 
   def new
@@ -89,7 +90,7 @@ class ExperiencesController < ApplicationController
 
   def apply_filters
     @experiences.where!(category: @categories) if @categories
-    @experiences.where!(start_date: @date[0]..@date[-1]) if @date
+    @experiences.where!(date: @date[0]..@date[-1]) if @date
   end
 
   def calculate_date

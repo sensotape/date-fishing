@@ -15,7 +15,7 @@
       <% end %>
 
       <%= simple_form_for :range, method: :get do |f| %>
-        <%= f.input :date_range, as: :string, input_html: {class: "datepickr"} %>
+        <%= f.input :date_range, as: :string, input_html: {class: "datepickr-range"} %>
         <%= f.submit "custom range", name: :date, class: "btn btn-primary" %>
       <% end %>
 
