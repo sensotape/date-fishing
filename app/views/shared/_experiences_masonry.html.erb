@@ -1,0 +1,5 @@
+<div class="grid">
+  <% experiences.each do |experience| %>
+    <%= cl_image_tag experience.photos.first.picture, alt: experience.title, class: 'grid-item' %>
+  <% end %>
+</div>

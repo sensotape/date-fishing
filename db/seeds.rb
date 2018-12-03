@@ -1,6 +1,10 @@
 require 'date'
 
 puts 'Dropping database...'
+Message.destroy_all
+Conversation.destroy_all
+Nibble.destroy_all
+Photo.destroy_all
 Experience.destroy_all
 User.destroy_all
 
@@ -67,7 +71,8 @@ tango_date = aigerim.experiences.new(
   date: Date.new(2018, 12, 12)
 )
 tango_date.save!
-tango_date.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/come_tango_dancing_at_ballroom_berlin.png'))
+# tango_date.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/come_tango_dancing_at_ballroom_berlin.png'))
+tango_date.photos.create!(picture: open("https://picsum.photos/#{rand(800..1200)}/#{rand(800..1200)}"))
 copenhagen_date = andrew.experiences.new(
   title: 'Bike Ride to Copenhagen',
   category: 'Tourism',
@@ -76,7 +81,8 @@ copenhagen_date = andrew.experiences.new(
   date: Date.new(2018, 12, 18)
 )
 copenhagen_date.save!
-copenhagen_date.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318234/winter_trip_to_copenhagen.png'))
+# copenhagen_date.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318234/winter_trip_to_copenhagen.png'))
+copenhagen_date.photos.create!(picture: open("https://picsum.photos/#{rand(800..1200)}/#{rand(800..1200)}"))
 
 boardgames_date = marcel.experiences.new(
   title: 'Board Games and Red Wine',
@@ -86,7 +92,8 @@ boardgames_date = marcel.experiences.new(
   date: Date.new(2018, 12, 17)
 )
 boardgames_date.save!
-boardgames_date.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/boardgames_and_red_wine.png'))
+# boardgames_date.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/boardgames_and_red_wine.png'))
+boardgames_date.photos.create!(picture: open("https://picsum.photos/#{rand(800..1200)}/#{rand(800..1200)}"))
 
 skydiving_date = aigerim.experiences.new(
   title: 'Jump out of a Plane with Me',
@@ -96,7 +103,8 @@ skydiving_date = aigerim.experiences.new(
   date: Date.new(2018, 12, 20)
 )
 skydiving_date.save!
-skydiving_date.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318234/skydiving.png'))
+# skydiving_date.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318234/skydiving.png'))
+skydiving_date.photos.create!(picture: open("https://picsum.photos/#{rand(800..1200)}/#{rand(800..1200)}"))
 
 exploration_date = maylee.experiences.new(
   title: 'Explore the Abandoned Brewery',
@@ -106,7 +114,8 @@ exploration_date = maylee.experiences.new(
   date: Date.new(2018, 12, 26)
 )
 exploration_date.save!
-exploration_date.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/explore_the_abandoned_brewery_in_pankow.png'))
+# exploration_date.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/explore_the_abandoned_brewery_in_pankow.png'))
+exploration_date.photos.create!(picture: open("https://picsum.photos/#{rand(800..1200)}/#{rand(800..1200)}"))
 
 sushi_date = maylee.experiences.new(
   title: 'Sushi and Sake',
@@ -116,7 +125,8 @@ sushi_date = maylee.experiences.new(
   date: Date.new(2018, 12, 21)
 )
 sushi_date.save!
-sushi_date.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/cook_sushi_with_me.png'))
+# sushi_date.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/cook_sushi_with_me.png'))
+sushi_date.photos.create!(picture: open("https://picsum.photos/#{rand(800..1200)}/#{rand(800..1200)}"))
 
 badminton_date = andrew.experiences.new(
   title: 'Beat Me at Badminton',
@@ -126,5 +136,6 @@ badminton_date = andrew.experiences.new(
   date: Date.new(2018, 12, 27)
 )
 badminton_date.save!
-badminton_date.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/beat_me_at_badminton.png'))
+# badminton_date.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/beat_me_at_badminton.png'))
+badminton_date.photos.create!(picture: open("https://picsum.photos/#{rand(800..1200)}/#{rand(800..1200)}"))
 puts 'Database seeded with 4 users, posting 2 dates each.'

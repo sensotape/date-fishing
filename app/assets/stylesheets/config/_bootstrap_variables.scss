@@ -51,3 +51,13 @@ $border-radius-small: 2px;
 }
 
 // Override other variables below!
+a {
+  font-weight:bold;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  &:hover {
+    transform: scale(1.03, 1.03);
+    color: $blue;
+    text-decoration: none;
+  }
+}

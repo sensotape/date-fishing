@@ -1,26 +1,35 @@
 
-.banner-container {
-  background-image: url("https://res.cloudinary.com/dkft9hkkv/image/upload/v1543515737/Date%20Fishing/Homepage_Cover.jpg");
-
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+.homepage-banner {
+  // background-image: url("https://res.cloudinary.com/dkft9hkkv/image/upload/v1543515737/Date%20Fishing/Homepage_Cover.jpg");
+  // background-repeat: no-repeat;
+  // background-position: center;
+  // background-size: cover;
+  background: white;
   height: calc(100vh - 70px);
-  color: white;
+  width: 100vw;
+  color: $gray;
   padding-top: 70px;
-
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
+  padding-left: 40px;
 }
 
 .banner-content {
   p {
-
     opacity: 0.85;
   }
 }
 
-.banner-padding {
-  padding-left: 40px;
+.homepage-sections {
+  width: 100vw;
+}
+
+.homepage-icon-container {
+  max-width: 200px;
+  margin: 30px;
+  p {
+    font-size: 0.8em;
+  }
+}
+
+.homepage-icon {
+  height: 100px;
 }
