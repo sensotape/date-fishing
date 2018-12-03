@@ -63,7 +63,7 @@ class ExperiencesController < ApplicationController
   def destroy
     @experience.destroy
     redirect_to user_path(current_user)
-    flash[:notice] = "Date succesfuly "
+    flash[:notice] = "Date succesfuly deleted"
   end
 
   private
