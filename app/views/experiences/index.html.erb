@@ -22,7 +22,7 @@
 
     <!-- CARDS BENEATH -->
     <div class="row">
-      <% flash[:alert] = "Oops! Something went wrong 😔 No experiences match your criteria" if @experiences == [] %>
+      <% flash[:alert] = "Oops! It seems no dates match your criteria 😔" if @experiences == [] %>
       <% @experiences.each do |experience| %>
         <div class="col-md-4" align="center">
           <%= render 'shared/card', experience: experience %>
