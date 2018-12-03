@@ -15,7 +15,6 @@
     <%= f.input :location %>
 
 
-
     </div>
 
     <div class="column right">
@@ -25,7 +24,7 @@
           <%= p.input :picture_cache, input_html: { multiple: true}, as: :hidden %>
         <% end %>
 
-      <%= f.submit class: "btn btn-primary"%>
+      <%= f.submit class: "btn btn-primary", id: "experience-submit"%>
     </div>
 
   <% end %>

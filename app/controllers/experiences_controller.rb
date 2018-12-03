@@ -19,6 +19,7 @@ class ExperiencesController < ApplicationController
   end
 
   def new
+    @experiences = Experience.all
     @experience = current_user.experiences.new
     @experience.photos.build
     authorize @experience
@@ -33,7 +34,7 @@ class ExperiencesController < ApplicationController
         Photo.create(user: current_user, experience: @experience, picture: pic)
       end
     else
-      render 'form_new_experience'
+      redirect_to new_experience_path
     end
   end
 

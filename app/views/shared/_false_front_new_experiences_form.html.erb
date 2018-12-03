@@ -1,0 +1,41 @@
+<div class="experiencesContainer">
+  <div class="formSliderContainer" id="slider-new-experience">
+   <div class="formContainer">
+     <div class="form">
+      <div class="btn btn-primary" id="new-date-1">Next</div>
+
+        <h1>title*</h1>
+        <input type="text" id="input-1">
+        <select>
+          <% @experiences.each do |experience| %>
+            <option value="<%=experience.category%>"><%=experience.category%></option>
+          <% end %>
+        </select>
+     </div>
+   </div>
+   <div class="formContainer">
+     <div class="form">
+      <div class="btn btn-primary" id="new-date-2">Next</div>
+        <div class="btn btn-primary" id="photos-button">Photos</div>
+          <div id="photo-file-name"></div>
+        <input type="text" id="input-3">
+      <div class="btn btn-primary" id="new-date-2-back">Back</div>
+     </div>
+   </div>
+   <div class="formContainer">
+     <div class="form">
+      <div class="btn btn-primary" id="new-date-3">Next</div>
+       <input class="form-control string optional datepickr flatpickr-input input active" type="text">
+        <input type="text" id="experience_location">
+      <div class="btn btn-primary" id="new-date-3-back">Back</div>
+     </div>
+   </div>
+   <div class="formContainer">
+     <div class="form">
+      <div class="btn btn-primary" id="submit-experience-back">Back</div>
+      <div id="cancel-experience-button"><%= link_to "Cancel", experiences_path %></div>
+      <div class="btn btn-primary" id="submit-experience-button">Confirm</div>
+     </div>
+   </div>
+  </div>
+</div>
