@@ -1,7 +1,9 @@
+<<<<<<< HEAD
+<div class="container">
+=======
 <div class="index-page-background">
   <div class="container">
-
-
+>>>>>>> master
 
   <!-- FILTERS AT TOP -->
     <div class="filters-container">
@@ -20,18 +22,24 @@
       </div>
     </div>
 
-    <!-- CARDS BENEATH -->
-    <div class="row">
-      <% flash[:alert] = "Oops! It seems no dates match your criteria 😔" if @experiences == [] %>
-      <% @experiences.each do |experience| %>
-        <div class="col-md-4" align="center">
-          <%= render 'shared/card', experience: experience %>
-        </div>
-      <% end %>
-    </div>
-  </div>
+
+  <!-- CARDS BENEATH -->
+  <% flash[:alert] = "Oops! It seems no dates match your criteria 😔" if @experiences == [] %>
+  <%= render 'shared/experiences_masonry', experiences: @experiences %>
+
 </div>
 
+<!-- MARGIN BEFORE FOOTER -->
+<div class="div-margin-large"></div>
 
 
 
+
+
+<!-- <div class="row">
+  <%# @experiences.each do |experience| %>
+    <div class="col-md-4" align="center">
+      <%#= render 'shared/card', experience: experience %>
+    </div>
+  <%# end %>
+</div> -->

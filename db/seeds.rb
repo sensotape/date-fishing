@@ -1,6 +1,10 @@
 require 'date'
 
 puts 'Dropping database...'
+Message.destroy_all
+Conversation.destroy_all
+Nibble.destroy_all
+Photo.destroy_all
 Experience.destroy_all
 User.destroy_all
 
@@ -67,7 +71,8 @@ tango_date = aigerim.experiences.new(
   date: Date.new(2018, 12, 12)
 )
 tango_date.save!
-tango_date.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/come_tango_dancing_at_ballroom_berlin.png'))
+# tango_date.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/come_tango_dancing_at_ballroom_berlin.png'))
+tango_date.photos.create!(picture: open("https://picsum.photos/#{rand(800..1200)}/#{rand(800..1200)}"))
 copenhagen_date = andrew.experiences.new(
   title: 'Bike Ride to Copenhagen',
   category: 'Tourism',
@@ -76,7 +81,8 @@ copenhagen_date = andrew.experiences.new(
   date: Date.new(2018, 12, 15)
 )
 copenhagen_date.save!
-copenhagen_date.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318234/winter_trip_to_copenhagen.png'))
+# copenhagen_date.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318234/winter_trip_to_copenhagen.png'))
+copenhagen_date.photos.create!(picture: open("https://picsum.photos/#{rand(800..1200)}/#{rand(800..1200)}"))
 
 boardgames_date = marcel.experiences.new(
   title: 'Board Games and Red Wine',
@@ -86,7 +92,8 @@ boardgames_date = marcel.experiences.new(
   date: Date.new(2018, 12, 17)
 )
 boardgames_date.save!
-boardgames_date.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/boardgames_and_red_wine.png'))
+# boardgames_date.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/boardgames_and_red_wine.png'))
+boardgames_date.photos.create!(picture: open("https://picsum.photos/#{rand(800..1200)}/#{rand(800..1200)}"))
 
 skydiving_date = aigerim.experiences.new(
   title: 'Jump out of a Plane with Me',
@@ -96,7 +103,8 @@ skydiving_date = aigerim.experiences.new(
   date: Date.new(2018, 12, 20)
 )
 skydiving_date.save!
-skydiving_date.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318234/skydiving.png'))
+# skydiving_date.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318234/skydiving.png'))
+skydiving_date.photos.create!(picture: open("https://picsum.photos/#{rand(800..1200)}/#{rand(800..1200)}"))
 
 exploration_date = maylee.experiences.new(
   title: 'Explore the Abandoned Brewery',
@@ -106,7 +114,8 @@ exploration_date = maylee.experiences.new(
   date: Date.new(2018, 12, 26)
 )
 exploration_date.save!
-exploration_date.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/explore_the_abandoned_brewery_in_pankow.png'))
+# exploration_date.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/explore_the_abandoned_brewery_in_pankow.png'))
+exploration_date.photos.create!(picture: open("https://picsum.photos/#{rand(800..1200)}/#{rand(800..1200)}"))
 
 sushi_date = maylee.experiences.new(
   title: 'Sushi and Sake',
@@ -116,7 +125,8 @@ sushi_date = maylee.experiences.new(
   date: Date.new(2018, 12, 21)
 )
 sushi_date.save!
-sushi_date.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/cook_sushi_with_me.png'))
+# sushi_date.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/cook_sushi_with_me.png'))
+sushi_date.photos.create!(picture: open("https://picsum.photos/#{rand(800..1200)}/#{rand(800..1200)}"))
 
 badminton_date = andrew.experiences.new(
   title: 'Beat Me at Badminton',
@@ -126,5 +136,85 @@ badminton_date = andrew.experiences.new(
   date: Date.new(2018, 12, 27)
 )
 badminton_date.save!
-badminton_date.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/beat_me_at_badminton.png'))
+# badminton_date.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/beat_me_at_badminton.png'))
+badminton_date.photos.create!(picture: open("https://picsum.photos/#{rand(800..1200)}/#{rand(800..1200)}"))
+
+date1 = aigerim.experiences.new(
+  title: 'Plan a Picnic',
+  category: 'Art & Culture',
+  location: 'Gesundbrunnen, Berlin',
+  description: "I learned to tango in Argentina and would like to share my skills in a romantic evening.",
+  date: Date.new(2018, 12, rand(4..31))
+)
+date1.save!
+# tango_date.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/come_tango_dancing_at_ballroom_berlin.png'))
+date1.photos.create!(picture: open("https://picsum.photos/#{rand(800..1200)}/#{rand(800..1200)}"))
+
+date2 = aigerim.experiences.new(
+  title: 'Go Birdwatching',
+  category: 'Art & Culture',
+  location: 'Gesundbrunnen, Berlin',
+  description: "I learned to tango in Argentina and would like to share my skills in a romantic evening.",
+  date: Date.new(2018, 12, rand(4..31))
+)
+date2.save!
+# date2.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/come_tango_dancing_at_ballroom_berlin.png'))
+date2.photos.create!(picture: open("https://picsum.photos/#{rand(800..1200)}/#{rand(800..1200)}"))
+
+date3 = aigerim.experiences.new(
+  title: 'Take a Brewery Tour',
+  category: 'Art & Culture',
+  location: 'Gesundbrunnen, Berlin',
+  description: "I learned to tango in Argentina and would like to share my skills in a romantic evening.",
+  date: Date.new(2018, 12, rand(4..31))
+)
+date3.save!
+# date3.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/come_tango_dancing_at_ballroom_berlin.png'))
+date3.photos.create!(picture: open("https://picsum.photos/#{rand(800..1200)}/#{rand(800..1200)}"))
+
+date4 = aigerim.experiences.new(
+  title: 'Take a Workout Class',
+  category: 'Art & Culture',
+  location: 'Gesundbrunnen, Berlin',
+  description: "I learned to tango in Argentina and would like to share my skills in a romantic evening.",
+  date: Date.new(2018, 12, rand(4..31))
+)
+date4.save!
+# date4.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/come_tango_dancing_at_ballroom_berlin.png'))
+date4.photos.create!(picture: open("https://picsum.photos/#{rand(800..1200)}/#{rand(800..1200)}"))
+
+date5 = aigerim.experiences.new(
+  title: 'Visit a Museum and See Something Unexpected',
+  category: 'Art & Culture',
+  location: 'Gesundbrunnen, Berlin',
+  description: "I learned to tango in Argentina and would like to share my skills in a romantic evening.",
+  date: Date.new(2018, 12, rand(4..31))
+)
+date5.save!
+# date5.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/come_tango_dancing_at_ballroom_berlin.png'))
+date5.photos.create!(picture: open("https://picsum.photos/#{rand(800..1200)}/#{rand(800..1200)}"))
+
+date6 = aigerim.experiences.new(
+  title: 'Meet for Drinks at a Local Landmark',
+  category: 'Art & Culture',
+  location: 'Gesundbrunnen, Berlin',
+  description: "I learned to tango in Argentina and would like to share my skills in a romantic evening.",
+  date: Date.new(2018, 12, rand(4..31))
+)
+date6.save!
+# date6.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/come_tango_dancing_at_ballroom_berlin.png'))
+date6.photos.create!(picture: open("https://picsum.photos/#{rand(800..1200)}/#{rand(800..1200)}"))
+
+date7 = aigerim.experiences.new(
+  title: 'Make Homemade Pizzas with Wild Toppings',
+  category: 'Art & Culture',
+  location: 'Gesundbrunnen, Berlin',
+  description: "I learned to tango in Argentina and would like to share my skills in a romantic evening.",
+  date: Date.new(2018, 12, rand(4..31))
+)
+date7.save!
+# date7.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/come_tango_dancing_at_ballroom_berlin.png'))
+date7.photos.create!(picture: open("https://picsum.photos/#{rand(800..1200)}/#{rand(800..1200)}"))
+
+
 puts 'Database seeded with 4 users, posting 2 dates each.'
