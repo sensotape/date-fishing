@@ -1,44 +1,49 @@
-<div class="homepage-banner flexbox-left-vertical">
+<!-- SECTION 1: BANNER -->
+<div class="homepage-banner">
 
-  <!-- SECTION 1: BANNER -->
+  <!-- FERRIS WHEEL -->
+  <%= render 'shared/ferris-wheel' %>
+
+  <!-- TEXT -->
   <div class="banner-content">
     <h1>Date Fishing</h1>
     <p>Go on amazing dates.</p>
     <%= link_to "Explore Dates", experiences_path, class: 'btn btn-primary item-padding' %>
   </div>
-
 </div>
 
-<div class="homepage-sections">
+<!-- PREVIOUS CONTENT -->
+
+<!-- <div class="homepage-sections"> -->
 
   <!-- SECTION 2: INTRO + ICONS -->
-  <div class="flexbox-vertical blue-background div-padding">
+  <!-- <div class="flexbox-vertical blue-background div-padding">
     <h2>CUT TO THE CHASE</h2>
     <p>Finally, a social dating app that actually gets you dates. The idea is simple: </p>
     <div class="flexbox-horizontal-align-top">
       <div class="homepage-icon-container text-center">
-        <%= image_tag "date-icon", class: "homepage-icon item-padding item-margin" %>
-        <p>Post & browse really cool date experiences</p>
+   -->      <%#= image_tag "heart-icon", class: "homepage-icon item-padding item-margin" %>
+        <!-- <p>Post & browse really cool date experiences</p>
       </div>
       <div class="homepage-icon-container text-center">
-        <%= image_tag "match-icon", class: "homepage-icon item-padding item-margin" %>
+        <%#= image_tag "match-icon", class: "homepage-icon item-padding item-margin" %>
         <p>Match with others based on shared interests</p>
       </div>
-      <div class="homepage-icon-container text-center">
-        <%= image_tag "chemistry-icon", class: "homepage-icon item-padding item-margin" %>
-        <p>Get offline and explore your in-person chemistry</p>
+      <div class="homepage-icon-container text-center"> -->
+        <%#= image_tag "chemistry-icon", class: "homepage-icon item-padding item-margin" %>
+        <!-- <p>Get offline and explore your in-person chemistry</p>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <!-- SECTION 3: EXAMPLES -->
-  <div class="flexbox-vertical white-background div-padding min-div-height">
+  <!-- <div class="flexbox-vertical white-background div-padding min-div-height">
     <h2>GO FISH</h2>
-    <p>So what are you waiting for? Cast your awesome date and wait for the nibbles to roll in.</p>
-    <%= link_to "Create a Date", new_experience_path, class: 'btn btn-primary' %>
-  </div>
+    <p>So what are you waiting for? Cast your awesome date and wait for the nibbles to roll in.</p> -->
+    <%#= link_to "Create a Date", new_experience_path, class: 'btn btn-primary' %>
+  <!-- </div>
 
-</div>
+</div> -->
 
 
 
