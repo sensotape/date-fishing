@@ -43,7 +43,8 @@
         <button data-toggle="modal" data-target="#edit-experience-modal-<%= experience.id %>" class="btn btn-primary">Edit</button>
         <%= render 'shared/edit-experience', experience: experience %>
 
-        <button class="btn btn-primary"><%= link_to "Delete Experience", experience, method: :delete, data: { confirm: "Are you sure about this?"} %> </button>
+        <%= button_to "Delete Experience", experience, method: :delete, data: { confirm: "Are you sure about this?"}, class: "btn btn-primary" %>
+
       </div>
 
         <strong>title</strong>
