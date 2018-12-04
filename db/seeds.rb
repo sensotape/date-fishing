@@ -106,7 +106,7 @@ kaylin = User.create!(
   bio: ".",
   gender: 'Female',
   seeking: 'Male',
-  birthday: Date.new(1985, 6, 4)
+  birthday: Date.new(1990, 6, 4)
 )
 
 alice = User.create!(
@@ -118,7 +118,7 @@ alice = User.create!(
   bio: "International Web Development Teacher Super Star, looking for fun, uplifting experiences in Berlin.",
   gender: 'Female',
   seeking: 'Male',
-  birthday: Date.new(1985, 6, 4)
+  birthday: Date.new(1987, 6, 4)
 )
 
 katharine = User.create!(
@@ -130,7 +130,7 @@ katharine = User.create!(
   bio: "Young DJ out of London, trying to break into the ",
   gender: 'Female',
   seeking: 'Female',
-  birthday: Date.new(1985, 6, 4)
+  birthday: Date.new(1991, 6, 4)
 )
 
 clara = User.create!(
@@ -142,7 +142,7 @@ clara = User.create!(
   bio: "CEO of the greatest bootcamp on earth. I do actually have a white and red wagon.",
   gender: 'Female',
   seeking: 'Male',
-  birthday: Date.new(1985, 6, 4)
+  birthday: Date.new(1992, 6, 4)
 )
 
 nimkit = User.create!(
@@ -154,7 +154,7 @@ nimkit = User.create!(
   bio: "CEO of the greatest bootcamp on earth. I do actually have a white and red wagon.",
   gender: 'Female',
   seeking: 'Male',
-  birthday: Date.new(1985, 6, 4)
+  birthday: Date.new(1993, 6, 4)
 )
 
 # User photos
@@ -190,7 +190,7 @@ machupichu_date = aigerim.experiences.new(
   category: 'Bucketlist',
   location: 'Machu Pichu',
   description: "I always wanted to go to this legendary place! Who wants to come with me? All expenses are paid for, except the plane ticket.",
-  date: Date.new(2018, 12, 20)
+  date: Date.new(2019, 11, 20)
 )
 machupichu_date.save!
 machupichu_date.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543922328/jeremiah-berman-282409-unsplash.jpg'))
@@ -199,11 +199,42 @@ hpcastle_date = aigerim.experiences.new(
   title: 'Help me build a Lego Harry Potter Castle!',
   category: 'Geek & Nerd',
   location: 'Berlin',
-  description: "Could use some help building this Lego set I got for Christmas. Would you like to help me? No Slytherins allowed!",
+  description: "Could use some help building this Lego set I got for Christmas. Would you like to help me? No Slytherins allowed! We can also watch some of the movies while we do it :)",
   date: Date.new(2018, 12, 30)
 )
 hpcastle_date.save!
 hpcastle_date.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543922354/lego-harry-potter-71043-hogwarts-castle-2.jpg'))
+
+#Alice
+feuerle_date = alice.experiences.new(
+  title: 'The Feuerle Incense Ceremony',
+  category: 'Bucketlist',
+  location: 'Hallesches Ufer 70, Berlin',
+  description: "Looking for someone sophisticated enough to fully absorb and comprehend the Chinese Incense Ceremony offered by the Feuerle Collection. I will be very demanding in the chat.",
+  date: Date.new(2019, 07, 02)
+)
+feuerle_date.save!
+feuerle_date.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543939803/Date%20Experiences/1a._1607_the_feuerle_collection19212__photo__def_image__1_2.jpg'))
+
+christmas_date = alice.experiences.new(
+  title: 'Christmas Market night',
+  category: 'Food & Drink',
+  location: 'Kulturbrauerei',
+  description: "It's cuffing season! What better way to start it than with a nice night at the local Scandinavian Christmas Market? Gluhwein is on me if you are interesting enough :)",
+  date: Date.new(2019, 06, 27)
+)
+christmas_date.save!
+christmas_date.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543940019/christmas-market-berlin-IMG_2216.jpg'))
+
+kadeve_date = alice.experiences.new(
+  title: 'Getting Lost in KaDeWe',
+  category: 'Food & Drink',
+  location: 'Tauentzienstraße 21-24, 10789 Berlin',
+  description: "The premise is simple: explore the imense KaDeWe. We each have to find a small, 10 euro treat to gift the other person. Let's be creative!",
+  date: Date.new(2018, 12, 12)
+)
+kadeve_date.save!
+kadeve_date.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543940019/christmas-market-berlin-IMG_2216.jpg'))
 
 #Andrew
 desert_date = andrew.experiences.new(
@@ -278,6 +309,79 @@ dungeons_date = bryan.experiences.new(
 dungeons_date.save!
 dungeons_date.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543934388/Date%20Experiences/half-elf-ranger-moon-elf-aaron_miller1.jpg'))
 
+#clara
+aurora_date = kaylin.experiences.new(
+  title: 'Northern Lights',
+  category: 'Bucketlist',
+  location: 'Iceland',
+  description: "It has been a dream of mine to see the Aurora Borealis. Would really like to share it with someone special who hasn't seen it before, like me.",
+  date: Date.new(2019, 05, 04)
+)
+aurora_date.save!
+aurora_date.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543943299/Date%20Experiences/jonatan-pie-1196629-unsplash.jpg'))
+
+skating_date = kaylin.experiences.new(
+  title: 'Come Ice-Skate with a total beginner!',
+  category: 'Sport & Recreation',
+  location: 'Erika Hess Stadium',
+  description: "Can anyone teach me how to ice-skate? It will be clumsy and it will be funny.",
+  date: Date.new(2019, 12, 04)
+)
+skating_date.save!
+skating_date.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543943506/Date%20Experiences/vasilios-muselimis-495970-unsplash.jpg'))
+
+#Katharine
+berghain_date = kaylin.experiences.new(
+  title: 'DJing at Berghain',
+  category: 'Music',
+  location: 'Berghain',
+  description: "I'll be DJing and Berghain on this night. Looking for an amazing person to sneak into the place with me as my guest. You better be willing to dance all night long!",
+  date: Date.new(2019, 12, 07)
+)
+berghain_date.save!
+berghain_date.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543915962/36312387_1809859525763110_6994761258406772736_o.jpg'))
+
+nature_date = kaylin.experiences.new(
+  title: 'Visiting Tristan',
+  category: 'Art & Culture',
+  location: 'Naturekundemuseum, Berlin',
+  description: "I heard Tristan is flying off to New York next year! I'd love to say good-bye to this amazing and friendly T-Rex, and would love some company.",
+  date: Date.new(2018, 12, 15)
+)
+nature_date.save!
+nature_date.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543943750/tristan02.jpg'))
+
+#Kaylin
+handball_date = kaylin.experiences.new(
+  title: 'Handball game at Mauerpark',
+  category: 'Sport & Recreation',
+  location: 'Mauerpark, Germany',
+  description: "My friends bought tickets to this handball game, but I'd love to take someone who actually knows more about the sport. Any candidates?",
+  date: Date.new(2019, 05, 04)
+)
+handball_date.save!
+handball_date.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543930466/Date%20Experiences/action-from-berlin-fchse-pro-handball-match-against-hsg-wetzlar-on-FYE5F8.jpg'))
+
+katzen_date = kaylin.experiences.new(
+  title: 'Date at the Katzen Café',
+  category: 'Food & Drink',
+  location: 'Malchower Weg 68, Germany',
+  description: "I am not a weird cat lady, but I do love cats. People say this place serves amazing coffee with cake. Any handsome fella would like to join me?",
+  date: Date.new(2019, 03, 16)
+)
+katzen_date.save!
+katzen_date.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543938719/Date%20Experiences/ol6i0qrlih2oix1jralc.jpg'))
+
+braden_date = kaylin.experiences.new(
+  title: 'Guided tour around Berlin',
+  category: 'Community',
+  location: 'Pariser Platz, Germany',
+  description: "I'm going to do the free guided tour around Berlin, but I don't want to do it alone. It would be pretty nice meeting someone from Berlin to give me a more private education.",
+  date: Date.new(2018, 05, 17)
+)
+braden_date.save!
+braden_date.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543938950/Date%20Experiences/BrandenburgerTor_c_visitBerlin_Foto_Schramm_3_von_9__OCV_DL_PPT_0.jpg'))
+
 #Marcel
 soen_date = marcel.experiences.new(
   title: 'Soen Concert at SO36',
@@ -340,6 +444,27 @@ planetarium_date = maylee.experiences.new(
 planetarium_date.save!
 planetarium_date.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543933559/Date%20Experiences/14922e0064cb492a.jpg'))
 
+#Nim
+# _date = kaylin.experiences.new(
+#   title: '',
+#   category: '',
+#   location: '',
+#   description: "M",
+#   date: Date.new(2019, 05, 04)
+# )
+# _date.save!
+# _date.photos.create!(picture: open(''))
+
+# _date = kaylin.experiences.new(
+#   title: '',
+#   category: '',
+#   location: '',
+#   description: "M",
+#   date: Date.new(2019, 05, 04)
+# )
+# _date.save!
+# _date.photos.create!(picture: open(''))
+
 #Rich
 pubcrawl_date = rich.experiences.new(
   title: 'Pub Crawling in Berlin!',
@@ -371,36 +496,6 @@ mauer_date = rich.experiences.new(
 mauer_date.save!
 mauer_date.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543936891/Date%20Experiences/mauerpark-berlin-flea-market-VINTAGE-Vinyl-Records.jpg'))
 
-#kaylin
-handball_date = kaylin.experiences.new(
-  title: 'Handball game at Mauerpark',
-  category: 'Sport & Recreation',
-  location: 'Mauerpark, Germany',
-  description: "My friends bought tickets to this handball game, but I'd love to take someone who actually knows more about the sport. Any candidates?",
-  date: Date.new(2019, 05, 04)
-)
-handball_date.save!
-handball_date.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543930466/Date%20Experiences/action-from-berlin-fchse-pro-handball-match-against-hsg-wetzlar-on-FYE5F8.jpg'))
-
-katzen_date = kaylin.experiences.new(
-  title: 'Date at the Katzen Café',
-  category: 'Food & Drink',
-  location: 'Malchower Weg 68, Germany',
-  description: "I am not a weird cat lady, but I do love cats. People say this place serves amazing coffee with cake. Any handsome fella would like to join me?",
-  date: Date.new(2019, 03, 16)
-)
-katzen_date.save!
-katzen_date.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543938719/Date%20Experiences/ol6i0qrlih2oix1jralc.jpg'))
-
-braden_date = kaylin.experiences.new(
-  title: 'Guided tour around Berlin',
-  category: 'Community',
-  location: 'Pariser Platz, Germany',
-  description: "I'm going to do the free guided tour around Berlin, but I don't want to do it alone. It would be pretty nice meeting someone from Berlin to give me a more private education.",
-  date: Date.new(2018, 05, 17)
-)
-braden_date.save!
-braden_date.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543938950/Date%20Experiences/BrandenburgerTor_c_visitBerlin_Foto_Schramm_3_von_9__OCV_DL_PPT_0.jpg'))
 
 
 puts "Database seeded with 12 users and #{Experience.all.length} experiences"
