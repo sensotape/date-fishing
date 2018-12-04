@@ -13,9 +13,11 @@ class ExperiencesController < ApplicationController
       save_filters
       apply_filters
     end
-    @experience = Experience.new
+
+    @experiences = @experiences.where("date >= ?", Time.zone.now.beginning_of_day)
+    @experiences = @experiences.joins(:user).where("users.gender = ?", current_user.seeking)
+    @experiences = @experiences.joins(:user).where("users.seeking = ?", current_user.gender)
     authorize @experiences
-    authorize @experience
   end
 
   def new
@@ -60,6 +62,12 @@ class ExperiencesController < ApplicationController
     end
   end
 
+  def destroy
+    @experience.destroy
+    redirect_to user_path(current_user)
+    flash[:notice] = "Date succesfuly deleted"
+  end
+
   private
 
   def set_experience
@@ -83,7 +91,7 @@ class ExperiencesController < ApplicationController
 
   def apply_filters
     @experiences.where!(category: @categories) if @categories
-    @experiences.where!(start_date: @date[0]..@date[-1]) if @date
+    @experiences.where!(date: @date[0]..@date[-1]) if @date
   end
 
   def calculate_date

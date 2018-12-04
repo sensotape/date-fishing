@@ -1,24 +1,32 @@
+<<<<<<< HEAD
 <div class="container">
+=======
+<div class="index-page-background">
+  <div class="container">
+>>>>>>> master
 
   <!-- FILTERS AT TOP -->
-  <div class="filters-container">
-    <button class="btn btn-success filter-item" data-toggle="modal" data-target="#category-filter-modal">Category</button>
-    <%= render 'shared/category_filter_modal' %>
-    <button class="btn btn-success filter-item" data-toggle="modal" data-target="#date-filter-modal">Date</button>
-    <%= render 'shared/date_filter_modal' %>
-    <div class="search-bar search-bar-width filter-item">
-      <%= form_tag experiences_path, method: :get do %>
-      <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Explore an ocean of dates"
-      %>
-      <% end %>
+    <div class="filters-container">
+      <button class="btn btn-success filter-item" data-toggle="modal" data-target="#category-filter-modal">Category</button>
+      <%= render 'shared/category_filter_modal' %>
+      <button class="btn btn-success filter-item" data-toggle="modal" data-target="#date-filter-modal">Date</button>
+      <%= render 'shared/date_filter_modal' %>
+      <div class="search-bar search-bar-width filter-item">
+        <%= form_tag experiences_path, method: :get do %>
+        <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Explore an ocean of dates"
+        %>
+        <% end %>
+      </div>
     </div>
-  </div>
+
 
   <!-- CARDS BENEATH -->
+  <% flash[:alert] = "Oops! It seems no dates match your criteria 😔" if @experiences == [] %>
   <%= render 'shared/experiences_masonry', experiences: @experiences %>
+
 </div>
 
 <!-- MARGIN BEFORE FOOTER -->

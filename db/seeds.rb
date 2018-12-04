@@ -78,7 +78,7 @@ copenhagen_date = andrew.experiences.new(
   category: 'Tourism',
   location: 'Copenhagen, Denmark',
   description: "Hi, I'd love to go on a romantic trip to Copenhagen by bike",
-  date: Date.new(2018, 12, 18)
+  date: Date.new(2018, 12, 15)
 )
 copenhagen_date.save!
 # copenhagen_date.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318234/winter_trip_to_copenhagen.png'))
