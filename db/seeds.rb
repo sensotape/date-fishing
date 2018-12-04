@@ -138,4 +138,83 @@ badminton_date = andrew.experiences.new(
 badminton_date.save!
 # badminton_date.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/beat_me_at_badminton.png'))
 badminton_date.photos.create!(picture: open("https://picsum.photos/#{rand(800..1200)}/#{rand(800..1200)}"))
+
+date1 = aigerim.experiences.new(
+  title: 'Plan a Picnic',
+  category: 'Art & Culture',
+  location: 'Gesundbrunnen, Berlin',
+  description: "I learned to tango in Argentina and would like to share my skills in a romantic evening.",
+  date: Date.new(2018, 12, rand(4..31))
+)
+date1.save!
+# tango_date.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/come_tango_dancing_at_ballroom_berlin.png'))
+date1.photos.create!(picture: open("https://picsum.photos/#{rand(800..1200)}/#{rand(800..1200)}"))
+
+date2 = aigerim.experiences.new(
+  title: 'Go Birdwatching',
+  category: 'Art & Culture',
+  location: 'Gesundbrunnen, Berlin',
+  description: "I learned to tango in Argentina and would like to share my skills in a romantic evening.",
+  date: Date.new(2018, 12, rand(4..31))
+)
+date2.save!
+# date2.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/come_tango_dancing_at_ballroom_berlin.png'))
+date2.photos.create!(picture: open("https://picsum.photos/#{rand(800..1200)}/#{rand(800..1200)}"))
+
+date3 = aigerim.experiences.new(
+  title: 'Take a Brewery Tour',
+  category: 'Art & Culture',
+  location: 'Gesundbrunnen, Berlin',
+  description: "I learned to tango in Argentina and would like to share my skills in a romantic evening.",
+  date: Date.new(2018, 12, rand(4..31))
+)
+date3.save!
+# date3.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/come_tango_dancing_at_ballroom_berlin.png'))
+date3.photos.create!(picture: open("https://picsum.photos/#{rand(800..1200)}/#{rand(800..1200)}"))
+
+date4 = aigerim.experiences.new(
+  title: 'Take a Workout Class',
+  category: 'Art & Culture',
+  location: 'Gesundbrunnen, Berlin',
+  description: "I learned to tango in Argentina and would like to share my skills in a romantic evening.",
+  date: Date.new(2018, 12, rand(4..31))
+)
+date4.save!
+# date4.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/come_tango_dancing_at_ballroom_berlin.png'))
+date4.photos.create!(picture: open("https://picsum.photos/#{rand(800..1200)}/#{rand(800..1200)}"))
+
+date5 = aigerim.experiences.new(
+  title: 'Visit a Museum and See Something Unexpected',
+  category: 'Art & Culture',
+  location: 'Gesundbrunnen, Berlin',
+  description: "I learned to tango in Argentina and would like to share my skills in a romantic evening.",
+  date: Date.new(2018, 12, rand(4..31))
+)
+date5.save!
+# date5.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/come_tango_dancing_at_ballroom_berlin.png'))
+date5.photos.create!(picture: open("https://picsum.photos/#{rand(800..1200)}/#{rand(800..1200)}"))
+
+date6 = aigerim.experiences.new(
+  title: 'Meet for Drinks at a Local Landmark',
+  category: 'Art & Culture',
+  location: 'Gesundbrunnen, Berlin',
+  description: "I learned to tango in Argentina and would like to share my skills in a romantic evening.",
+  date: Date.new(2018, 12, rand(4..31))
+)
+date6.save!
+# date6.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/come_tango_dancing_at_ballroom_berlin.png'))
+date6.photos.create!(picture: open("https://picsum.photos/#{rand(800..1200)}/#{rand(800..1200)}"))
+
+date7 = aigerim.experiences.new(
+  title: 'Make Homemade Pizzas with Wild Toppings',
+  category: 'Art & Culture',
+  location: 'Gesundbrunnen, Berlin',
+  description: "I learned to tango in Argentina and would like to share my skills in a romantic evening.",
+  date: Date.new(2018, 12, rand(4..31))
+)
+date7.save!
+# date7.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/come_tango_dancing_at_ballroom_berlin.png'))
+date7.photos.create!(picture: open("https://picsum.photos/#{rand(800..1200)}/#{rand(800..1200)}"))
+
+
 puts 'Database seeded with 4 users, posting 2 dates each.'

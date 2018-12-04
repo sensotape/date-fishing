@@ -51,13 +51,21 @@ $border-radius-small: 2px;
 }
 
 // Override other variables below!
-a {
-  font-weight:bold;
-  transition: all 0.3s ease;
-  text-decoration: none;
+* {
+  text-decoration: none !important;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   &:hover {
-    transform: scale(1.03, 1.03);
-    color: $blue;
-    text-decoration: none;
+    text-decoration: none !important;
   }
 }
+
+a {
+  transition: all 0.3s ease;
+  &:hover {
+    transform: scale(1.03, 1.03);
+  }
+}
+
