@@ -13,9 +13,9 @@
           <p><%= nibble.status.capitalize %></p>
           <% if nibble.status == 'pending' %>
             <%= link_to '', experience_nibble_path(nibble.experience, nibble, status: 'accepted'),
-                method: :patch, class: 'fas fa-check-circle', style: "color: green;" %>
+                method: :patch, class: 'fas fa-check-circle', style: "color: #2E996E;" %>
             <%= link_to '', experience_nibble_path(nibble.experience, nibble, status: 'declined'),
-                method: :patch, class: 'fas fa-thumbs-down', style: "color: red;" %>
+                method: :patch, class: 'fas fa-thumbs-down', style: "color: #9B2E2E;" %>
           <% end %>
         </div>
       </div>

@@ -31,9 +31,9 @@
             <% if policy(conversation.nibble).update? && conversation.nibble.status == 'pending' %>
               <div id="status-buttons">
                 <%= link_to '', experience_nibble_path(conversation.nibble.experience, conversation.nibble, status: 'accepted'),
-                    method: :patch, class: 'fas fa-check-circle', style: "color: green;" %>
+                    method: :patch, class: 'fas fa-check-circle', style: "color: #2E996E;" %>
                 <%= link_to '', experience_nibble_path(conversation.nibble.experience, conversation.nibble, status: 'declined'),
-                    method: :patch, class: 'fas fa-thumbs-down', style: "color: red;" %>
+                    method: :patch, class: 'fas fa-thumbs-down', style: "color: #9B2E2E;" %>
               </div>
             <% elsif !policy(conversation.nibble).update? && conversation.nibble.status == 'pending' %>
               <p><em>Patience is a virtue, right?</em></p>

@@ -36,3 +36,11 @@
 .container-profile-pages {
   width: calc(100vw - 60px);
 }
+
+.tab-content {
+  color: $white;
+  p {
+    color: $white;
+    opacity: 0.8;
+  }
+}

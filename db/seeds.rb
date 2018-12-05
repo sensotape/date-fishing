@@ -2,6 +2,7 @@ require 'date'
 
 puts 'Dropping database...'
 
+Notification.destroy_all
 Photo.destroy_all
 Message.destroy_all
 Conversation.destroy_all
