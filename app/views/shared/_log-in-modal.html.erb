@@ -2,6 +2,7 @@
   <div class="modal-dialog">
     <div class="modal-content login-modal-content modal-padding modal-background">
 
+      <button data-dismiss="modal" class="close">×</button>
       <div class="login-title"><h2>Log in</h2></div>
         <div class="login-form">
           <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -18,7 +19,7 @@
         </div>
 
       <div class="form-actions">
-        <%= f.button :submit, "Log in" %>
+        <%= f.button :submit, "Log in", class: "btn btn-primary" %>
       </div>
       <% end %>
 
