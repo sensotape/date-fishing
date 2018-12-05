@@ -2,9 +2,9 @@
 
   <!-- FILTERS AT TOP -->
     <div class="filters-container">
-      <button class="btn btn-success filter-item" data-toggle="modal" data-target="#category-filter-modal">Category</button>
+      <button class="btn btn-primary filter-item" data-toggle="modal" data-target="#category-filter-modal">Category</button>
       <%= render 'shared/category_filter_modal' %>
-      <button class="btn btn-success filter-item" data-toggle="modal" data-target="#date-filter-modal">Date</button>
+      <button class="btn btn-primary filter-item" data-toggle="modal" data-target="#date-filter-modal">Date</button>
       <%= render 'shared/date_filter_modal' %>
       <div class="search-bar search-bar-width filter-item">
         <%= form_tag experiences_path, method: :get do %>
