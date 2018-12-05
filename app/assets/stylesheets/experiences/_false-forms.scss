@@ -27,9 +27,8 @@
     display: flex;
     justify-content: space-between;
     .btn {
-            padding: 14px 60px;
-    background-color: #4e4579
-
+      padding: 14px 60px;
+      background-color: #4e4579
     }
   .muted {
     background-color: lightgrey;
@@ -175,12 +174,12 @@ option {
 
 
 
-.btn {
-            padding: 14px 60px;
-    background-color: #4e4579;
-    &:hover {
-    opacity: 0.85;
-    text-decoration: none;
-    transform: scale(1.03, 1.03);
-  }
-    }
+// .btn {
+//     padding: 14px 60px;
+//     background-color: #4e4579;
+//     &:hover {
+//     opacity: 0.85;
+//     text-decoration: none;
+//     transform: scale(1.03, 1.03);
+//   }
+// }
