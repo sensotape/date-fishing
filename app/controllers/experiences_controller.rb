@@ -35,7 +35,7 @@ class ExperiencesController < ApplicationController
         Photo.create(user: current_user, experience: @experience, picture: pic)
       end
     else
-      render 'form_new_experience'
+      redirect_to experiences_path
     end
   end
 

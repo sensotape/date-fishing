@@ -1,4 +1,4 @@
-<div class="new-experience">
+<div class="new-experience" >
   <div class="headers">
     <h1>Get creative!</h1>
     <p>Write a fun description and choose nice photos for your date. Don't forget to set the category as well.</p>
@@ -14,18 +14,16 @@
 
     <%= f.input :location %>
 
-
-
     </div>
 
     <div class="column right">
-      <%= f.input :date, as: :string, input_html: {class: "datepickr"} %>
+      <%= f.input :date, as: :string %>
         <%= f.simple_fields_for :photos do |p| %>
           <%= p.input :picture, input_html: { multiple: true} %>
           <%= p.input :picture_cache, input_html: { multiple: true}, as: :hidden %>
         <% end %>
 
-      <%= f.submit class: "btn btn-primary"%>
+      <%= f.submit class: "btn btn-primary", id: "experience-submit" %>
     </div>
 
   <% end %>
