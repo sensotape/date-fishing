@@ -6,11 +6,20 @@
 .avatar-large {
   width: 100px;
   height: 100px;
+  object-fit: cover;
+}
+
+.avatar-show-page {
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .avatar-small {
   width: 50px;
   height: 50px;
+  object-fit: cover;
 }
 
 .modal-image-container
