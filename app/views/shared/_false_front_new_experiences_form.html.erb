@@ -3,58 +3,72 @@
     <div class="formContainer">
       <div class="form">
         <div class="form-group">
-          <h3>What's your date?*</h3>
-          <input type="text" id="input-1">
+          <i class='fas fa-heart'></i>
+          <i class="far fa-heart"></i>
+         <i class="far fa-heart"></i>
+          <h3>What's your date?</h3>
+          <input type="text" placeholder="Tell us your perfect date!" id="input-1">
         </div>
         <div class="form-group">
-          <h3>And which category is it in?*</h3>
-          <select id="input-2">
+          <h3>And which category is it in?</h3>
+          <select id="input-2" placeholder="Select One">
+            <option id="intro-select">Select One</option>
           <% Experience::CATEGORIES.each do |category| %>
             <option value="<%=category%>"><%=category%></option>
           <% end %>
           </select>
         </div>
-        <div class="btn btn-primary" id="new-date-1">Next</div>
+        <div class="button-container-form">
+          <div class="btn btn-primary muted">Back</div>
+          <div class="btn btn-primary" id="new-date-1">Next</div>
+        </div>
       </div>
     </div>
     <div class="formContainer">
       <div class="form">
         <div class="form-group">
-          <h3>Add some photos!*</h3>
-          <div class="btn btn-primary" id="photos-button">Photos</div>
+          <i class='fas fa-heart'></i>
+          <i class='fas fa-heart'></i>
+         <i class="far fa-heart"></i>
+          <h3>Add some photos!</h3>
+          <div class="btn btn-primary btn-special-photo" id="photos-button">+</div>
           <div id="photo-file-name"></div>
         </div>
         <div class="form-group">
           <h3>And describe your date 😍</h3>
-          <input type="text" id="input-3">
+        <input type="text" placeholder="Whats the plan, Stan?" id="input-3">
         </div>
-        <div class="btn btn-primary" id="new-date-2-back">Back</div>
-        <div class="btn btn-primary" id="new-date-2">Next</div>
-      </div>
-    </div>
-    <div class="formContainer">
-      <div class="form">
-        <div class="form-group">
-          <h3>When would you like to meet?</h3>
-          <input class="form-control string optional datepickr flatpickr-input input active" type="text" id="test-1">
+         <div class="button-container-form">
+          <div class="btn btn-primary" id="new-date-2-back">Back</div>
+          <div class="btn btn-primary" id="new-date-2">Next</div>
         </div>
-        <div class="form-group">
-          <h3>And of course, where?</h3>
-          <input class="form-control string optional ap-input" type="text" name="experience[location]" id="input-4" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="both" aria-expanded="false" aria-owns="algolia-places-listbox-0" dir="auto" style="position: relative; vertical-align:top;">
-        </div>
-      <div class="btn btn-primary" id="new-date-3-back">Back</div>
-      <div class="btn btn-primary" id="new-date-3">Next</div>
       </div>
     </div>
 
     <div class="formContainer">
       <div class="form">
-       <div class="button-container">
-        <div class="btn btn-primary" id="submit-experience-back">Back</div>
-        <div id="cancel-experience-button"><%= link_to "Cancel", experiences_path %></div>
-        <div class="btn btn-primary" id="submit-experience-button">Go Fishing!</div>
-       </div>
+        <div class="form-group">
+           <i class='fas fa-heart'></i>
+          <i class='fas fa-heart'></i>
+          <i class='fas fa-heart'></i>
+          <h3>When would you like to meet?</h3>
+          <input placeholder="Select a date!" id="test-1" class="test-1 form-control string optional datepickr flatpickr-input input active" type="text">
+        </div>
+        <div class="form-group">
+          <h3>And of course, where?</h3>
+          <input placeholder="Let's meet 😃" class="form-control string optional ap-input" type="text" name="experience[location]" id="input-4" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="both" aria-expanded="false" aria-owns="algolia-places-listbox-0" dir="auto" style="position: relative; vertical-align:top;">
+        </div>
+
+         <div class="button-container-form">
+            <div class="btn btn-primary" id="new-date-3-back">Back</div>
+            <div id="new-date-3"></div>
+            <div class="btn btn-primary" id="submit-experience-button">Go Fishing!</div>
+
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
+
+        <div class="btn btn-primary" id="submit-experience-back">Back</div>
+
+
