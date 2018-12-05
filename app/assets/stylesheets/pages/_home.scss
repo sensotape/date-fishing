@@ -1,15 +1,13 @@
-
 .homepage-banner {
   background: $black;
   height: calc(100vh - 70px);
   width: 100vw;
   color: $gray;
-  // padding-top: 30vh;
-  // padding-left: 40px;
   display: flex;
   flex-direction: column;
   justify-content: right;
   position: relative;
+  overflow-x: hidden;
 }
 
 .banner-content {
