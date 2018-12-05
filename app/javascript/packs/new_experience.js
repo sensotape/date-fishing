@@ -50,19 +50,24 @@ submitExperienceBack.addEventListener('click', function() {
   stepback3();
 });
 
+document.getElementById('submit-experience-button').addEventListener('click', function() {
+  step3();
+  //submitRealExperience();
+});
+
 document.addEventListener('keyup', function(e) {
   if (e.key == "ArrowRight") {
     nextStep();
   } else if (e.key == "ArrowLeft") {
     previousStep();
-  } else if ((e.key === 13) && (container.dataset.step === "4")) {
-
+  } else if ((e.key === "Enter") && (container.dataset.step === "3")) {
+    step3();
   }
 });
 
-function submitRealExperience() {
-
-}
+// function submitRealExperience() {
+//
+// }
 
 function nextStep() {
   if (container.dataset.step === "1") {
@@ -105,20 +110,17 @@ function step2() {
 }
 
 function step3() {
-  slider.style.transform = 'translate(-300vw)';
   var input4 = document.getElementById('input-4').value;
   realInput4.value = input4;
   var test1 = document.getElementById('test-1').value;
   realInput5.value = test1;
-  container.dataset.step = 4;
+  if ((input4 != undefined) && (test1 != undefined)) {
+    realSubmitExperienceButton.click();
+  }
 }
 
 photoFileTitle.addEventListener('change', function() {
   addedFileTitle.insertAdjacentHTML('beforeend', photoFileTitle.value+'<br>');
-});
-
-document.getElementById('submit-experience-button').addEventListener('click', function() {
-  realSubmitExperienceButton.click();
 });
 
 function stepback1() {
