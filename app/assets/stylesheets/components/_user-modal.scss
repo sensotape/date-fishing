@@ -1,23 +1,53 @@
-.name{
-  font-weight: bold;
-  content-align: left;
+.user-card-name {
+  color: $black;
+  font-size: 24px;
+  padding-top: 10px;
 }
 
 .modal-image-container {
-  border-radius: 10px;
+  border-radius: 4px 4px 0 0;
+  width: 100%;
+  height: 65%;
+  overflow: hidden;
+  padding-bottom: 15px;
 }
 
-#user-modal {
-  padding: 30px;
-  border-radius: 8px;
+.modal-image-container img {
+  border-radius: 4px 4px 0 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+
 }
 
-.content {
-  padding: 30px;
+.user-card-content {
+  color: $black;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 
-.modal-content {
-  padding: 15px;
+.user-modal-dialog {
+  height: 650px;
+  width: 450px;
+}
+
+.user-modal-content {
+  background: $white;
+  border-radius: 4px;
+  width: 390px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.user-card {
+  border-radius: 4px;
+  width: 390px;
+  height: 600px;
+  background: $white;
 }
 
 
