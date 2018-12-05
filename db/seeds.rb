@@ -169,7 +169,7 @@ marcel.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/
 maylee.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1544008614/maylee.jpg'))
 aigerim.photos.create!(picture: open('https://avatars0.githubusercontent.com/u/41161878?s=460&v=4.jpg'))
 rich.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543915962/22228568_10215461503709866_914630491015053537_n.jpg'))
-bryan.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543915962/19029529_10209573268588468_1207346413178763227_n.jpg'))
+bryan.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1544039026/19029529_10209573268588468_1207346413178763227_n.jpg'))
 kaylin.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543917552/983731_10152860580735246_1214873563_n.jpg'))
 alice.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543915990/highres_273114615.jpg'))
 katharine.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543915962/36379031_1809863849096011_3049154311729709056_o.jpg'))

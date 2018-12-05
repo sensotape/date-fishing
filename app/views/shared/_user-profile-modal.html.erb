@@ -1,7 +1,7 @@
 <div class="modal fade" id="user-modal" role="dialog">
   <div class="modal-dialog user-modal-dialog">
     <div class="modal-content user-modal-content modal-padding modal-background">
-
+        <button data-dismiss="modal" class="close user-x-button">×</button>
         <div class="user-card">
         <div class="modal-image-container">
           <%= cl_image_tag @experience.user.photos.first.picture, class: 'modal-image' %>
