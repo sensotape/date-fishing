@@ -165,10 +165,10 @@ nimkit = User.create!(
 puts 'Uploading photos...'
 boris.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543860812/big_detected_cover_59662824a9b4977b7400007b.jpg'))
 andrew.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1542906721/user.jpg'))
-marcel.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1542906721/2018-11-22_18.10.49.jpg'))
+marcel.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1544040404/berlinm.jpg'))
 maylee.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1544008614/maylee.jpg'))
 aigerim.photos.create!(picture: open('https://avatars0.githubusercontent.com/u/41161878?s=460&v=4.jpg'))
-rich.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543915962/22228568_10215461503709866_914630491015053537_n.jpg'))
+rich.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1544040229/22228568_10215461503709866_914630491015053537_n.jpg'))
 bryan.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1544039026/19029529_10209573268588468_1207346413178763227_n.jpg'))
 kaylin.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543917552/983731_10152860580735246_1214873563_n.jpg'))
 alice.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543915990/highres_273114615.jpg'))
