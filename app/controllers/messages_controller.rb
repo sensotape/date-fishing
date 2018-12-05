@@ -6,6 +6,7 @@ class MessagesController < ApplicationController
     @message.recipient = who_is_recipient
     authorize @message
     if @message.save
+      Notification.create(recipient: @message.recipient, user: @message.sender, action: "messaged", notifiable: @message.recipient)
       respond_to do |format|
         format.html { redirect_to conversation_path(@conversation) }
         format.js

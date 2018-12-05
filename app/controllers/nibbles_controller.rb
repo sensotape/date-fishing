@@ -6,8 +6,10 @@ class NibblesController < ApplicationController
     @nibble.interested = current_user
     authorize @nibble
     if @nibble.save
+      Notification.create(recipient: @nibble.owner, user: current_user, action: "nibbled", notifiable: @nibble.owner)
       @conversation = @nibble.conversations.create
       @message = @conversation.messages.create(nibble_message_params)
+      Notification.create(recipient: @nibble.owner, user: current_user, action: "messaged", notifiable: @nibble.owner)
       redirect_to experiences_path
       flash[:notice] = "You just nibbled #{@nibble.owner.first_name} 😜"
     else
@@ -21,9 +23,24 @@ class NibblesController < ApplicationController
     @nibble = policy_scope(Nibble).find(params[:id])
     authorize @nibble
     @nibble.status = params[:status]
+    @nibbles = @experience.nibbles.reject { |nibble| nibble == @nibble }
     if @nibble.save
-      redirect_to inbox_path
-      flash[:notice] = "You've made your decision"
+      Notification.create(recipient: @nibble.interested, user: current_user, action: "updated", notifiable: @nibble.interested)
+      if params[:status] == 'accepted'
+        @nibbles.each do |nibble|
+          nibble.status = 'declined'
+          nibble.save
+        end
+        flash[:notice] = "Congratulations! You've got a date! 🎉"
+      elsif params[:status] == 'declined'
+        flash[:notice] = "You've made your decision"
+        if @nibbles.length == 1
+          @nibbles.first.status = 'accepted'
+          @nibbles.first.save
+          flash[:notice] = "Congratulations! You've got a date! 🎉"
+        end
+      end
+      redirect_back(fallback_location: root_path)
     else
       flash[:alert] = "Oops! Something went wrong 😔 Please try again later"
     end

@@ -27,6 +27,7 @@ class Experience < ApplicationRecord
   validates :category, presence: true, inclusion: { in: CATEGORIES }
   validates :description, presence: true
   validates :location, length: { maximum: 120 }
+  validates :cancelled, default: false, inclusion: { in: [true, false] }
 
   after_validation :geocode, if: :will_save_change_to_location?
 

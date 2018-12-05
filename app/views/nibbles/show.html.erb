@@ -1,8 +1,0 @@
-<% content_for :after_js do %>
-  <script>
-    App['nibble_<%= @nibble.id %>'] = App.cable.subscriptions.create(
-      { channel: 'NibbleChannel', nibble_id: <%= @nibble.id %> },
-      { received: (data) => console.log(data) }
-    )
-  </script>
-<% end %>

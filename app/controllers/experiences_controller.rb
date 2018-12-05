@@ -63,9 +63,18 @@ class ExperiencesController < ApplicationController
   end
 
   def destroy
-    @experience.destroy
-    redirect_to user_path(current_user)
-    flash[:notice] = "Date succesfuly deleted"
+    # @experience.destroy
+    @experience.nibbles.each do |nibble|
+      nibble.status = 'cancelled'
+      nibble.save
+    end
+    @experience.cancelled = true
+    if @experience.save
+      redirect_back(fallback_location: root_path)
+      flash[:notice] = "Date succesfuly cancelled"
+    else
+      flash[:alert] = "Oops! Something went wrong 😔 Please try again later"
+    end
   end
 
   private

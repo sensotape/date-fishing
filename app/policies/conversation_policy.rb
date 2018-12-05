@@ -5,11 +5,7 @@ class ConversationPolicy < ApplicationPolicy
     end
   end
 
-  def inbox?
-    true # change later
-  end
-
   def show?
-    true # change later
+    record.nibble.owner == user || record.nibble.interested == user
   end
 end

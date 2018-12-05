@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_30_114631) do
+ActiveRecord::Schema.define(version: 2018_12_05_095759) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 2018_11_30_114631) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "cancelled", default: false
     t.index ["user_id"], name: "index_experiences_on_user_id"
   end
 
@@ -71,6 +72,17 @@ ActiveRecord::Schema.define(version: 2018_11_30_114631) do
     t.index ["owner_id"], name: "index_nibbles_on_owner_id"
   end
 
+  create_table "notifications", force: :cascade do |t|
+    t.bigint "user_id"
+    t.integer "recipient_id"
+    t.string "action"
+    t.string "notifiable_type"
+    t.integer "notifiable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_notifications_on_user_id"
+  end
+
   create_table "photos", force: :cascade do |t|
     t.string "picture"
     t.bigint "user_id"
@@ -95,6 +107,7 @@ ActiveRecord::Schema.define(version: 2018_11_30_114631) do
     t.string "seeking", null: false
     t.text "bio"
     t.datetime "birthday", null: false
+    t.boolean "admin", default: false, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -103,6 +116,7 @@ ActiveRecord::Schema.define(version: 2018_11_30_114631) do
   add_foreign_key "conversations", "nibbles"
   add_foreign_key "experiences", "users"
   add_foreign_key "nibbles", "experiences"
+  add_foreign_key "notifications", "users"
   add_foreign_key "photos", "experiences"
   add_foreign_key "photos", "users"
 end

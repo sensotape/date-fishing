@@ -8,6 +8,8 @@ class Message < ApplicationRecord
   validates :body, presence: true, length: { maximum: 1000 }, allow_blank: false
   validates :read, default: false, inclusion: { in: [true, false] }
 
+  scope :unread, -> { where(read: false) }
+
   def broadcast_message
     ActionCable.server.broadcast("conversation_#{self.conversation.id.to_s}", {
       message_partial: ApplicationController.renderer.render(
@@ -18,7 +20,16 @@ class Message < ApplicationRecord
     })
   end
 
+  def read!
+    self.read = true
+    self.save
+  end
+
   def date
     created_at.strftime("%b %d")
+  end
+
+  def time
+    created_at.strftime("%I:%M %p")
   end
 end

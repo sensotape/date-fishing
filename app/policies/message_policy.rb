@@ -5,11 +5,11 @@ class MessagePolicy < ApplicationPolicy
     end
   end
 
-  def index?
+  def create?
     record.sender == user || record.recipient == user
   end
 
-  def create?
-    record.sender == user || record.recipient == user
+  def index?
+    create?
   end
 end

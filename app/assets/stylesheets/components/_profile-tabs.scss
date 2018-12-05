@@ -9,8 +9,8 @@ button {
 
 .all-tabs {
   height: calc(100vh - 70px);
-  width: 25vw;
-  position: fixed;
+  width: 100%;
+  // position: fixed;
 }
 
 .tab-item {
@@ -37,6 +37,6 @@ button {
   display: block;
 }
 
-.tab-content {
-  margin-left: calc(25vw + 30px);
+.container-profile-pages {
+  width: calc(100vw - 60px);
 }

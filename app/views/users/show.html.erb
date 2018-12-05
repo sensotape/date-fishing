@@ -1,75 +1,106 @@
- <div class="profile-page">
+<div class="profile-page">
 
-  <!-- THE TABS -->
-  <div class="all-tabs">
-    <%= button_tag "Profile", class: 'tab-item top-tab active', id: 'profile-tab', "data-content" => 'profile-content' %>
-    <%= button_tag "Dates", class: 'tab-item', id: 'dates-tab', "data-content" => 'dates-content' %>
-    <%= button_tag "Nibbles", class: 'tab-item', id: 'nibbles-tab', "data-content" => 'nibbles-content' %>
-    <%= button_tag "Statistics", class: 'tab-item', id: 'statistics-tab', "data-content" => 'statistics-content' %>
-  </div>
+  <div class="container-profile-pages">
+    <div class="row">
 
+      <!-- THE TABS -->
+      <div class="col-xs-3">
+        <div class="all-tabs">
 
-<!-- THE CONTENT -->
-<div class="all-content">
-
-    <!-- PAGE 1 -->
-    <div class="tab-content" id="profile-content">
-      <h2>1. PROFILE</h2>
-
-      <strong>name</strong>
-      <p><%= @user.full_name %></p><br>
-
-      <strong>image</strong><br>
-      <%= cl_image_tag @user.photos.first.picture, class: 'avatar avatar-large' %><br><br>
-
-      <strong>bio</strong>
-      <p><%= @user.bio %></p><br>
-
-      <strong>identifies as</strong>
-      <p><%= @user.gender %></p><br>
-
-      <strong>interested in</strong>
-      <p><%= @user.seeking %></p><br>
-
-      <strong>DOB</strong>
-      <p><%= @user.birthday %></p><br>
-    </div>
-
-    <!-- PAGE 2 -->
-    <div class="tab-content hidden" id="dates-content">
-      <h2>2. MY DATES</h2>
-      <% @user.experiences.each do |experience| %>
-      <div>
-        <button data-toggle="modal" data-target="#edit-experience-modal-<%= experience.id %>" class="btn btn-primary">Edit</button>
-        <%= render 'shared/edit-experience', experience: experience %>
-
-        <button class="btn btn-primary"><%= link_to "Delete Experience", experience, method: :delete, data: { confirm: "Are you sure about this?"} %> </button>
+          <%= button_tag "Profile", class: 'tab-item top-tab active', id: 'profile-tab', "data-content" => 'profile-content' %>
+          <%= button_tag "Dates", class: 'tab-item', id: 'dates-tab', "data-content" => 'dates-content' %>
+          <%= image_tag "heart.svg", class: 'notification hidden', id: "dates-notification" %>
+          <%= button_tag "Nibbles", class: 'tab-item', id: 'nibbles-tab', "data-content" => 'nibbles-content' %>
+          <%= image_tag "heart.svg", class: 'notification hidden', id: "nibbles-notification" %>
+          <%= button_tag "Statistics", class: 'tab-item', id: 'statistics-tab', "data-content" => 'statistics-content' %>
+        </div>
       </div>
 
-        <strong>title</strong>
-        <p><%= experience.title %></p><br>
-        <strong>category</strong>
-        <p><%= experience.category %></p><br>
-        <strong>location</strong>
-        <p><%= experience.location %></p><br>
-        <strong>description</strong>
-        <p><%= experience.description %></p><br>
-        <hr>
-      <% end %>
-    </div>
+      <!-- THE CONTENT -->
+      <div class="col-xs-9">
+        <div class="all-content">
+          <!-- PAGE 1 -->
+          <div class="tab-content" id="profile-content">
+            <h2>1. PROFILE</h2>
 
-    <!-- PAGE 3 -->
-    <div class="tab-content hidden" id="nibbles-content">
-      <h2>3. MY NIBBLES</h2>
-      <% @user.nibbles.each do |nibble| %>
-        <button class="btn btn-primary"><%= link_to "Delete Nibble", experience_nibble_path(nibble.experience, nibble), method: :delete, data: { confirm: "Are you sure about this?"} %> </button>
-        <p><%= link_to nibble.experience.title, experience_path(nibble.experience) %></p>
-      <% end %>
-    </div>
+            <strong>name</strong>
+            <p><%= @user.full_name %></p><br>
 
-    <!-- PAGE 4 -->
-    <div class="tab-content hidden" id="statistics-content">
-      <h2>4. STATISTICS</h2>
-      <p>Statistics go here</p>
+            <strong>image</strong><br>
+            <%= cl_image_tag @user.photos.first.picture, class: 'avatar avatar-large' %><br><br>
+
+            <strong>bio</strong>
+            <p><%= @user.bio %></p><br>
+
+            <strong>identifies as</strong>
+            <p><%= @user.gender %></p><br>
+
+            <strong>interested in</strong>
+            <p><%= @user.seeking %></p><br>
+
+            <strong>DOB</strong>
+            <p><%= @user.birthday %></p><br>
+          </div>
+
+          <!-- PAGE 2 -->
+          <div class="tab-content hidden" id="dates-content">
+            <h2>2. MY DATES</h2>
+            <% @user.experiences.each do |experience| %>
+              <div class="my-date">
+                <%= cl_image_tag experience.photos.first.picture,
+                    transformation: [{ height: 70, width: 70, crop: :thumb}] %>
+                <div class="date-title">
+                  <h4>
+                    <%= experience.title %>
+                    <% if experience.cancelled %>
+                      <span>Cancelled</span>
+                    <% else %>
+                      <a data-toggle="modal" data-target="#edit-experience-modal-<%= experience.id %>">Edit</a>
+                    <% end %>
+                  </h4>
+                  <%= render 'shared/edit-experience', experience: experience %>
+                </div>
+                <div class="date-nibbles" id="nibble-<%= experience.id %>">
+                  <a class="badge badge-primary"><%= experience.nibbles.length %></a>
+                </div>
+              </div>
+              <div class="nibble-dropdown hidden" id="dropdown-nibble-<%= experience.id %>">
+                <%= render 'shared/date-nibbles', experience: experience %>
+              </div>
+              <% content_for :nibble_dropdown do %>
+                <script>
+                  elementsArray = document.querySelectorAll('.date-nibbles');
+                  elementsArray.forEach(function(elem) {
+                      elem.onclick = function(event) {
+                        event.stopPropagation();
+                        event.preventDefault();
+                        div = document.getElementById(`dropdown-${elem.id}`);
+                        div.classList.toggle("hidden");
+                        return false;
+                      };
+                  });
+                </script>
+              <% end %>
+            <% end %>
+          </div>
+
+          <!-- PAGE 3 -->
+          <div class="tab-content hidden" id="nibbles-content">
+            <h2>3. MY NIBBLES</h2>
+            <% @user.nibbles.each do |nibble| %>
+              <button class="btn btn-primary"><%= link_to "Delete Nibble", experience_nibble_path(nibble.experience, nibble), method: :delete, data: { confirm: "Are you sure about this?"} %> </button>
+              <p><%= link_to nibble.experience.title, experience_path(nibble.experience) %> | <%= nibble.status.capitalize %></p>
+            <% end %>
+          </div>
+
+          <!-- PAGE 4 -->
+          <div class="tab-content hidden" id="statistics-content">
+            <h2>4. STATISTICS</h2>
+            <p>Statistics go here</p>
+          </div>
+        </div>
+      </div>
+
     </div>
+  </div>
 </div>

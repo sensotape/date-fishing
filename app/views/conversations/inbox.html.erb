@@ -14,6 +14,11 @@
             <p><%= link_to conversation.nibble.experience.title, conversation_path(conversation) %></p>
           </div>
 
+          <% if conversation.messages.unread.where(recipient: current_user).length > 0  %>
+            <span class="badge badge-primary" id="badge-message">
+              <%= conversation.messages.unread.where(recipient: current_user).length %>
+            </span>
+          <% end %>
           <div class="message-body">
             <p>
               <%= link_to conversation.messages.last.body, conversation_path(conversation) %>
@@ -23,17 +28,17 @@
 
           <div class="message-status">
             <p class="status <%= conversation.nibble.status %>" id="status_<%= conversation.nibble.id %> "><%= conversation.nibble.status.capitalize %></p>
-            <% if policy(conversation.nibble).update? %>
+            <% if policy(conversation.nibble).update? && conversation.nibble.status == 'pending' %>
               <div id="status-buttons">
                 <%= link_to '', experience_nibble_path(conversation.nibble.experience, conversation.nibble, status: 'accepted'),
                     method: :patch, class: 'fas fa-check-circle', style: "color: green;" %>
                 <%= link_to '', experience_nibble_path(conversation.nibble.experience, conversation.nibble, status: 'declined'),
                     method: :patch, class: 'fas fa-thumbs-down', style: "color: red;" %>
-                <%= link_to '', experience_nibble_path(conversation.nibble.experience, conversation.nibble, status: 'cancelled'),
-                    method: :patch, class: 'fas fa-ban', style: "color: grey;" %>
               </div>
-            <% else %>
+            <% elsif !policy(conversation.nibble).update? && conversation.nibble.status == 'pending' %>
               <p><em>Patience is a virtue, right?</em></p>
+            <% else %>
+              <p></p>
             <% end %>
           </div>
 
