@@ -1,9 +1,19 @@
-body {
-  color: $gray;
+.link-item {
+  font-weight: normal;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: $red;
+  transform: scale(1);
+  &:hover {
+    transform: scale(1.03, 1.03) !important;
+    font-size: 1.03em;
+    text-decoration: none;
+    opacity: 0.7;
+  }
 }
 
 .primary-color {
-  color: $blue;
+  color: $red;
 }
 
 .flexbox-vertical {
@@ -17,6 +27,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.flexbox-horizontal-align-top {
+  display: flex;
+  justify-content: center;
+  align-items: top;
 }
 
 .flexbox-left {
@@ -37,12 +53,37 @@ body {
   margin: 20px auto;
 }
 
+.div-margin-large {
+  margin: 50px auto;
+}
+
+.div-padding {
+  padding: 20px;
+}
+
 .item-padding {
   padding: 5px 10px;
 }
 
-.index-page-background {
-  background-image: url("https://res.cloudinary.com/dkft9hkkv/image/upload/v1543583133/Date%20Fishing/Background_flipped_copy.png");
-  background-size: cover;
-  z-index: -5;
+.item-margin {
+  margin: 0 10px;
+}
+
+.red-background {
+  background: $red;
+  color: white;
+}
+
+.white-background {
+  background: white;
+  color: $black;
+}
+
+.min-div-height {
+  min-height: 300px;
+}
+
+.min-page-height {
+  min-height: calc(100vh - 140px);
+  background: $black;
 }

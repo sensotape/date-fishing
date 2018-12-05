@@ -1,16 +1,19 @@
 <div class="modal fade" id="user-modal" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content modal-padding modal-background">
-      <div class="modal-image-container">
-        <%= cl_image_tag @experience.user.photos.first.picture, class: 'modal-image' %>
-      </div>
+  <div class="modal-dialog user-modal-dialog">
+    <div class="modal-content user-modal-content modal-padding modal-background">
 
-      <div class="name">
-        <%= @experience.user.full_name %> | Age: <%= @experience.user.age %>
-      </div>
+        <div class="user-card">
+        <div class="modal-image-container">
+          <%= cl_image_tag @experience.user.photos.first.picture, class: 'modal-image' %>
+        </div>
 
-      <div class="content">
-        <%= content_tag :p, @experience.user.bio %>
+        <div class="user-card-name">
+          <p> <strong><%= @experience.user.full_name %></strong>, <%= @experience.user.age %></p>
+        </div>
+
+        <div class="user-card-content">
+          <%= content_tag :p, @experience.user.bio %>
+        </div>
       </div>
 
     </div>

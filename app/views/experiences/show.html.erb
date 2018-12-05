@@ -1,42 +1,76 @@
-<div class="page-container flexbox-horizontal">
+<div class="container">
 
-  <!-- image side -->
-  <div class="photo-side">
-    <%= cl_image_tag @experience.photos.first.picture, :gravity=>"east", :crop=>"fill", id:"show-image" %>
+  <div class="showpage-content-container">
+
+    <!-- PHOTO SIDE -->
+    <div class="photo-side">
+      <%= cl_image_tag @experience.photos.first.picture, gravity: :east, crop: :fill %>
+    </div>
+
+    <!-- DETAILS SIDE -->
+    <div class="details-side">
+
+    <!-- TOP PART -->
+    <div class="details-side-top">
+
+      <!-- TOP-HEAD -->
+      <div class="details-side-top-head">
+        <div class="details-left">
+          <h2><%= @experience.title %></h2>
+        </div>
+        <div class="details-right">
+          <%= cl_image_tag @experience.user.photos.first.picture, class: 'avatar-show-page' %>
+        </div>
+      </div>
+
+      <!-- TOP-BODY -->
+      <div class="details-side-top-body">
+        <div class="details-left">
+          <strong><p><%= @experience.location %></p></strong>
+          <p><%= "#{@experience.day_of_week}, #{@experience.humanize_date}" %></p>
+        </div>
+        <div class="details-right">
+          <strong><p><%= @experience.user.first_name %></p></strong>
+          <button class="view-profile-modal" data-toggle="modal" data-target="#user-modal">(View Profile)</button>
+         <%= render 'shared/user-profile-modal' %>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTTOM PART -->
+    <div class="details-side-bottom">
+
+      <!-- TABS -->
+      <div class="details-side-bottom-head">
+        <%= button_tag "DESCRIPTION", class: 'show-page-tab show-page-active', id: 'description-tab', "data-content" => 'description-content' %>
+
+        <%= button_tag "MAP", class: 'show-page-tab show-page-inactive', id: 'description-tab', "data-content" => 'description-content' %>
+      </div>
+
+      <!-- CONTENT -->
+      <div class="details-side-bottom-body details-left">
+
+        <!-- DESCRIPTION -->
+        <div class="experience-description">
+          <p><%= @experience.description %></p>
+        </div>
+
+        <!-- MAP -->
+        <div class="experience-map">
+
+        </div>
+      </div>
+
+    </div>
+
+    </div>
+
   </div>
 
-  <!-- details side -->
-  <div class="details-side">
+</div>
 
-    <!-- content box -->
-    <div class="content-box text-center flexbox-vertical">
 
-      <!-- header -->
-      <h1><%= @experience.title %></h1>
-
-      <!-- date, time and category -->
-      <div class="show-features">
-        <p class= "item-padding"><strong class="primary-color">Date: </strong> <%= @experience.humanize_date %></p>
-        <p class= "item-padding"><strong class="primary-color">Time: </strong> <%= @experience.humanize_time %></p>
-        <p class= "item-padding"><strong class="primary-color">Category: </strong> <%= @experience.category.capitalize %></p>
-      </div>
-
-      <!-- map -->
-      <div id="map" style="width: 80%; height: 200px;"
-        data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-      </div>
-
-      <!-- description -->
-      <div class="div-margin">
-        <p><%= @experience.description %></p>
-      </div>
-
-      <!-- all buttons -->
-      <div class="flexbox-left" style="margin-left: 70px">
-
-        <!-- nibble button -->
-        <% if policy(@nibble).create? %>
+<% if policy(@nibble).create? %>
           <button class="item-padding btn btn-primary" data-toggle="modal" data-target="#nibble" style="margin-right: 20px">Nibble</button>
           <%= render 'shared/nibble', experience: @experience %>
 
@@ -45,18 +79,5 @@
           <button data-toggle="modal" data-target="#edit-experience-modal-<%= @experience.id %>" class="btn btn-primary">Edit</button>
           <%= render 'shared/edit-experience', experience: @experience %>
         <% end %>
-
-        <!-- user profile modal -->
-        <button class="item-padding btn btn-primary" data-toggle="modal" data-target="#user-modal">View Profile</button>
-         <%= render 'shared/user-profile-modal' %>
-
-      </div>
-
-    </div>
-
-  </div>
-</div>
-
-
 
 

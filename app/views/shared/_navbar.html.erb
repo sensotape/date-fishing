@@ -1,78 +1,59 @@
 <div class="navbar-wagon">
-  <!-- Logo -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "https://res.cloudinary.com/dkft9hkkv/image/upload/v1543592610/Date%20Fishing/datefishing.png", height: 50 %>
-  <% end %>
 
-  <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
+  <!-- FOR LARGER SCREENS -->
+  <div class="hidden-xs hidden-sm">
 
+    <!-- USER SIGNED IN -->
     <% if user_signed_in? %>
       <% notif_message = current_user.messages.unread.where(recipient: current_user).length > 0 ? 'notification' : 'notification hidden' %>
-      <!-- Links when logged in -->
-      <%= link_to "Random", experience_path(Experience.all.sample), class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Explore", experiences_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Create", new_experience_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Messages", inbox_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
+      <!-- LEFT OF LOGO -->
+      <%= link_to "EXPLORE", experiences_path, class: "item-padding item-margin link-item" %>
+      <%= link_to "CREATE", new_experience_path, class: "item-padding item-margin link-item" %>
+
+      <!-- LOGO -->
+      <%= link_to root_path, class: "navbar-logo" do %>
+        <%= cl_image_tag "https://res.cloudinary.com/dkft9hkkv/image/upload/v1543947454/Date%20Fishing/datefishing-white.png" %>
+      <% end %>
+
+      <!-- RIGHT OF LOGO -->
+      <%= link_to "MESSAGES", inbox_path, class: "item-padding item-margin link-item" %>
       <%= image_tag "heart.svg", class: notif_message, id: "message-notification" %>
-      <%= link_to "Profile", user_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "PROFILE", user_path(current_user), class: "item-padding item-margin link-item" %>
       <%= image_tag "heart.svg", class: 'notification hidden', id: "profile-notification" %>
 
-      <!-- Avatar with dropdown menu -->
-      <div class="navbar-wagon-item">
-        <div class="dropdown">
-          <%= image_tag "https://www.emojirequest.com/images/PurpleHeartExMarkEmoji.jpg", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li>
-              <%= link_to user_path(current_user) do %>
-                <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-              <% end %>
-            </li>
-          </ul>
-        </div>
-      </div>
+    <!-- USER NOT SIGNED IN -->
     <% else %>
-      <!-- Sign up link (when logged out) -->
+
+      <!-- SIGN UP -->
       <button class="btn btn-primary" data-toggle="modal" data-target="#sign-up">Sign Up</button>
       <%= render 'shared/sign-up-modal' %>
-      <!-- Log in link (when logged out) -->
+
+      <!-- LOGO -->
+      <%= link_to root_path, class: "navbar-wagon-brand" do %>
+        <%= image_tag "https://res.cloudinary.com/dkft9hkkv/image/upload/v1543592610/Date%20Fishing/datefishing.png", height: 50 %>
+      <% end %>
+
+      <!-- LOG IN -->
       <button class="btn btn-primary" data-toggle="modal" data-target="#log-in">Log In</button>
       <%= render 'shared/log-in-modal' %>
     <% end %>
   </div>
 
-  <!-- Dropdown list appearing on mobile only -->
-  <!-- Having problems with sign in modal -->
+
+  <!-- FOR SMALLER SCREENS -->
   <div class="navbar-wagon-item hidden-md hidden-lg">
-      <% if user_signed_in? %>
-        <div class="dropdown">
-          <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-              <li><%= link_to "Random", experience_path(Experience.all.sample) %></li>
-              <li><%= link_to "Explore", experiences_path %></li>
-              <li><%= link_to "Create", new_experience_path %></li>
-              <li><%= link_to "Messages", inbox_path %></li>
-              <li><%= link_to "Profile", user_path(current_user) %></li>
-              <li>
-                <%= link_to destroy_user_session_path, method: :delete do %>
-                  <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-                <% end %>
-              </li>
-          </ul>
-        </div>
-      <% else %>
-        <!-- Sign up link (when logged out) -->
-        <button class="btn btn-primary" data-toggle="modal" data-target="#sign-up">Sign Up</button>
-        <%= render 'shared/sign-up-modal' %>
-        <!-- Log in link (when logged out) -->
-        <button class="btn btn-primary" data-toggle="modal" data-target="#log-in">Log In</button>
-        <%= render 'shared/log-in-modal' %>
-      <% end %>
+    <div class="dropdown">
+      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <li><%= link_to "Explore", experiences_path %></li>
+          <li><%= link_to "Create", new_experience_path %></li>
+          <li><%= link_to "Messages", inbox_path %></li>
+          <li><%= link_to "Profile", user_path(current_user) %></li>
+      </ul>
+    </div>
+
   </div>
 </div>
+
 

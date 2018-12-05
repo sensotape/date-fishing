@@ -6,21 +6,21 @@
 // General style
 $font-family-sans-serif:  $body-font;
 $headings-font-family:    $headers-font;
-$body-bg:                 $light-gray;
+$body-bg:                 $black;
 $font-size-base: 18px;
 
 // Colors
-$gray-base:       $gray;
-$brand-primary:   $blue;
+$gray-base:       $black;
+$brand-primary:   $red;
 $brand-success:   $green;
-$brand-info:      $yellow;
+$brand-info:      $green;
 $brand-danger:    $red;
-$brand-warning:   $orange;
+$brand-warning:   $black;
 
 // Buttons & inputs' radius
-$border-radius-base:  2px;
-$border-radius-large: 2px;
-$border-radius-small: 2px;
+$border-radius-base:  4px;
+$border-radius-large: 4px;
+$border-radius-small: 4px;
 
 
 // Patch to make simple_form compatible with bootstrap 3
@@ -51,3 +51,37 @@ $border-radius-small: 2px;
 }
 
 // Override other variables below!
+* {
+  text-decoration: none !important;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  &:hover {
+    text-decoration: none !important;
+  }
+}
+
+a {
+  transition: all 0.3s ease;
+  &:hover {
+    transform: scale(1.03, 1.03);
+  }
+}
+
+body {
+  color: $white;
+  background: $black;
+}
+
+button {
+  border: none;
+}
+
+i {
+  color: $red;
+}
+
+h1, h2, h3, p {
+  color: $text;
+}

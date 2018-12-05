@@ -1,0 +1,7 @@
+<div class="carousel">
+  <% experiences.each do |experience| %>
+    <div class="carousel-cell">
+      <%= cl_image_tag experience.photos.first.picture, alt: experience.title %>
+    </div>
+  <% end %>
+</div>

@@ -1,26 +1,42 @@
 
-.banner-container {
-  background-image: url("https://res.cloudinary.com/dkft9hkkv/image/upload/v1543515737/Date%20Fishing/Homepage_Cover.jpg");
-
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+.homepage-banner {
+  background: $black;
   height: calc(100vh - 70px);
-  color: white;
-  padding-top: 70px;
-
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
+  width: 100vw;
+  color: $gray;
+  // padding-top: 30vh;
+  // padding-left: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  position: relative;
 }
 
 .banner-content {
+  color: white;
+  position: absolute;
+  top: 35vh;
+  left: 7vw;
+  h1 {
+    font-size: 3em;
+  }
   p {
-
     opacity: 0.85;
   }
 }
 
-.banner-padding {
-  padding-left: 40px;
+.homepage-sections {
+  width: 100vw;
+}
+
+.homepage-icon-container {
+  max-width: 200px;
+  margin: 30px;
+  p {
+    font-size: 0.8em;
+  }
+}
+
+.homepage-icon {
+  height: 100px;
 }

@@ -5,9 +5,12 @@ class Experience < ApplicationRecord
                 'Food & Drink', 'Community', 'DIY',
                 'Tourism', 'Wildcard']
 
-  MONTHS = [nil, 'January', 'February', 'March', 'April',
-            'May', 'June', 'July', 'August', 'September',
-            'October', 'November', 'December']
+  MONTHS     = [nil, 'January', 'February', 'March', 'April',
+                'May', 'June', 'July', 'August', 'September',
+                'October', 'November', 'December']
+
+  DAYS       = [nil, 'Monday', 'Tuesday', 'Wednesday', 'Thursday',
+                'Friday', 'Saturday', 'Sunday']
 
   include PgSearch
   pg_search_scope :search_by_title_and_category_and_location_and_description,
@@ -33,6 +36,15 @@ class Experience < ApplicationRecord
 
   def humanize_date
     "#{MONTHS[date.month]} #{date.day}"
+  end
+
+  def humanize_date_shorthand
+    "#{date.day} #{MONTHS[date.month].first(3)}"
+  end
+
+  def day_of_week
+    time = Time.at(date)
+    DAYS[time.wday]
   end
 
   def humanize_time
