@@ -42,18 +42,25 @@
 
       <!-- TABS -->
       <div class="details-side-bottom-head">
+        <%= button_tag "DESCRIPTION", class: 'show-page-tab show-page-active', id: 'description-tab', "data-content" => 'description-content' %>
 
+        <%= button_tag "MAP", class: 'show-page-tab show-page-inactive', id: 'description-tab', "data-content" => 'description-content' %>
       </div>
 
-      <!-- BIO -->
-      <div class="experience-bio">
+      <!-- CONTENT -->
+      <div class="details-side-bottom-body details-left">
 
+        <!-- DESCRIPTION -->
+        <div class="experience-description">
+          <p><%= @experience.description %></p>
+        </div>
+
+        <!-- MAP -->
+        <div class="experience-map">
+
+        </div>
       </div>
 
-      <!-- MAP -->
-      <div class="experience-map">
-
-      </div>
     </div>
 
     </div>
@@ -61,5 +68,16 @@
   </div>
 
 </div>
+
+
+<% if policy(@nibble).create? %>
+          <button class="item-padding btn btn-primary" data-toggle="modal" data-target="#nibble" style="margin-right: 20px">Nibble</button>
+          <%= render 'shared/nibble', experience: @experience %>
+
+        <!-- edit button -->
+        <% elsif @experience.user == current_user %>
+          <button data-toggle="modal" data-target="#edit-experience-modal-<%= @experience.id %>" class="btn btn-primary">Edit</button>
+          <%= render 'shared/edit-experience', experience: @experience %>
+        <% end %>
 
 
