@@ -17,8 +17,12 @@
   flex-shrink: 0;
   display: flex;
   margin-bottom: 10px;
+  width: 100%;
+  min-width: 300px;
   &.right {
     flex-direction: row-reverse;
+    width: 100%;
+    min-width: 300px;
     .message-content {
       background-color: #F2F9FC;
     }
@@ -29,6 +33,11 @@
   border-radius: 3px;
   margin: 0 10px;
   padding: 11px 10px 8px 10px;
+}
+.message-time {
+  font-size: 10px;
+  margin-left: 6px;
+  opacity: 0.85;
 }
 .avatar {
   width: 42px;

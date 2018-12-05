@@ -12,7 +12,9 @@
 
     <% end -%>
 
+    <button class="btn btn-primary">
+      <%= link_to "Cancel Date", experience, method: :delete, data: { confirm: "Are you sure about this?" } %>
+    </button>
     </div>
   </div>
 </div>
-

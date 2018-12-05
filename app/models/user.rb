@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_many :blocked_users
   has_many :messages, foreign_key: 'sender_id' # right?
   has_many :photos
+  has_many :notifications, foreign_key: 'recipient_id' # , dependent: :destroy
 
   validates :first_name, presence: true, length: { in: 2..35 }
   validates :last_name, presence: true, length: { in: 2..35 }

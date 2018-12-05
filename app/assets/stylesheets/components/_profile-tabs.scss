@@ -4,9 +4,9 @@
 }
 
 .all-tabs {
-  height: calc(100vh - 140px);
-  width: 15vw;
-  position: fixed;
+  height: calc(100vh - 70px);
+  width: 100%;
+  // position: fixed;
 }
 
 .tab-item {
@@ -33,6 +33,14 @@
   display: block;
 }
 
+.container-profile-pages {
+  width: calc(100vw - 60px);
+}
+
 .tab-content {
-  margin-left: calc(25vw + 30px);
+  color: $white;
+  p {
+    color: $white;
+    opacity: 0.85;
+  }
 }

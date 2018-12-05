@@ -6,6 +6,7 @@ class ConversationsController < ApplicationController
 
   def show
     @conversation = Conversation.find(params[:id])
+    mark_messages_as_read
     authorize @conversation
   end
 
@@ -18,5 +19,10 @@ class ConversationsController < ApplicationController
         @conversations << conversation
       end
     end
+  end
+
+  def mark_messages_as_read
+    messages = @conversation.messages.where(recipient: current_user)
+    messages.each { |message| message.read! }
   end
 end
