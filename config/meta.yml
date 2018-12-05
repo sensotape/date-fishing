@@ -1,0 +1,5 @@
+meta_product_name: "Date Fishing"
+meta_title: "Date Fishing | Go on really, really cool dates"
+meta_description: "An experience focused dating app."
+meta_image: "cover.png"                       # should exist in `app/assets/images/`
+twitter_account: "@aerlanger"   # required for Twitter Cards
