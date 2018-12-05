@@ -26,6 +26,8 @@
             messagesContainer = document.querySelector('.show-messages');
             messagesContainer.insertAdjacentHTML('beforeend', data.message_partial);
             scrollLastMessageIntoView();
+            var element = document.querySelector(".show-messages");
+            element.scrollTop = element.scrollHeight;
           }
         }
       }

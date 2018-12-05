@@ -55,8 +55,7 @@ aigerim = User.create!(
   last_name: 'Kalysheva',
   password: '123456',
   password_confirmation: '123456',
-  bio: "Till death do we part? Looking for my ride or die. Meet for a once-in-a-lifetime experience.
-  Tell your family you went to live in a Buddhist monastery.",
+  bio: "New to Berlin, hoping to find cool people to explore this amazing city with. Will be here until the end of January.",
   gender: 'Female',
   seeking: 'Male',
   birthday: Date.new(1993, 3, 4)
@@ -68,7 +67,7 @@ boris = User.create!(
   last_name: 'Paillard',
   password: '123456',
   password_confirmation: '123456',
-  bio: "CEO of the greatest bootcamp on earth. I do actually have a white and red wagon.",
+  bio: "CEO of the greatest bootcamp on earth. I do actually have a red and white wagon.",
   gender: 'Male',
   seeking: 'Female',
   birthday: Date.new(1985, 6, 4)
@@ -92,7 +91,7 @@ bryan = User.create!(
   last_name: 'Leighton',
   password: '123456',
   password_confirmation: '123456',
-  bio: "Straight out of the good old US of A. Trying my luck in Europe!",
+  bio: "Straight out of the good old US of A. Trying my luck in Europe after traveling around the world. Looking for a cool morning person to share coffee with and maybe go ice skating with :)!",
   gender: 'Male',
   seeking: 'Female',
   birthday: Date.new(1990, 6, 4)
@@ -104,7 +103,7 @@ kaylin = User.create!(
   last_name: 'Bittner',
   password: '123456',
   password_confirmation: '123456',
-  bio: ".",
+  bio: "Sexy and you know it. Quite picky with dates I create and the ones I'm interested in. Get creative, people!",
   gender: 'Female',
   seeking: 'Male',
   birthday: Date.new(1990, 6, 4)
@@ -128,9 +127,9 @@ katharine = User.create!(
   last_name: 'Doyle',
   password: '123456',
   password_confirmation: '123456',
-  bio: "Young DJ out of London, trying to break into the ",
+  bio: "Young DJ out of London, trying to break into the Berlin techno scene.",
   gender: 'Female',
-  seeking: 'Female',
+  seeking: 'Male',
   birthday: Date.new(1991, 6, 4)
 )
 
@@ -140,7 +139,7 @@ clara = User.create!(
   last_name: 'Morgen',
   password: '123456',
   password_confirmation: '123456',
-  bio: "CEO of the greatest bootcamp on earth. I do actually have a white and red wagon.",
+  bio: "Bright as the dawn, I'm always in a good mood early in the morning.",
   gender: 'Female',
   seeking: 'Male',
   birthday: Date.new(1992, 6, 4)
@@ -152,7 +151,7 @@ nimkit = User.create!(
   last_name: 'Lepcha',
   password: '123456',
   password_confirmation: '123456',
-  bio: "CEO of the greatest bootcamp on earth. I do actually have a white and red wagon.",
+  bio: "Nimkit 2.0: Minor bug fixes, new selection algorithm, multilingual support.",
   gender: 'Female',
   seeking: 'Male',
   birthday: Date.new(1993, 6, 4)
@@ -163,7 +162,7 @@ puts 'Uploading photos...'
 boris.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543860812/big_detected_cover_59662824a9b4977b7400007b.jpg'))
 andrew.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1542906721/user.jpg'))
 marcel.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1542906721/2018-11-22_18.10.49.jpg'))
-maylee.photos.create!(picture: open('https://avatars0.githubusercontent.com/u/12126401?s=400&v=4.jpg'))
+maylee.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1544008614/maylee.jpg'))
 aigerim.photos.create!(picture: open('https://avatars0.githubusercontent.com/u/41161878?s=460&v=4.jpg'))
 rich.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543915962/22228568_10215461503709866_914630491015053537_n.jpg'))
 bryan.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543915962/19029529_10209573268588468_1207346413178763227_n.jpg'))
@@ -313,7 +312,7 @@ dungeons_date.save!
 dungeons_date.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543934388/Date%20Experiences/half-elf-ranger-moon-elf-aaron_miller1.jpg'))
 
 #clara
-aurora_date = kaylin.experiences.new(
+aurora_date = clara.experiences.new(
   title: 'Northern Lights',
   category: 'Bucketlist',
   location: 'Iceland',
@@ -323,7 +322,7 @@ aurora_date = kaylin.experiences.new(
 aurora_date.save!
 aurora_date.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543943299/Date%20Experiences/jonatan-pie-1196629-unsplash.jpg'))
 
-skating_date = kaylin.experiences.new(
+skating_date = clara.experiences.new(
   title: 'Come Ice-Skate with a total beginner!',
   category: 'Sport & Recreation',
   location: 'Erika Hess Stadium',
@@ -335,7 +334,7 @@ skating_date.save!
 skating_date.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543943506/Date%20Experiences/vasilios-muselimis-495970-unsplash.jpg'))
 
 #Katharine
-berghain_date = kaylin.experiences.new(
+berghain_date = katharine.experiences.new(
   title: 'DJing at Berghain',
   category: 'Music',
   location: 'Berghain',
@@ -345,7 +344,7 @@ berghain_date = kaylin.experiences.new(
 berghain_date.save!
 berghain_date.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543915962/36312387_1809859525763110_6994761258406772736_o.jpg'))
 
-nature_date = kaylin.experiences.new(
+nature_date = katharine.experiences.new(
   title: 'Visiting Tristan',
   category: 'Art & Culture',
   location: 'Naturekundemuseum, Berlin',
