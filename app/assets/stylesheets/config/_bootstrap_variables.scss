@@ -76,6 +76,7 @@ body {
 
 button {
   border: none;
+  background: $red;
 }
 
 i {
@@ -84,4 +85,8 @@ i {
 
 h1, h2, h3, p {
   color: $text;
+}
+
+.btn .btn-primary {
+  background: $red;
 }
