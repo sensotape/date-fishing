@@ -1,0 +1,35 @@
+<div class="grid">
+  <% experiences.each do |experience| %>
+
+    <!-- GRID ITEM -->
+    <a href='/experiences/<%= experience.id %>' class="grid-item" data-effect="zoom">
+      <!-- PHOTO -->
+      <div class="grid-image">
+        <%= cl_image_tag experience.photos.first.picture, alt: experience.title %>
+      </div>
+
+      <!-- TEXT CONTAINER -->
+      <div class="grid-text-container">
+
+        <!-- TITLE -->
+        <div class="grid-text-title">
+          <%= experience.title %>
+        </div>
+
+        <!-- DATE -->
+        <div class="grid-text-date">
+          <%= experience.humanize_date_shorthand %>
+        </div>
+
+      </div>
+    </a>
+
+  <% end %>
+</div>
+<script>
+  $('.grid').masonry({
+    itemSelector: '.grid-item',
+    columnWidth: 5,
+    fitWidth: true
+  });
+</script>

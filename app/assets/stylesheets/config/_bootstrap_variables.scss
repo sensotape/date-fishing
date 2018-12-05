@@ -51,3 +51,21 @@ $border-radius-small: 2px;
 }
 
 // Override other variables below!
+* {
+  text-decoration: none !important;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  &:hover {
+    text-decoration: none !important;
+  }
+}
+
+a {
+  transition: all 0.3s ease;
+  &:hover {
+    transform: scale(1.03, 1.03);
+  }
+}
+

@@ -1,6 +1,7 @@
 require 'date'
 
 puts 'Dropping database...'
+
 Photo.destroy_all
 Message.destroy_all
 Conversation.destroy_all
@@ -287,6 +288,7 @@ tango_date = bryan.experiences.new(
   date: Date.new(2018, 12, 12)
 )
 tango_date.save!
+
 tango_date.photos.create!(picture: open('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1543318203/come_tango_dancing_at_ballroom_berlin.png'))
 
 salsa_date = bryan.experiences.new(
@@ -306,6 +308,7 @@ dungeons_date = bryan.experiences.new(
   description: "My D&D group needs someone to fill in as a high level NPC elf character. Previous RPG experience would be welcome, but totally not necessary. Who wants in?",
   date: Date.new(2018, 12, 12)
 )
+
 dungeons_date.save!
 dungeons_date.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543934388/Date%20Experiences/half-elf-ranger-moon-elf-aaron_miller1.jpg'))
 
@@ -327,6 +330,7 @@ skating_date = kaylin.experiences.new(
   description: "Can anyone teach me how to ice-skate? It will be clumsy and it will be funny.",
   date: Date.new(2019, 12, 04)
 )
+
 skating_date.save!
 skating_date.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543943506/Date%20Experiences/vasilios-muselimis-495970-unsplash.jpg'))
 
@@ -473,6 +477,7 @@ pubcrawl_date = rich.experiences.new(
   description: "We meet at 18:00 sharp, and we start the crawl at Alexaderplatz!",
   date: Date.new(2019, 02, 04)
 )
+
 pubcrawl_date.save!
 pubcrawl_date.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543935749/Date%20Experiences/12309753_1668352650074901_9185612671942259442_o.jpg'))
 
@@ -493,6 +498,7 @@ mauer_date = rich.experiences.new(
   description: "I've heard they have some great arts and crafts teachers there, as well as amazing food stands.",
   date: Date.new(2018, 12, 26)
 )
+
 mauer_date.save!
 mauer_date.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543936891/Date%20Experiences/mauerpark-berlin-flea-market-VINTAGE-Vinyl-Records.jpg'))
 
