@@ -17,13 +17,11 @@
 
 .navbar-logo img {
   height: 35px;
-  text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
   overflow: hidden;
   &:hover {
     opacity: 0.85;
-    text-decoration: none;
-    transform: scale(1.03, 1.03);
+    transform: scale(1.08, 1.08);
   }
 }
 

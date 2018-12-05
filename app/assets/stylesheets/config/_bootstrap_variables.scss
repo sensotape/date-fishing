@@ -67,9 +67,6 @@ a {
   &:hover {
     transform: scale(1.03, 1.03);
   }
-  .btn {
-    background: $red;
-  }
 }
 
 body {
@@ -90,6 +87,3 @@ h1, h2, h3, p {
   color: $text;
 }
 
-.btn .btn-primary {
-  background: $red;
-}
