@@ -5,7 +5,7 @@
 
     <!-- USER SIGNED IN -->
     <% if user_signed_in? %>
-      <% notif_message = current_user.messages.unread.where(recipient: current_user).length > 0 ? 'notification' : 'notification hidden' %>
+      <% notif_message = current_user.received_messages.unread.length > 0 ? 'notification' : 'notification hidden' %>
 
       <div class="flexbox-horizontal">
 
