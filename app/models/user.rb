@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :nibbles, foreign_key: 'interested_id'
   has_many :blocked_users
   has_many :messages, foreign_key: 'sender_id' # right?
+  has_many :received_messages, class_name: 'Message', foreign_key: 'recipient_id'
   has_many :photos
   has_many :notifications, foreign_key: 'recipient_id' # , dependent: :destroy
 
