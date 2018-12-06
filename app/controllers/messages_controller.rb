@@ -9,7 +9,7 @@ class MessagesController < ApplicationController
       Notification.create(recipient: @message.recipient, user: @message.sender, action: "messaged", notifiable: @message.recipient)
       respond_to do |format|
         format.html { redirect_to conversation_path(@conversation) }
-        format.js
+        format.js # create.js.erb
       end
     else
       respond_to do |format|
