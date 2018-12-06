@@ -4,7 +4,7 @@
       <% who = @conversation.nibble.interested == current_user ? @conversation.nibble.owner : @conversation.nibble.interested %>
       <div class="chat-header"><h4><%= @conversation.nibble.experience.title %> | <%= who.full_name %></h4></div>
       <div class="show-messages">
-        <% @conversation.messages.each do |message| %>
+        <% @conversation.messages.sorted.each do |message| %>
           <%= render "messages/message", message: message, user_is_messages_author: message.sender == current_user %>
         <% end %>
       </div>
