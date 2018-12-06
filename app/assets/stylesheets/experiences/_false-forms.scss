@@ -6,7 +6,7 @@
 }
 
 .formSliderContainer {
-  height: 100vh;
+  height: calc(100vh - 70px);
   width: 400vw;
   display: flex;
   transition: all ease 1s;
@@ -36,10 +36,15 @@
 
 #input-1 {
   border-bottom: solid 3px #4e4579;
-  font-size: 30px;
+  font-size: 1.4vw;
   font-weight: bolder;
   color: black;
   padding: 8px;
+  width: 70%;
+}
+
+#photo-file-name {
+  margin-left: 15px;
 }
 
 #input-1::placeholder {
@@ -62,13 +67,14 @@
 #input-2 {
   border: solid 3px;
   color: lightgrey;
-  font-size: 30px;
+  font-size: 1.3vw;
   border: 0;
   border-color: #664b79;
   padding: 12px 3px;
   background-color: #4e457900;
   font-weight: bolder;
   border-bottom: solid 3px #4e4579;
+  width: 70%;
 
   option {
   font-weight: bolder;
@@ -76,16 +82,39 @@
   }
 }
 
+.right-side-arrow {
+  margin-top: 115px;
+  margin-left: 7vw;
+  font-size: 4vw;
+  opacity: 0.6;
+  transition: ease all 0.3s;
+  &:hover {
+    cursor: pointer;
+    opacity: 1;
+    transform: scale(1.03);
+  }
+}
 
-.form {
-  position: relative;
-  padding: 70px;
+.left-side-arrow {
+  margin-top: 115px;
+  margin-right: 7vw;
+  font-size: 4vw;
+  opacity: 0.6;
+  transition: ease all 0.3s;
+  &:hover {
+    cursor: pointer;
+    opacity: 1;
+    transform: scale(1.03);
+  }
+}
+
+.create-form-flexbox {
   height: 60vh;
   width: 50vw;
   border-radius: 3px;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: top;
   // background-color: rgb(150, 150, 150);
   // box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
 }
@@ -105,7 +134,7 @@
   width: 100%;
   border: solid 3px;
   color: black;
-  font-size: 30px !important;
+  font-size: 1.3vw !important;
   border: 0 !important;
   border-color: #664b79;
   padding: 12px 3px;
@@ -123,15 +152,16 @@
   color: #cacaca;
   border-color: #4e4579;
   box-shadow: 1px 1px 4px 0px #7171715e;
-  font-size: 60px;
+  font-size: 2vw;
   background: white;
+  transition: ease all 0.3s;
 }
 
 #input-3 {
   width: 100%;
   border: solid 3px;
   color: black;
-  font-size: 30px;
+  font-size: 1.3vw;
   border: 0;
   border-color: #664b79;
   padding: 12px 3px;
@@ -144,30 +174,51 @@
 
 #submit-experience-button {
     margin-top: 34px;
-    width: 320px;
-    font-size: 27px;
+    width: 10vw;
+    font-size: 1.5vw;
     font-weight: bold;
     margin-bottom: 17px;
-    padding: 16px;
     background-color: #9b2e2d;
     &:hover {
-    opacity: 0.85;
-    text-decoration: none;
-    transform: scale(1.03, 1.03);
+      opacity: 0.85;
+      transform: scale(1.03, 1.03);
   }
 }
 
 #new-date-3-back {
-  padding: 12px 60px;
-  background-color: #4e4579;
-  height: 50px;
-  margin-top: 75px;
   &:hover {
   opacity: 0.85;
   text-decoration: none;
   transform: scale(1.03, 1.03);
   }
 }
+
+.create-form-image-flexbox {
+  display: flex;
+  align-items: flex-end;
+  justify-content: left;
+}
+
+.upper-form {
+  vertical-align: center;
+}
+
+.flexbox-gofish-button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.arrow-hide {
+  opacity: 0;
+  &:hover {
+    opacity:0;
+    cursor: default;
+  }
+}
+
+
 
 
 
