@@ -1,6 +1,7 @@
 <div class="container">
 
-  <!-- FILTERS AT TOP -->
+ <div class="filters-and-grid">
+   <!-- FILTERS -->
     <div class="filters-container">
       <button class="btn btn-primary filter-item" data-toggle="modal" data-target="#category-filter-modal">Category</button>
       <%= render 'shared/category_filter_modal' %>
@@ -17,24 +18,11 @@
       </div>
     </div>
 
+    <!-- CARDS -->
+    <% flash[:alert] = "Oops! It seems no dates match your criteria 😔" if @experiences == [] %>
+    <%= render 'shared/experiences_masonry', experiences: @experiences %>
+  </div>
 
-  <!-- CARDS BENEATH -->
-  <% flash[:alert] = "Oops! It seems no dates match your criteria 😔" if @experiences == [] %>
-  <%= render 'shared/experiences_masonry', experiences: @experiences %>
+  <div class="div-margin-large"></div>
 
 </div>
-
-<!-- MARGIN BEFORE FOOTER -->
-<div class="div-margin-large"></div>
-
-
-
-
-
-<!-- <div class="row">
-  <%# @experiences.each do |experience| %>
-    <div class="col-md-4" align="center">
-      <%#= render 'shared/card', experience: experience %>
-    </div>
-  <%# end %>
-</div> -->

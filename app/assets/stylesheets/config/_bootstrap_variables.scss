@@ -85,3 +85,25 @@ i {
 h1, h2, h3, p {
   color: $text;
 }
+
+input.form-control {
+  &:focus {
+    outline: none;
+    border: 1px solid $red !important;
+    box-shadow: none;
+    color: $text;
+  }
+}
+
+.simple-form {
+  color: $text;
+}
+
+.btn {
+  transition: all 0.3s ease;
+  &:hover {
+    transform: scale(1.03, 1.03);
+  }
+}
+
+

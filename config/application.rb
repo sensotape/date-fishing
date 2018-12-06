@@ -9,6 +9,8 @@ Bundler.require(*Rails.groups)
 
 module DateFishing
   class Application < Rails::Application
+    config.autoload_paths << Rails.root.join('lib')
+
     config.generators do |generate|
           generate.assets false
           generate.helper false

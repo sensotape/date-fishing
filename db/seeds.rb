@@ -18,11 +18,11 @@ andrew = User.create!(
   last_name: 'Erlanger',
   password: '123456',
   password_confirmation: '123456',
-  bio: "Super seriously totally straight guy from Down Under looking for new experiences.
-  I'll try anything once.",
+  bio: "All around cool guy from the land down under. Looking for fun, energetic people to go out on adventerous dates with.",
   gender: 'Male',
   seeking: 'Female',
-  birthday: Date.new(1988, 2, 26)
+  birthday: Date.new(1988, 2, 26),
+  admin: true
 )
 
 marcel = User.create!(
@@ -32,10 +32,11 @@ marcel = User.create!(
   password: '123456',
   password_confirmation: '123456',
   bio: "Hi there, I'm new to Berlin from Brazil and looking to meet new people. I'm super chill, love going
-  to the movies and spending time with friends.",
+  to the movies and spending time going to fancy places..",
   gender: 'Male',
   seeking: 'Female',
-  birthday: Date.new(1987, 10, 30)
+  birthday: Date.new(1987, 10, 30),
+  admin: true
 )
 
 maylee = User.create!(
@@ -47,7 +48,8 @@ maylee = User.create!(
   bio: "Old enough to know better, young enough not to care :)",
   gender: 'Female',
   seeking: 'Male',
-  birthday: Date.new(1978, 5, 18)
+  birthday: Date.new(1978, 5, 18),
+  admin: true
 )
 
 aigerim = User.create!(
@@ -59,7 +61,8 @@ aigerim = User.create!(
   bio: "New to Berlin, hoping to find cool people to explore this amazing city with. Will be here until the end of January.",
   gender: 'Female',
   seeking: 'Male',
-  birthday: Date.new(1993, 3, 4)
+  birthday: Date.new(1993, 3, 4),
+  admin: true
 )
 
 boris = User.create!(
@@ -80,7 +83,7 @@ rich = User.create!(
   last_name: 'O`Grady',
   password: '123456',
   password_confirmation: '123456',
-  bio: "Driver of Le Wagon Berlin. I came to Berlin because it rains so much, just like back home.",
+  bio: "Driver of Le Wagon Berlin. I came to Berlin because it rains so much, just like back home. And I love the city.",
   gender: 'Male',
   seeking: 'Female',
   birthday: Date.new(1995, 6, 4)
@@ -92,7 +95,7 @@ bryan = User.create!(
   last_name: 'Leighton',
   password: '123456',
   password_confirmation: '123456',
-  bio: "Straight out of the good old US of A. Trying my luck in Europe after traveling around the world. Looking for a cool morning person to share coffee with and maybe go ice skating with :)!",
+  bio: "Straight out of the good old US of A. Trying my luck in Europe after traveling around the world. Looking for a cool morning person to share coffee and maybe go ice skating with :)!",
   gender: 'Male',
   seeking: 'Female',
   birthday: Date.new(1990, 6, 4)
@@ -104,7 +107,7 @@ kaylin = User.create!(
   last_name: 'Bittner',
   password: '123456',
   password_confirmation: '123456',
-  bio: "Sexy and you know it. Quite picky with dates I create and the ones I'm interested in. Get creative, people!",
+  bio: "Sexy and you know it. Quite picky with the dates I create and the ones I'm interested in. Get creative, people!",
   gender: 'Female',
   seeking: 'Male',
   birthday: Date.new(1990, 6, 4)
@@ -128,7 +131,7 @@ katharine = User.create!(
   last_name: 'Doyle',
   password: '123456',
   password_confirmation: '123456',
-  bio: "Young DJ out of London, trying to break into the Berlin techno scene.",
+  bio: "Young DJ out of London, trying to break into the Berlin techno scene. I really don't care who you are as long as you are interesting and fun-loving.",
   gender: 'Female',
   seeking: 'Male',
   birthday: Date.new(1991, 6, 4)
@@ -140,7 +143,7 @@ clara = User.create!(
   last_name: 'Morgen',
   password: '123456',
   password_confirmation: '123456',
-  bio: "Bright as the dawn, I'm always in a good mood early in the morning.",
+  bio: "Bright as the dawn, I'm always in a good mood early in the morning. Looking for someone to dance my nights away with.",
   gender: 'Female',
   seeking: 'Male',
   birthday: Date.new(1992, 6, 4)
@@ -162,11 +165,11 @@ nimkit = User.create!(
 puts 'Uploading photos...'
 boris.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543860812/big_detected_cover_59662824a9b4977b7400007b.jpg'))
 andrew.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1542906721/user.jpg'))
-marcel.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1542906721/2018-11-22_18.10.49.jpg'))
+marcel.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1544040404/berlinm.jpg'))
 maylee.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1544008614/maylee.jpg'))
 aigerim.photos.create!(picture: open('https://avatars0.githubusercontent.com/u/41161878?s=460&v=4.jpg'))
-rich.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543915962/22228568_10215461503709866_914630491015053537_n.jpg'))
-bryan.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543915962/19029529_10209573268588468_1207346413178763227_n.jpg'))
+rich.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1544040229/22228568_10215461503709866_914630491015053537_n.jpg'))
+bryan.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1544039026/19029529_10209573268588468_1207346413178763227_n.jpg'))
 kaylin.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543917552/983731_10152860580735246_1214873563_n.jpg'))
 alice.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543915990/highres_273114615.jpg'))
 katharine.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543915962/36379031_1809863849096011_3049154311729709056_o.jpg'))
@@ -180,11 +183,11 @@ panic_date = aigerim.experiences.new(
   title: 'Panic at the Disco Concert',
   category: 'Music',
   location: 'Astra Kulturhaus',
-  description: "I have two tickets for my favorite band and would really like some company. Takers?.",
+  description: "I have two tickets for my favorite band and would really like some company. Any takers? It's the perfect opportunity to just ",
   date: Date.new(2018, 12, 20)
 )
 panic_date.save!
-panic_date.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543922405/Panic-At-The-Disco-2018-03-22-Rock.jpg'))
+panic_date.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1544024733/Date%20Experiences/unnamed.jpg'))
 
 machupichu_date = aigerim.experiences.new(
   title: 'Trip to Machu Pichu',
@@ -204,14 +207,14 @@ hpcastle_date = aigerim.experiences.new(
   date: Date.new(2018, 12, 30)
 )
 hpcastle_date.save!
-hpcastle_date.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543922354/lego-harry-potter-71043-hogwarts-castle-2.jpg'))
+hpcastle_date.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1544024481/lego_hp_castle0072_rt.jpg'))
 
 #Alice
 feuerle_date = alice.experiences.new(
   title: 'The Feuerle Incense Ceremony',
   category: 'Bucketlist',
   location: 'Hallesches Ufer 70, Berlin',
-  description: "Looking for someone sophisticated enough to fully absorb and comprehend the Chinese Incense Ceremony offered by the Feuerle Collection. I will be very demanding in the chat.",
+  description: "Looking for someone sophisticated enough to fully absorb and comprehend the Chinese Incense Ceremony offered by the Feuerle Collection. I will be very demanding in the chat, but only because it is super expensive.",
   date: Date.new(2019, 07, 02)
 )
 feuerle_date.save!
@@ -221,7 +224,7 @@ christmas_date = alice.experiences.new(
   title: 'Christmas Market night',
   category: 'Food & Drink',
   location: 'Kulturbrauerei',
-  description: "It's cuffing season! What better way to start it than with a nice night at the local Scandinavian Christmas Market? Gluhwein is on me if you are interesting enough :)",
+  description: "It's cuffing season! What better way to start it than with a nice night at the local Scandinavian Christmas Market? Gluhwein is on me :)",
   date: Date.new(2019, 06, 27)
 )
 christmas_date.save!
@@ -231,18 +234,18 @@ kadeve_date = alice.experiences.new(
   title: 'Getting Lost in KaDeWe',
   category: 'Food & Drink',
   location: 'Tauentzienstraße 21-24, 10789 Berlin',
-  description: "The premise is simple: explore the imense KaDeWe. We each have to find a small, 10 euro treat to gift the other person. Let's be creative!",
+  description: "The premise is simple: explore the imense KaDeWe. We each have to find a small, 30 euro treat to gift the other person. Let's be try to find something interesting in there!",
   date: Date.new(2018, 12, 12)
 )
 kadeve_date.save!
-kadeve_date.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543940019/christmas-market-berlin-IMG_2216.jpg'))
+kadeve_date.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1544024595/kadewe-berlin-bei-nacht-1.1454516022.jpg'))
 
 #Andrew
 desert_date = andrew.experiences.new(
   title: 'Desert Racing in the Australian Outback',
   category: 'Bucketlist',
   location: 'The Great Sandy Desert, Australia',
-  description: "Hello, everyone! I've always wanted to ride towards the sunset in the Sandy Desert, but I think it would be much more interesting if I had good company. Who else is interested?",
+  description: "Hello, everyone! I've always wanted to ride towards the sunset in the Sandy Desert, but I think it would be much more interesting if I had good company in the car. Who else is interested?",
   date: Date.new(2019, 06, 15)
 )
 desert_date.save!
@@ -252,7 +255,7 @@ bikeride_date = andrew.experiences.new(
   title: 'Bike ride to Poland',
   category: 'Nature',
   location: 'Poland',
-  description: "This is one ride I've been wanting to take since I moved to Berlin a couple of years ago. Anyone want to join me? Bring your own bike!",
+  description: "This is one ride I've been wanting to take since I moved to Berlin a couple of years ago. Just us, our bikes and the cool wind. Bring your own bike!",
   date: Date.new(2019, 06, 27)
 )
 bikeride_date.save!
@@ -277,7 +280,7 @@ lewagon_date = boris.experiences.new(
   date: Date.new(2018, 12, 07)
 )
 lewagon_date.save!
-lewagon_date.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543859185/46994073_768409646831386_3904800939139137536_o.jpg'))
+lewagon_date.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1544025605/797136-bab3b602e5a085872a99161c7fba53d2167d731b.jpg'))
 
 #Bryan
 tango_date = bryan.experiences.new(
@@ -335,6 +338,16 @@ skating_date.save!
 skating_date.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543943506/Date%20Experiences/vasilios-muselimis-495970-unsplash.jpg'))
 
 #Katharine
+airshow_date = katharine.experiences.new(
+  title: 'Berlin Air Show',
+  category: 'Community',
+  location: 'Messestraße 1, 12529 Schönefeld',
+  description: "I love airshows, and I heard that the one in Berlin is amazing. Especially since the RAF Red Arrows will be there! Any aviation buffs want to tag along? No mansplaining, please.",
+  date: Date.new(2019, 05, 04)
+)
+airshow_date.save!
+airshow_date.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1544027125/richard-r-schunemann-795320-unsplash.jpg'))
+
 berghain_date = katharine.experiences.new(
   title: 'DJing at Berghain',
   category: 'Music',
@@ -415,7 +428,7 @@ lotr_date = marcel.experiences.new(
   date: Date.new(2019, 12, 31)
 )
 lotr_date.save!
-lotr_date.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543929435/lotr.jpg'))
+lotr_date.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1544025521/conner-bowe-800487-unsplash.jpg'))
 
 #May-Lee
 copenhagen_date = maylee.experiences.new(
@@ -439,35 +452,35 @@ liquid_date.save!
 liquid_date.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543933275/Date%20Experiences/8fb7ddc0644f02ca565105160a7621d2.jpg'))
 
 planetarium_date = maylee.experiences.new(
-  title: 'Explore the Abandoned Brewery',
-  category: 'Adventure',
+  title: 'Planetarium visit',
+  category: 'Art & Culture',
   location: 'Berlin, Germany',
-  description: "We meet two hours before dusk. Bring your own gear. Experience required!",
+  description: "I love both astronomy and astrology, celestial objects are really a thing of mine. Could be a very cool and we could learn a lot!",
   date: Date.new(2018, 12, 26)
 )
 planetarium_date.save!
 planetarium_date.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543933559/Date%20Experiences/14922e0064cb492a.jpg'))
 
 #Nim
-# _date = kaylin.experiences.new(
-#   title: '',
-#   category: '',
-#   location: '',
-#   description: "M",
-#   date: Date.new(2019, 05, 04)
-# )
-# _date.save!
-# _date.photos.create!(picture: open(''))
+riotrip_date = nimkit.experiences.new(
+  title: 'Carnival in Rio',
+  category: 'Tourism',
+  location: 'Rio de Janeiro, Brazil',
+  description: "I want to experience Carnival in Rio! This has always been on my bucketlist. It would be nice to have some company, but bring your A-game and party vibe because it will be a nonstop ride! ",
+  date: Date.new(2019, 02, 04)
+)
+riotrip_date.save!
+riotrip_date.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1544027944/agustin-diaz-185846-unsplash.jpg'))
 
-# _date = kaylin.experiences.new(
-#   title: '',
-#   category: '',
-#   location: '',
-#   description: "M",
-#   date: Date.new(2019, 05, 04)
-# )
-# _date.save!
-# _date.photos.create!(picture: open(''))
+got_date = nimkit.experiences.new(
+  title: 'Game of Thrones Board Game',
+  category: 'Geek & Nerd',
+  location: 'Berlin',
+  description: "My friends and I are looking for a sixth player to play an epic campaign of Game of Thrones. We even bought the new expasion. You HAVE to be a fan of the series (book or show).",
+  date: Date.new(2019, 05, 04)
+)
+got_date.save!
+got_date.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1544028250/mauricio-santos-503880-unsplash.jpg'))
 
 #Rich
 pubcrawl_date = rich.experiences.new(
