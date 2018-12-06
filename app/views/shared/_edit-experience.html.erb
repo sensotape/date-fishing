@@ -1,20 +1,22 @@
 <div class='modal fade' id="edit-experience-modal-<%= experience.id %>" role=dialog">
   <div class="modal-dialog">
     <div class="modal-content modal-padding modal-background">
+      <div class="edit-content">
+        <h2 class="edit-header">Edit your Date</h2>
+      <%= simple_form_for experience do |f| -%>
+        <%= f.input :title %>
+        <%= f.input :category %>
+        <%= f.input :description %>
+        <%= f.input :location %>
+        <%= f.input :date, as: :string, input_html: {class: "datepickr-birthday"}%>
+      <button>
+        <%= link_to "Cancel Date", experience, method: :delete, data: { confirm: "Are you sure about this?" }, class: "btn btn-primary" %>
+      </button>
+        <%= f.submit class:"btn btn-primary" %>
 
-    <%= simple_form_for experience do |f| -%>
-      <%= f.input :title %>
-      <%= f.input :category %>
-      <%= f.input :description %>
-      <%= f.input :location %>
-      <%= f.input :date %>
-      <%= f.submit class:"btn btn-primary" %>
+      <% end -%>
 
-    <% end -%>
-
-    <button class="btn btn-primary">
-      <%= link_to "Cancel Date", experience, method: :delete, data: { confirm: "Are you sure about this?" } %>
-    </button>
+    </div>
     </div>
   </div>
 </div>
