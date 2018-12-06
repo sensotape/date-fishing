@@ -1,7 +1,13 @@
+<div class="all-message-content">
+
 <div class="container">
-  <div class="row">
-    <div class="col-sm-8 col-sm-offset-2">
+  <div class="row flexbox-horizontal">
+    <div class="col-sm-8">
+
       <% who = @conversation.nibble.interested == current_user ? @conversation.nibble.owner : @conversation.nibble.interested %>
+
+      <div class="flexbox-vertical" style="margin:20px;">
+      <!-- FROM HERE -->
       <div class="chat-header"><h4><%= @conversation.nibble.experience.title %> | <%= who.full_name %></h4></div>
       <div class="show-messages">
         <% @conversation.messages.each do |message| %>
@@ -15,6 +21,9 @@
           <%= f.submit "Send", class: 'btn btn-primary' %>
         <% end %>
       </div>
+      <!-- TO HERE -->
+      </div>
+
     </div>
   </div>
 </div>
@@ -32,5 +41,8 @@
         }
       }
     )
+    document.querySelector('html').scrollTop = 0;
   </script>
 <% end %>
+
+</div>
