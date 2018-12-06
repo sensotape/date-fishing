@@ -1,12 +1,31 @@
 <div class="footer">
-  <div class="footer-links">
-    <a href="#"><i class="fab fa-github"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-facebook"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>
-  </div>
-  <div class="footer-copyright">
-    This footer was made underwater
-  </div>
+  <% if user_signed_in? %>
+    <% notif_message = current_user.received_messages.unread.length > 0 ? 'notification' : 'notification hidden' %>
+
+    <!-- EXPLORE -->
+    <%= link_to "EXPLORE", experiences_path, class: "item-padding item-margin link-item", style: "margin-right: 20px; color: white" %>
+
+    <!-- LOGO -->
+    <a href="/" class="navbar-logo center-text">
+      <%= image_tag "datefishing-white.png", alt: "Date Fishing" %>
+    </a>
+
+    <!-- LOG OUT -->
+    <%= link_to "LOG OUT", destroy_user_session_path, class: "item-padding item-margin link-item", style: "margin-left: 20px; color: white", method: :delete %>
+  <% else %>
+
+    <!-- SIGN UP -->
+    <span class="item-padding item-margin link-item" data-toggle="modal" data-target="#sign-up">SIGN UP</span>
+    <%= render 'shared/sign-up-modal' %>
+
+    <!-- LOGO -->
+    <a href="/" class="navbar-logo center-text">
+      <%= image_tag "datefishing-white.png", alt: "Date Fishing" %>
+    </a>
+
+    <!-- LOG IN -->
+    <span class="item-padding item-margin link-item" data-toggle="modal" data-target="#log-in">LOG IN</span>
+    <%= render 'shared/log-in-modal' %>
+
+    <% end %>
 </div>
