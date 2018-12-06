@@ -1,5 +1,5 @@
 <div class="message <%= user_is_messages_author ? "right" : "" %>">
-  <%= cl_image_tag message.sender.photos.first.picture, class: "avatar" %>
+  <%= cl_image_tag message.sender.photos.first.picture, class: "avatar", style: "object-fit:cover" %>
   <div class="message-content">
     <%= message.body %>
     <span class="message-time">
