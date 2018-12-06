@@ -22,8 +22,6 @@
 
 .button-container-form {
     width: 96%;
-    position: absolute;
-    bottom: 42px;
     display: flex;
     justify-content: space-between;
     .btn {
@@ -41,7 +39,7 @@
   font-size: 30px;
   font-weight: bolder;
   color: black;
-      padding: 8px;
+  padding: 8px;
 }
 
 #input-1::placeholder {
@@ -62,30 +60,32 @@
 
 
 #input-2 {
-    border: solid 3px;
-    color: lightgrey;
-    font-size: 30px;
-    border: 0;
-    border-color: #664b79;
-    padding: 12px 3px;
-    background-color: #4e457900;
-    font-weight: bolder;
-    /* text-transform: uppercase; */
-    /* letter-spacing: 2px; */
-    border-bottom: solid 3px #4e4579;
-option {
+  border: solid 3px;
+  color: lightgrey;
+  font-size: 30px;
+  border: 0;
+  border-color: #664b79;
+  padding: 12px 3px;
+  background-color: #4e457900;
+  font-weight: bolder;
+  border-bottom: solid 3px #4e4579;
+
+  option {
   font-weight: bolder;
   color: grey;
-}
+  }
 }
 
 
 .form {
   position: relative;
   padding: 70px;
-  height: 650px;
-  width: 850px;
+  height: 60vh;
+  width: 50vw;
   border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   // background-color: rgb(150, 150, 150);
   // box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
 }
@@ -95,41 +95,38 @@ option {
 }
 
 .final-cta-container {
-  a{
-        color: #939393;
+  a {
+   color: #939393;
   }
   text-align: center;
-
 }
 
 #input-4, .flatpickr-input  {
-    width: 100%;
-    border: solid 3px;
-    color: black;
-    font-size: 30px !important;
-    border: 0 !important;
-    border-color: #664b79;
-    padding: 12px 3px;
-    padding: 28px 8px;
-        border-radius: 0;
-    background-color: #4e457900;
-    font-weight: bolder;
-    /* text-transform: uppercase; */
-    /* letter-spacing: 2px; */
-    border-bottom: solid 3px #4e4579 !important;
+  width: 100%;
+  border: solid 3px;
+  color: black;
+  font-size: 30px !important;
+  border: 0 !important;
+  border-color: #664b79;
+  padding: 12px 3px;
+  padding: 28px 8px;
+  border-radius: 0;
+  background-color: #4e457900;
+  font-weight: bolder;
+  border-bottom: solid 3px #4e4579 !important;
 }
 
 .btn-special-photo {
-    padding: 1px 28px;
-    margin-top: 13px;
-    border: solid 3px;
-    color: #cacaca;
-    border-color: #4e4579;
-    box-shadow: 1px 1px 4px 0px #7171715e;
-    font-size: 60px;
-    background: white;
-
+  padding: 1px 28px;
+  margin-top: 13px;
+  border: solid 3px;
+  color: #cacaca;
+  border-color: #4e4579;
+  box-shadow: 1px 1px 4px 0px #7171715e;
+  font-size: 60px;
+  background: white;
 }
+
 #input-3 {
   width: 100%;
   border: solid 3px;
@@ -158,19 +155,19 @@ option {
     text-decoration: none;
     transform: scale(1.03, 1.03);
   }
-  }
+}
 
 #new-date-3-back {
-    padding: 12px 60px;
-    background-color: #4e4579;
-    height: 50px;
-    margin-top: 75px;
-    &:hover {
-    opacity: 0.85;
-    text-decoration: none;
-    transform: scale(1.03, 1.03);
+  padding: 12px 60px;
+  background-color: #4e4579;
+  height: 50px;
+  margin-top: 75px;
+  &:hover {
+  opacity: 0.85;
+  text-decoration: none;
+  transform: scale(1.03, 1.03);
   }
-    }
+}
 
 
 

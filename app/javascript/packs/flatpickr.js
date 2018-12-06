@@ -13,3 +13,8 @@ flatpickr(".datepickr-range", {
   minDate: "today",
   maxDate: new Date().getDate() + "/" + (new Date().getMonth() + 1) + "/" + (new Date().getFullYear() + 1)
 });
+
+flatpickr(".datepickr-birthday", {
+  altInput: true,
+  maxDate: "today"
+});

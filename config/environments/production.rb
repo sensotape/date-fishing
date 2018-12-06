@@ -48,8 +48,8 @@ Rails.application.configure do
   config.action_cable.url = "wss://www.datefishing.herokuapp.com/cable"
   config.action_cable.allowed_request_origins = [ "http://www.datefishing.herokuapp.com", "https://www.datefishing.herokuapp.com" ]
   # config.action_cable.mount_path = nil
-  config.action_cable.url = "wss://datefishing.herokuapp.com/cable"
-  config.action_cable.allowed_request_origins = [ "http://datefishing.herokuapp.com", "https://datefishing.herokuapp.com" ]
+  config.action_cable.url = "wss://datefishing.co/cable"
+  config.action_cable.allowed_request_origins = [ "http://www.datefishing.co", "https://www.datefishing.co" ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
