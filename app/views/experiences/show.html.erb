@@ -19,7 +19,8 @@
             <h2><%= @experience.title %></h2>
           </div>
           <div class="details-right">
-            <%= cl_image_tag @experience.user.photos.first.picture, class: 'avatar-show-page' %>
+            <%= cl_image_tag @experience.user.photos.first.picture, class: 'avatar-show-page', style: 'margin-top: 3px;' %>
+            <p style="letter-spacing: 1.1px; font-size: 14px; margin-top: 2.5px;"><%= @experience.user.first_name %></p>
           </div>
         </div>
 
@@ -29,11 +30,7 @@
             <p><%= @experience.location %></p>
             <strong><p><%= "#{@experience.day_of_week}, #{@experience.humanize_date}" %></p></strong>
           </div>
-          <div class="details-right">
-            <p><%= @experience.user.first_name %></p>
-            <strong><p><%= @experience.user.last_name %></p></strong>
-            <!-- <div class="view-profile-modal" data-toggle="modal" data-target="#user-modal">(View Profile)</div> -->
-          </div>
+
         </div>
       </div>
 
@@ -41,7 +38,7 @@
       <div class="details-side-bottom">
 
         <!-- TABS -->
-        <div class="details-side-bottom-head" style="margin-bottom: 20px;">
+        <div class="details-side-bottom-head" style="margin-bottom: 30px;">
           <%= button_tag "CREATOR PROFILE", class: 'show-page-tab', 'data-toggle'=>"modal", 'data-target'=>"#user-modal" %>
           <%= render 'shared/user-profile-modal' %>
 
@@ -52,7 +49,7 @@
         <!-- DESCRIPTION -->
         <div class="details-and-nibble">
           <div class="details-left">
-            <p style="font-size: 16px"><%= @experience.description %></p>
+            <p style="font-size: 16px"><%= @experience.shorten_description %></p>
           </div>
 
           <!-- NIBBLE/EDIT BUTTON -->
