@@ -69,4 +69,13 @@ class Experience < ApplicationRecord
       "More than a year off"
     end
   end
+
+  def shorten_description
+    description_array = description.split(//)
+    if description_array.count > 144
+      "#{description_array.first(144).join} ..."
+    else
+      description
+    end
+  end
 end

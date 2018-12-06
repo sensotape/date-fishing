@@ -97,6 +97,7 @@
   align-items: space-between;
   margin-bottom: 10px;
   h2 {
+    margin-top: 0;
     color: $text;
   }
 }
@@ -107,6 +108,7 @@
   align-items: center;
   margin: 10px 0;
   h2 {
+    margin-top: 0;
     color: $text;
   }
 }
@@ -124,6 +126,7 @@
 // }
 
 .details-left {
+  margin-top: 0;
   width: 60%;
   text-align: left;
   p {
@@ -132,7 +135,7 @@
 }
 
 .details-right {
-  width: 125px;
+  width: 165px;
   text-align: center;
   p {
     margin: 0;
@@ -203,4 +206,5 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  min-height: calc(100vh - 120px);
 }
