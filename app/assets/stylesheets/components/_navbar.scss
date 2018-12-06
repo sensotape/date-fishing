@@ -15,6 +15,12 @@
   border-color: #E6E6E6;
 }
 
+.navbar-logo {
+  display: inline-flex;
+  justify-content: center;
+  align-content: center;
+}
+
 .navbar-logo img {
   height: 35px;
   transition: all 0.5s ease;
