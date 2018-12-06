@@ -71,7 +71,7 @@
   padding: 10px 5px;
   display: flex;
   justify-content: space-around;
-  align-content: bottom;
+  align-items: flex-end;
 }
 .grid-text-title {
   width: 190px;
@@ -80,10 +80,7 @@
 .grid-text-date {
   width: 60px;
   color: $red;
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: right;
-  align-content: center;
+  text-align: right;
 }
 .grid-image-background {
   z-index: 1;

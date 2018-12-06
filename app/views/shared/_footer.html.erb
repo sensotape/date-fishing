@@ -2,25 +2,38 @@
   <% if user_signed_in? %>
     <% notif_message = current_user.received_messages.unread.length > 0 ? 'notification' : 'notification hidden' %>
 
+    <!-- RANDOM -->
+    <%= link_to "RANDOM", experience_path(Experience.all.sample), class: "item-padding item-margin link-item", style: "margin-right: 20px; color: white" %>
+
     <!-- EXPLORE -->
     <%= link_to "EXPLORE", experiences_path, class: "item-padding item-margin link-item", style: "margin-right: 20px; color: white" %>
 
+    <!-- CREATE -->
+    <%= link_to "CREATE", new_experience_path, class: "item-padding item-margin link-item", style: "margin-right: 20px; color: white" %>
+
     <!-- LOGO -->
-    <a href="/" class="navbar-logo center-text">
-      <%= image_tag "datefishing-white.png", alt: "Date Fishing" %>
+    <a href="/" class="center-text">
+      <%= image_tag "datefishing-white.png", alt: "Date Fishing", id: "footer-logo"  %>
     </a>
+
+    <!-- MESSAGES -->
+    <%= link_to "MESSAGES", inbox_path, class: "item-padding item-margin link-item", style: "margin-left: 20px; color: white", method: :delete %>
+
+    <!-- PROFILE -->
+    <%= link_to "PROFILE", user_path(current_user), class: "item-padding item-margin link-item", style: "margin-left: 20px; color: white", method: :delete %>
 
     <!-- LOG OUT -->
     <%= link_to "LOG OUT", destroy_user_session_path, class: "item-padding item-margin link-item", style: "margin-left: 20px; color: white", method: :delete %>
-  <% else %>
+
+    <% else %>
 
     <!-- SIGN UP -->
     <span class="item-padding item-margin link-item" data-toggle="modal" data-target="#sign-up">SIGN UP</span>
     <%= render 'shared/sign-up-modal' %>
 
     <!-- LOGO -->
-    <a href="/" class="navbar-logo center-text">
-      <%= image_tag "datefishing-white.png", alt: "Date Fishing" %>
+    <a href="/" class="center-text">
+      <%= image_tag "datefishing-white.png", alt: "Date Fishing", id: "footer-logo"  %>
     </a>
 
     <!-- LOG IN -->
