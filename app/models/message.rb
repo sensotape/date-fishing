@@ -11,7 +11,7 @@ class Message < ApplicationRecord
   scope :unread, -> { where(read: false) }
 
   def broadcast_message
-    ActionCable.server.broadcast("conversation_#{self.conversation.id.to_s}", {
+    ActionCable.server.broadcast("conversation_#{self.conversation.id}", {
       message_partial: ApplicationController.renderer.render(
         partial: "messages/message",
         locals: { message: self, user_is_messages_author: false }

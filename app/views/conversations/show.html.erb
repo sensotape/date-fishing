@@ -9,9 +9,10 @@
         <% end %>
       </div>
       <div id="create-message">
-        <%= simple_form_for [@conversation, Message.new], url: new_message_path(@conversation), html: {autocomplete: "off" } do |f| %>
+        <%= simple_form_for [@conversation, Message.new], url: new_message_path(@conversation), remote: true, html: {autocomplete: "off" } do |f| %>
           <%= f.input :sender_id, input_html: { value: current_user.id }, as: :hidden %>
           <%= f.input :body, label: false %>
+          <%= f.submit "Send", class: 'btn btn-primary' %>
         <% end %>
       </div>
     </div>

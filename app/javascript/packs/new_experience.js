@@ -120,7 +120,12 @@ function step3() {
 }
 
 photoFileTitle.addEventListener('change', function() {
-  addedFileTitle.insertAdjacentHTML('beforeend', photoFileTitle.value+'<br>');
+  x = photoFileTitle.value.replace('fakepath\\','')
+  addedFileTitle.insertAdjacentHTML('beforeend', x + '<br>');
+  photosButton.style.backgroundColor = '#9B2E2E'
+  photosButton.style.borderColor ='#9B2E2E'
+  photosButton.innerHTML = '<span style="color: white">✓</span>'
+
 });
 
 function stepback1() {

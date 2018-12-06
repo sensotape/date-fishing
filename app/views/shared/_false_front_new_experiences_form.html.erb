@@ -1,13 +1,15 @@
 <div class="experiencesContainer" data-step="1" id="mainContainerForm">
   <div class="formSliderContainer" id="slider-new-experience">
+
     <div class="formContainer">
-      <div class="form">
-        <div>
+      <div class="create-form-flexbox">
+        <i class="fas fa-angle-left left-side-arrow arrow-hide"></i>
+        <div class="upper-form">
           <div class="form-group">
             <i class='fas fa-heart'></i>
             <i class="far fa-heart"></i>
            <i class="far fa-heart"></i>
-            <h3>What's your date?</h3>
+            <h3>What's the name of your date?</h3>
             <input type="text" placeholder="Tell us your perfect date!" id="input-1">
           </div>
           <div class="form-group">
@@ -20,41 +22,42 @@
             </select>
           </div>
         </div>
-        <div class="button-container-form">
-          <div class="btn btn-primary muted">Back</div>
-          <div class="btn btn-primary" id="new-date-1">Next</div>
-        </div>
+        <!-- div class="button-container-form"> -->
+          <!-- <div class="btn btn-primary muted"><</div> -->
+          <i class="fas fa-angle-right right-side-arrow" id="new-date-1"></i>
+        <!-- </div> -->
       </div>
     </div>
-
     <div class="formContainer">
-      <div class="form">
-        <div>
+      <div class="create-form-flexbox">
+          <i class="fas fa-angle-left left-side-arrow" id="new-date-2-back"></i>
+        <div class="upper-form">
           <div class="form-group">
             <i class='fas fa-heart'></i>
             <i class='fas fa-heart'></i>
            <i class="far fa-heart"></i>
             <h3>Add some photos!</h3>
-            <div class="btn btn-primary btn-special-photo" id="photos-button">+</div>
-            <div id="photo-file-name"></div>
+            <div class="create-form-image-flexbox">
+              <div class="btn btn-primary btn-special-photo" id="photos-button">+</div>
+              <div id="photo-file-name"></div>
+            </div>
           </div>
           <div class="form-group">
             <h3>And describe your date 😍</h3>
-          <input type="text" placeholder="Whats the plan, Stan?" id="input-3">
+          <input type="text" placeholder="What's the plan, Stan?" id="input-3">
           </div>
         </div>
-         <div class="button-container-form">
-          <div class="btn btn-primary" id="new-date-2-back">Back</div>
-          <div class="btn btn-primary" id="new-date-2">Next</div>
-        </div>
+
+          <i class="fas fa-angle-right right-side-arrow" id="new-date-2"></i>
       </div>
     </div>
 
     <div class="formContainer">
-      <div class="form">
-        <div>
+      <div class="create-form-flexbox">
+            <i class="fas fa-angle-left left-side-arrow" id="new-date-3-back"></i>
+        <div class="upper-form">
           <div class="form-group">
-             <i class='fas fa-heart'></i>
+            <i class='fas fa-heart'></i>
             <i class='fas fa-heart'></i>
             <i class='fas fa-heart'></i>
             <h3>When would you like to meet?</h3>
@@ -63,14 +66,15 @@
           <div class="form-group">
             <h3>And of course, where?</h3>
             <input placeholder="Let's meet 😃" class="form-control string optional ap-input" type="text" name="experience[location]" id="input-4" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="both" aria-expanded="false" aria-owns="algolia-places-listbox-0" dir="auto" style="position: relative; vertical-align:top;">
+            <div class="flexbox-gofish-button">
+              <div class="btn btn-primary" id="submit-experience-button">Go Fish!</div>
+            </div>
           </div>
         </div>
-         <div class="button-container-form">
-            <div class="btn btn-primary" id="new-date-3-back">Back</div>
-            <div id="new-date-3"></div>
-            <div class="btn btn-primary" id="submit-experience-button">Go Fishing!</div>
+        <i class="fas fa-angle-right right-side-arrow arrow-hide"></i>
 
-          </div>
+            <div id="new-date-3"></div>
+
         </div>
       </div>
     </div>
