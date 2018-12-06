@@ -1,10 +1,38 @@
+<style>
+  .mapboxgl-canvas{
+    height:55vh !important;
+    width:40vw !important;
+  }
+  .mapboxgl-canvas-container.mapboxgl-interactive.mapboxgl-touch-drag-pan.mapboxgl-touch-zoom-rotate{
+    height: 55vh !important;
+    width:40vw !important;
+  }
+  .modal-dialog.location-modal-dialog{
+    height: 100vh !important;
+    width: 40vw !important;
+    background-color: transparent;
+  }
+  .modal-content{
+    background-color: transparent;
+    display: flex;justify-content: center; flex-direction: column; align-items: center;
+  }
+  .newdata{
+    height: 100px;
+    width: 40vw;
+    background: white;
+  }
+</style>
+
 <div class="modal fade" id="map-modal" role="dialog">
-  <div class="modal-dialog user-modal-dialog">
+  <div class="modal-dialog location-modal-dialog">
     <div class="modal-content modal-padding modal-background">
-      <div id="map" style="width: 400px; height: 300px;"
+      <div id="map" style="width: 40vw; height: 55vh;"
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+
       </div>
+      <div class="newdata"></div>
     </div>
+
   </div>
 </div>
