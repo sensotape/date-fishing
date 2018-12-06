@@ -5,8 +5,14 @@
     <!-- GRID ITEM -->
     <a href='/experiences/<%= experience.id %>' class="grid-item" data-effect="zoom">
       <!-- PHOTO -->
-      <div class="grid-image">
-        <%= cl_image_tag experience.photos.first.picture, alt: experience.title %>
+      <div class="grid-image-background">
+        <div class="grid-image">
+          <%= cl_image_tag experience.photos.first.picture, alt: experience.title %>
+        </div>
+        <div class="grid-avatar">
+          <%= cl_image_tag experience.user.photos.first.picture %>
+          <p><%= experience.user.first_name %></p>
+        </div>
       </div>
 
       <!-- TEXT CONTAINER -->

@@ -4,7 +4,18 @@ $carousel = $('#js-ferris-wheel')
 //   $carousel.toggleClass('is-open');
 // });
 
+// $( document ).ready(function() {
+//     $carousel.toggleClass('is-open');
+// });
 
-$( document ).ready(function() {
+document.addEventListener('keyup', function(e) {
+  if (e.key === " ")
+  {
     $carousel.toggleClass('is-open');
+  }
+
 });
+
+// $( document ).ready(function() {
+//     $carousel.toggleClass('is-open');
+// });
