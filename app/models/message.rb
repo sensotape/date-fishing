@@ -9,6 +9,7 @@ class Message < ApplicationRecord
   validates :read, default: false, inclusion: { in: [true, false] }
 
   scope :unread, -> { where(read: false) }
+  scope :sorted, -> { order(created_at: :asc) }
 
   def broadcast_message
     ActionCable.server.broadcast("conversation_#{self.conversation.id}", {
