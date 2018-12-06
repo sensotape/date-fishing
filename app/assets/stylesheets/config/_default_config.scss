@@ -8,8 +8,9 @@
   transform: scale(1);
   font-size: 14px;
   &:hover {
-    font-color: $red;
+    color: $red;
     opacity: 1;
+    cursor: pointer;
   }
 }
 
@@ -87,4 +88,6 @@
 .min-page-height {
   min-height: calc(100vh - 140px);
   background: $black;
+  display: flex;
+  justify-content: center;
 }
