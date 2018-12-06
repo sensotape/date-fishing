@@ -106,4 +106,13 @@ input.form-control {
   }
 }
 
+.alert {
+  border: none !important;
+  border-radius: 0px !important;
+}
+
+.alert-warning {
+  border-color: blue;
+}
+
 

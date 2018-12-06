@@ -6,7 +6,6 @@
     object-position: 0 100%;
   }
 }
-
 @keyframes blur {
   from {
     transform: scale(1, 1);
@@ -17,36 +16,37 @@
     transition: all 0.3s ease;
   }
 }
-
 .grid {
   width: 100%;
   display: flex;
   justify-content: space-around;
   margin: 0 auto;
 }
-
 .grid:after {
   content: '';
   display: block;
   clear: both;
 }
-
 .grid-item {
   float: left;
   border-radius: 4px;
   margin: 5px;
-  transition: all 0.6s ease;
+  transition: all 0.8s ease;
   overflow: hidden;
   &:hover {
     transform: scale(1.015, 1.015);
+    .grid-avatar {
+      opacity: 1;
+      p {
+        opacity: 0.75;
+      }
+    }
   }
 }
-
 .grid-image {
-  width: 270px;
+  width: 320px;
   overflow: hidden;
 }
-
 .grid-image img {
   transform: scale(1, 1);
   display: block;
@@ -56,31 +56,27 @@
   opacity: 1;
   transition: all 0.65s ease;
 }
-
 .grid-item:hover .grid-image img {
-  transform: scale(1.25, 1.25);
-  opacity: 0.85;
-  animation-name: zoom;
-  animation-duration: 30s;
-  animation-direction: alternate;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+  transform: scale(1.05, 1.05);
+  opacity: 0.75;
+//   animation-name: zoom;
+//   animation-duration: 30s;
+//   animation-direction: alternate;
+//   animation-timing-function: linear;
+//   animation-iteration-count: infinite;
 }
-
 .grid-text-container {
-  width: 270px;
+  width: 320px;
   background: white;
-  padding: 5px;
+  padding: 10px 5px;
   display: flex;
   justify-content: space-around;
   align-content: bottom;
 }
-
 .grid-text-title {
   width: 190px;
   color: $text;
 }
-
 .grid-text-date {
   width: 60px;
   color: $red;
@@ -88,4 +84,35 @@
   flex-direction: column-reverse;
   justify-content: right;
   align-content: center;
+}
+.grid-image-background {
+  z-index: 1;
+  background: black;
+  position: relative;
+}
+
+.grid-avatar {
+  transition: ease all 0.8s;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  align-content: center;
+  // text-align: right;
+  // width: 100%;
+  // padding-right: 10px;
+  img {
+    height: 75px;
+    width: 75px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 0.5px solid rgba(255, 255, 255, 0.15);
+  }
+  p {
+    color: white;
+    text-align: center;
+  }
 }
