@@ -14,12 +14,16 @@
           </div>
           <div class="form-group">
             <h3>And which category is it in?</h3>
-            <select id="input-2" placeholder="Select One">
-              <option id="intro-select" style="color:lightgrey;">Select One</option>
-            <% Experience::CATEGORIES.each do |category| %>
-              <option value="<%=category%>" style="color:red;"><%=category%></option>
-            <% end %>
-            </select>
+            <div class="categories-container">
+
+              <select id="input-2" placeholder="Select One">
+                <option id="intro-select" style="color:lightgrey;">Select One</option>
+              <% Experience::CATEGORIES.each do |category| %>
+                <option value="<%=category%>" style="color:red;"><%=category%></option>
+              <% end %>
+              </select>
+
+            </div>
           </div>
         </div>
         <!-- div class="button-container-form"> -->
