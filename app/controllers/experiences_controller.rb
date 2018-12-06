@@ -15,8 +15,10 @@ class ExperiencesController < ApplicationController
     end
 
     @experiences = @experiences.where("date >= ?", Time.zone.now.beginning_of_day)
-    @experiences = @experiences.joins(:user).where("users.gender = ?", current_user.seeking)
-    @experiences = @experiences.joins(:user).where("users.seeking = ?", current_user.gender)
+
+    # REMOVED FOR DEMO DAY: FILTER BASED ON GENDER PREFERENCES
+    # @experiences = @experiences.joins(:user).where("users.gender = ?", current_user.seeking)
+    # @experiences = @experiences.joins(:user).where("users.seeking = ?", current_user.gender)
     authorize @experiences
   end
 
