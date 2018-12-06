@@ -1,4 +1,18 @@
-<!-- <style>
+// .location-card {
+//   width: 450px;
+// }
+
+// .location-modal-dialog {
+//   width: 390px !important;
+//   height: 390px !important;
+//   overflow-y: hidden;
+// }
+
+// .mapboxgl-canvas {
+//   height: 390px;
+//   width: 390px;
+// }
+
   .mapboxgl-canvas{
     height: 300px !important;
     width:390px !important;
@@ -34,23 +48,3 @@
     font-weight: bold;
 
   }
-
-</style> -->
-
-<div class="modal fade" id="map-modal" role="dialog">
-  <div class="modal-dialog location-modal-dialog">
-    <div class="modal-content modal-padding modal-background">
-      <div id="map" style="width: 390px; height: 300px;"
-        data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-
-      </div>
-      <div class="newdata">
-        <div class="location-address"><%= @experience.location %></div>
-      <div class="location-date"><%= @experience.humanize_date %></div>
-      <button data-dismiss="modal" class="close user-x-button">×</button>
-    </div>
-    </div>
-
-  </div>
-</div>

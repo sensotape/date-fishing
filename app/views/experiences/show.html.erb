@@ -1,75 +1,78 @@
-<div class="showpage-content-container">
+<div class="all-showpage-content">
 
-  <!-- PHOTO SIDE -->
-  <div class="photo-side">
-    <%= cl_image_tag @experience.photos.first.picture, :gravity=>"east" %>
-  </div>
+  <div class="showpage-content-container">
 
-  <!-- DETAILS SIDE -->
-  <div class="details-side">
+    <!-- PHOTO SIDE -->
+    <div class="photo-side">
+      <%= cl_image_tag @experience.photos.first.picture, :gravity=>"east" %>
+    </div>
 
-    <!-- TOP PART -->
-    <div class="details-side-top">
+    <!-- DETAILS SIDE -->
+    <div class="details-side">
 
-      <!-- TOP-HEAD -->
-      <div class="details-side-top-head">
-        <div class="details-left">
-          <h2><%= @experience.title %></h2>
+      <!-- TOP PART -->
+      <div class="details-side-top">
+
+        <!-- TOP-HEAD -->
+        <div class="details-side-top-head">
+          <div class="details-left">
+            <h2><%= @experience.title %></h2>
+          </div>
+          <div class="details-right">
+            <%= cl_image_tag @experience.user.photos.first.picture, class: 'avatar-show-page' %>
+          </div>
         </div>
-        <div class="details-right">
-          <%= cl_image_tag @experience.user.photos.first.picture, class: 'avatar-show-page' %>
+
+        <!-- TOP-BODY -->
+        <div class="details-side-top-body">
+          <div class="details-left">
+            <p><%= @experience.location %></p>
+            <strong><p><%= "#{@experience.day_of_week}, #{@experience.humanize_date}" %></p></strong>
+          </div>
+          <div class="details-right">
+            <p><%= @experience.user.first_name %></p>
+            <strong><p><%= @experience.user.last_name %></p></strong>
+            <!-- <div class="view-profile-modal" data-toggle="modal" data-target="#user-modal">(View Profile)</div> -->
+          </div>
         </div>
       </div>
 
-      <!-- TOP-BODY -->
-      <div class="details-side-top-body">
-        <div class="details-left">
-          <p><%= @experience.location %></p>
-          <strong><p><%= "#{@experience.day_of_week}, #{@experience.humanize_date}" %></p></strong>
+      <!-- BOTTOM PART -->
+      <div class="details-side-bottom">
+
+        <!-- TABS -->
+        <div class="details-side-bottom-head" style="margin-bottom: 20px;">
+          <%= button_tag "CREATOR PROFILE", class: 'show-page-tab', 'data-toggle'=>"modal", 'data-target'=>"#user-modal" %>
+          <%= render 'shared/user-profile-modal' %>
+
+          <%= button_tag "DATE MAP", class: 'show-page-tab', 'data-toggle'=>"modal", 'data-target'=>"#map-modal" %>
+          <%= render 'shared/map-modal' %>
         </div>
-        <div class="details-right">
-          <p><%= @experience.user.first_name %></p>
-          <strong><p><%= @experience.user.last_name %></p></strong>
-          <!-- <div class="view-profile-modal" data-toggle="modal" data-target="#user-modal">(View Profile)</div> -->
+
+        <!-- DESCRIPTION -->
+        <div class="details-and-nibble">
+          <div class="details-left">
+            <p style="font-size: 16px"><%= @experience.description %></p>
+          </div>
+
+          <!-- NIBBLE/EDIT BUTTON -->
+          <div class="nibble-container">
+
+            <!-- NIBBLE -->
+            <% if policy(@nibble).create? %>
+              <button class="btn btn-primary" data-toggle="modal" data-target="#nibble">Nibble</button>
+              <%= render 'shared/nibble', experience: @experience %>
+
+            <!-- EDIT -->
+            <% elsif @experience.user == current_user %>
+              <button data-toggle="modal" data-target="#edit-experience-modal-<%= @experience.id %>" class="btn btn-primary">Edit</button>
+              <%= render 'shared/edit-experience', experience: @experience %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
-
-    <!-- BOTTOM PART -->
-    <div class="details-side-bottom">
-
-      <!-- TABS -->
-      <div class="details-side-bottom-head" style="margin-bottom: 20px;">
-        <%= button_tag "CREATOR PROFILE", class: 'show-page-tab', 'data-toggle'=>"modal", 'data-target'=>"#user-modal" %>
-        <%= render 'shared/user-profile-modal' %>
-
-        <%= button_tag "DATE MAP", class: 'show-page-tab', 'data-toggle'=>"modal", 'data-target'=>"#map-modal" %>
-        <%= render 'shared/map-modal' %>
-      </div>
-
-      <!-- DESCRIPTION -->
-      <div class="details-and-nibble">
-        <div class="details-left">
-          <p style="font-size: 16px"><%= @experience.description %></p>
-        </div>
-
-        <!-- NIBBLE/EDIT BUTTON -->
-        <div class="nibble-container">
-
-          <!-- NIBBLE -->
-          <% if policy(@nibble).create? %>
-            <button class="btn btn-primary" data-toggle="modal" data-target="#nibble">Nibble</button>
-            <%= render 'shared/nibble', experience: @experience %>
-
-          <!-- EDIT -->
-          <% elsif @experience.user == current_user %>
-            <button data-toggle="modal" data-target="#edit-experience-modal-<%= @experience.id %>" class="btn btn-primary">Edit</button>
-            <%= render 'shared/edit-experience', experience: @experience %>
-          <% end %>
-        </div>
-      </div>
-    </div>
   </div>
+
+
 </div>
-
-
