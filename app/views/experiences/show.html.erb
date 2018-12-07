@@ -17,20 +17,13 @@
         <div class="details-side-top-head">
           <div class="details-left">
             <h2><%= @experience.title %></h2>
+            <p><%= @experience.location %></p>
+            <strong><p><%= "#{@experience.day_of_week}, #{@experience.humanize_date}" %></p></strong>
           </div>
           <div class="details-right">
             <%= cl_image_tag @experience.user.photos.first.picture, class: 'avatar-show-page', style: 'margin-top: 3px;' %>
             <p style="letter-spacing: 1.1px; font-size: 14px; margin-top: 2.5px;"><%= @experience.user.first_name %></p>
           </div>
-        </div>
-
-        <!-- TOP-BODY -->
-        <div class="details-side-top-body">
-          <div class="details-left">
-            <p><%= @experience.location %></p>
-            <strong><p><%= "#{@experience.day_of_week}, #{@experience.humanize_date}" %></p></strong>
-          </div>
-
         </div>
       </div>
 

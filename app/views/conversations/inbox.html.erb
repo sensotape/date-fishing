@@ -1,5 +1,5 @@
 <div class="container inbox-container">
-  <h3>Your Messages</h3>
+  <h3 id="inbox-header">Your Messages</h3>
   <% @conversations.each do |conversation| %>
   <% who = conversation.nibble.interested == current_user ? conversation.nibble.owner : conversation.nibble.interested %>
 

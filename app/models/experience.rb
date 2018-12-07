@@ -9,8 +9,8 @@ class Experience < ApplicationRecord
                 'May', 'June', 'July', 'August', 'September',
                 'October', 'November', 'December']
 
-  DAYS       = [nil, 'Monday', 'Tuesday', 'Wednesday', 'Thursday',
-                'Friday', 'Saturday', 'Sunday']
+  DAYS       = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday',
+                'Friday', 'Saturday']
 
   include PgSearch
   pg_search_scope :search_by_title_and_category_and_location_and_description,
@@ -72,8 +72,8 @@ class Experience < ApplicationRecord
 
   def shorten_description
     description_array = description.split(//)
-    if description_array.count > 144
-      "#{description_array.first(144).join} ..."
+    if description_array.count > 250
+      "#{description_array.first(250).join} ..."
     else
       description
     end
