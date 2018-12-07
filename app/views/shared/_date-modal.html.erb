@@ -1,0 +1,19 @@
+<div id="date_modal_content">
+  <div class="modal fade" id="date-modal" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content date-modal-content modal-padding modal-background">
+        <button data-dismiss="modal" class="close user-x-button">×</button>
+        <div class="date-card">
+          <div class="date-user-photos">
+            <%= cl_image_tag @nibble.interested.photos.first.picture, class: 'avatar-show-page' %>
+            <%= image_tag "heart.svg" %>
+            <%= cl_image_tag @nibble.owner.photos.first.picture, class: 'avatar-show-page' %>
+          </div>
+          <div class="text-center">
+            <h3>You've got a <span>date</span>!</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
