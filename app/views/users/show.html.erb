@@ -26,8 +26,11 @@
             <p><%= @user.full_name %></p><br>
 
             <strong>image</strong><br>
+            <% if @user.photos.length != 0 %>
             <%= cl_image_tag @user.photos.first.picture, class: 'avatar avatar-large' %><br><br>
-
+            <% else %>
+            <%= cl_image_tag "https://res.cloudinary.com/dlatcqlhm/image/upload/v1544186796/17317730.jpg", class: 'avatar avatar-large' %>
+            <% end %>
             <strong>bio</strong>
             <p><%= @user.bio %></p><br>
 
