@@ -72,8 +72,8 @@ class Experience < ApplicationRecord
 
   def shorten_description
     description_array = description.split(//)
-    if description_array.count > 144
-      "#{description_array.first(144).join} ..."
+    if description_array.count > 250
+      "#{description_array.first(250).join} ..."
     else
       description
     end
