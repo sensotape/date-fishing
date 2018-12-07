@@ -40,7 +40,7 @@
   font-weight: bolder;
   color: black;
   padding: 8px;
-  width: 70%;
+  width: 300px;
 }
 
 #photo-file-name {
@@ -69,12 +69,12 @@
   color: lightgrey;
   font-size: 1.3vw;
   border: 0;
-  border-color: #664b79;
+  // border-color: #664b79;
   padding: 12px 3px;
   background-color: #4e457900;
   font-weight: bolder;
-  border-bottom: solid 3px #4e4579;
-  width: 70%;
+  // border-bottom: solid 3px #4e4579;
+  width: 300px;
 
   option {
   font-weight: bolder;
@@ -132,7 +132,7 @@
 }
 
 #input-4, .flatpickr-input  {
-  width: 100%;
+  width: 300px;
   border: solid 3px;
   color: black;
   font-size: 1.3vw !important;
@@ -159,7 +159,7 @@
 }
 
 #input-3 {
-  width: 100%;
+  width: 300px;
   border: solid 3px;
   color: black;
   font-size: 1.3vw;
@@ -217,18 +217,17 @@
   }
 }
 
+.categories-container {
+  padding-bottom: 10px;
+  width: 300px;
+  border-bottom: solid 3px #4e4579;
+}
 
+.intro-select {
+ color: lightgrey;
+}
 
-
-
-
-// .btn {
-//     padding: 14px 60px;
-//     background-color: #4e4579;
-//     &:hover {
-//     opacity: 0.85;
-//     text-decoration: none;
-//     transform: scale(1.03, 1.03);
-//   }
-// }
+.selected-item {
+  color: red;
+}
 

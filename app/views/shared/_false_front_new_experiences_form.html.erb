@@ -9,17 +9,21 @@
             <i class='fas fa-heart'></i>
             <i class="far fa-heart"></i>
            <i class="far fa-heart"></i>
-            <h3>What's the name of your date?</h3>
-            <input type="text" placeholder="Tell us your perfect date!" id="input-1">
+            <h3>Name your date</h3>
+            <input type="text" placeholder="Knitting a scarf for winter" id="input-1">
           </div>
           <div class="form-group">
-            <h3>And which category is it in?</h3>
-            <select id="input-2" placeholder="Select One">
-              <option id="intro-select" style="color:lightgrey;">Select One</option>
-            <% Experience::CATEGORIES.each do |category| %>
-              <option value="<%=category%>" style="color:red;"><%=category%></option>
-            <% end %>
-            </select>
+            <h3>Select a category</h3>
+            <div class="categories-container">
+
+              <select id="input-2">
+                <option id="intro-select">Select One</option>
+              <% Experience::CATEGORIES.each do |category| %>
+                <option id="selected-item" value="<%=category%>"><%=category%></option>
+              <% end %>
+              </select>
+
+            </div>
           </div>
         </div>
         <!-- div class="button-container-form"> -->
@@ -36,15 +40,15 @@
             <i class='fas fa-heart'></i>
             <i class='fas fa-heart'></i>
            <i class="far fa-heart"></i>
-            <h3>Add some photos!</h3>
+            <h3>Upload a gorgeous photo</h3>
             <div class="create-form-image-flexbox">
               <div class="btn btn-primary btn-special-photo" id="photos-button">+</div>
               <div id="photo-file-name"></div>
             </div>
           </div>
           <div class="form-group">
-            <h3>And describe your date 😍</h3>
-          <input type="text" placeholder="What's the plan, Stan?" id="input-3">
+            <h3>Add a short description</h3>
+          <input type="text" placeholder="Winter is coming. Let’s knit together!" id="input-3">
           </div>
         </div>
 
@@ -60,12 +64,12 @@
             <i class='fas fa-heart'></i>
             <i class='fas fa-heart'></i>
             <i class='fas fa-heart'></i>
-            <h3>When would you like to meet?</h3>
-            <input placeholder="Select a date!" id="test-1" class="test-1 form-control string optional datepickr flatpickr-input input active" type="text">
+            <h3>Pick a date</h3>
+            <input placeholder="December 24, 2018" id="test-1" class="test-1 form-control string optional datepickr flatpickr-input input active" type="text">
           </div>
           <div class="form-group">
-            <h3>And of course, where?</h3>
-            <input placeholder="Let's meet 😃" class="form-control string optional ap-input" type="text" name="experience[location]" id="input-4" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="both" aria-expanded="false" aria-owns="algolia-places-listbox-0" dir="auto" style="position: relative; vertical-align:top;">
+            <h3>Pick a location</h3>
+            <input placeholder="Kreuzberg, Berlin" class="form-control string optional ap-input" type="text" name="experience[location]" id="input-4" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="both" aria-expanded="false" aria-owns="algolia-places-listbox-0" dir="auto" style="position: relative; vertical-align:top;">
             <div class="flexbox-gofish-button">
               <div class="btn btn-primary" id="submit-experience-button">Go Fish!</div>
             </div>

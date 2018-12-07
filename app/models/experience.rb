@@ -9,8 +9,8 @@ class Experience < ApplicationRecord
                 'May', 'June', 'July', 'August', 'September',
                 'October', 'November', 'December']
 
-  DAYS       = [nil, 'Monday', 'Tuesday', 'Wednesday', 'Thursday',
-                'Friday', 'Saturday', 'Sunday']
+  DAYS       = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday',
+                'Friday', 'Saturday']
 
   include PgSearch
   pg_search_scope :search_by_title_and_category_and_location_and_description,
