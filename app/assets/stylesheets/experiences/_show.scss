@@ -78,6 +78,7 @@
   justify-content: right;
   align-items: space-between;
   margin-bottom: 10px;
+  overflow: hidden;
 }
 
 .details-side-bottom {
@@ -200,6 +201,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  overflow: hidden;
 }
 
 .all-showpage-content {
