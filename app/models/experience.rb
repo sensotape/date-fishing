@@ -44,7 +44,11 @@ class Experience < ApplicationRecord
 
   def day_of_week
     time = Time.at(date)
-    DAYS[time.wday]
+    if DAYS[time.wday].nil?
+      "Sunday"
+    else
+      DAYS[time.wday]
+    end
   end
 
   def humanize_time
