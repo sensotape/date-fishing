@@ -1,17 +1,20 @@
-<div class="container">
+<div class="container inbox-container">
+  <h3>Your Messages</h3>
   <% @conversations.each do |conversation| %>
   <% who = conversation.nibble.interested == current_user ? conversation.nibble.owner : conversation.nibble.interested %>
 
   <div class="inbox-message">
     <div class="left-part-message">
+      <div class="left-part-image">
       <%= cl_image_tag who.photos.first.picture,
       transformation: [{ height: 70, width: 70, crop: :thumb, gravity: :face}],
-      style: "border-radius:50%;margin-left: 9px;height: 70px;",
+      style: "border-radius:50%;margin-left: 9px;height: 70px; object-fit:cover;",
       data: {toggle: "modal", target: "#user-modal"} %>
+      </div>
 
       <div class="message-name">
         <h3><%= who.full_name %></h3>
-        <p><%= link_to conversation.nibble.experience.title, conversation_path(conversation) %></p>
+        <p><%= link_to conversation.nibble.experience.title, conversation_path(conversation), style:"color:#333333" %></p>
       </div>
     </div>
 
@@ -25,7 +28,7 @@
     <div class="right-part-message">
       <div class="message-body">
         <p>
-          <%= link_to "#{conversation.messages.last.body[0..40]}...", conversation_path(conversation) %>
+          <%= link_to "#{conversation.messages.last.body[0..20]}...", conversation_path(conversation) %>
         </p>
         <div id="date"><%= conversation.messages.last.date %></div>
       </div>
@@ -40,9 +43,7 @@
           method: :patch, class: 'fas fa-thumbs-down', style: "color: #9B2E2E;" %>
         </div>
         <% elsif !policy(conversation.nibble).update? && conversation.nibble.status == 'pending' %>
-        <p><em>Patience is a virtue, right?</em></p>
-        <% else %>
-        <p></p>
+    <!--     <p><em>Patience is a virtue, right?</em></p> -->
         <% end %>
       </div>
     </div>
