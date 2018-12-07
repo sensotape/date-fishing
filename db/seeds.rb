@@ -599,7 +599,7 @@ paul_date = paul.experiences.new(
 )
 
 paul_date.save!
-paul_date.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1544180318/matthew-brodeur-297085-unsplash.jpg'))
+paul_date.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1544195203/gabriel-jimenez-241711-unsplash.jpg'))
 
 grissel_date = grissel.experiences.new(
   title: 'Romantic weekend at Berghain.',
