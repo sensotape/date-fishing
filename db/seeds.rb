@@ -583,7 +583,7 @@ rhett_date = rhett.experiences.new(
   title: 'Day trip to Dresden',
   category: 'Sport & Recreation',
   location: 'Dresden, Germany',
-  description: "You, me, and twenty thousand ultras. Let’s go to a Dynamo Dresden game and raise some hell. BYO flares and knives.",
+  description: "You, me, and twenty thousand ultras. Let’s go to a Dynamo Dresden game and raise some hell. BYO flares and knuckle dusters.",
   date: Date.new(2018, 12, 29)
 )
 
