@@ -29,7 +29,7 @@
               <%= link_to '', experience_nibble_path(@conversation.nibble.experience, @conversation.nibble, status: 'declined'),
               method: :patch, class: 'fas fa-times-circle', style: "color: #9B2E2E;margin: 0 10px;" %>
               <%= link_to '', experience_nibble_path(@conversation.nibble.experience, @conversation.nibble, status: 'accepted'),
-              class: 'fas fa-check-circle', style: "color: #2E996E;", data: {toggle: "modal", target: "#date-modal"} %>
+              method: :patch, class: 'fas fa-check-circle', style: "color: #2E996E;", data: {toggle: "modal", target: "#date-modal"} %>
             </div>
           <% else %>
             <p class="status <%= @conversation.nibble.status %>" id="status_<%= @conversation.nibble.id %> ">
