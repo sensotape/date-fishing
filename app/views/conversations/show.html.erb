@@ -26,10 +26,10 @@
           <% end %>
           <% if policy(@conversation.nibble).update? && @conversation.nibble.status == 'pending' %>
             <div class="accepted-declined">
-              <%= link_to '', experience_nibble_path(@conversation.nibble.experience, @conversation.nibble, status: 'accepted'),
-              method: :patch, class: 'fas fa-check-circle', style: "color: #2E996E;margin: 0 10px;" %>
               <%= link_to '', experience_nibble_path(@conversation.nibble.experience, @conversation.nibble, status: 'declined'),
-              method: :patch, class: 'fas fa-thumbs-down', style: "color: #9B2E2E;" %>
+              method: :patch, class: 'fas fa-times-circle', style: "color: #9B2E2E;margin: 0 10px;" %>
+              <%= link_to '', experience_nibble_path(@conversation.nibble.experience, @conversation.nibble, status: 'accepted'),
+              method: :patch, class: 'fas fa-check-circle', style: "color: #2E996E;" %>
             </div>
           <% else %>
             <p class="status <%= @conversation.nibble.status %>" id="status_<%= @conversation.nibble.id %> ">
