@@ -11,7 +11,7 @@
             <%= f.input :first_name %>
             <%= f.input :last_name %>
             <%#= f.input :birthday %>
-            <%= f.input :birthday, as: :string, input_html: {class: "datepickr-birthday"} %>
+            <%= f.input :birthday, as: :date, start_year: Date.today.year - 70, end_year: Date.today.year - 18 %>
             <%= f.input :gender, collection: User::GENDERS %>
             <%= f.input :seeking, collection: User::GENDERS %>
             <%= f.input :email,
