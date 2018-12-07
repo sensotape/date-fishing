@@ -166,6 +166,55 @@ nimkit = User.create!(
   birthday: Date.new(1993, 6, 4)
 )
 
+rhett = User.create!(
+  email: 'rhett@gmail.com',
+  first_name: 'Rhett',
+  last_name: 'Büttrich',
+  password: '123456',
+  password_confirmation: '123456',
+  bio: "Just a very chill dude outta Dresden. I like weed, siestas and techno.",
+  gender: 'Male',
+  seeking: 'Female',
+  birthday: Date.new(1995, 07, 03),
+)
+
+grissel = User.create!(
+  email: 'grissel@gmail.com',
+  first_name: 'Grissel',
+  last_name: 'Rios',
+  password: '123456',
+  password_confirmation: '123456',
+  bio: "Mexican party animal.",
+  gender: 'Female',
+  seeking: 'Male',
+  birthday: Date.new(1987, 4, 26),
+)
+
+paul = User.create!(
+  email: 'paul@gmail.com',
+  first_name: 'Paul',
+  last_name: 'Jelkman',
+  password: '123456',
+  password_confirmation: '123456',
+  bio: "WHY DID MY CODE BREAK?",
+  gender: 'Male',
+  seeking: 'Female',
+  birthday: Date.new(1992, 6, 10),
+)
+
+dimitri = User.create!(
+  email: 'dbo@gmail.com',
+  first_name: 'Dimitri',
+  last_name: 'Bosch',
+  password: '123456',
+  password_confirmation: '123456',
+  bio: "Movies, Music, Video Games, Coding, I know it all.",
+  gender: 'Male',
+  seeking: 'Female',
+  birthday: Date.new(1986, 3, 04),
+)
+
+
 # User photos
 puts 'Uploading photos...'
 boris.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543860812/big_detected_cover_59662824a9b4977b7400007b.jpg'))
@@ -180,8 +229,13 @@ alice.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/u
 katharine.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543915962/36379031_1809863849096011_3049154311729709056_o.jpg'))
 clara.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543916833/13925037_10207203443100530_6062834479516916988_n.jpg'))
 nimkit.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543915962/28279218_10214090792476997_8372779178525454463_n.jpg'))
+rhett.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1544179279/22221641_10209781370963060_8903142038224217857_n.jpg'))
+grissel.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1544180511/37979454.png'))
+paul.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1544179279/19399522_10209713821986524_8367820598287982210_n.jpg'))
+dimitri.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1544182556/story-dimitri-bosh-portrait.jpg'))
 
 # Experiences
+
 #Aigerim
 puts 'Creating experiences...'
 panic_date = aigerim.experiences.new(
@@ -544,4 +598,76 @@ mauer_date = rich.experiences.new(
 mauer_date.save!
 mauer_date.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1543936891/Date%20Experiences/mauerpark-berlin-flea-market-VINTAGE-Vinyl-Records.jpg'))
 
-puts "Database seeded with 12 users and #{Experience.all.length} experiences"
+#seeddates
+rhett_date = rhett.experiences.new(
+  title: 'Day trip to Dresden',
+  category: 'Sport & Recreation',
+  location: 'Dresden, Germany',
+  description: "You, me, and twenty thousand ultras. Let’s go to a Dynamo Dresden game and raise some hell. BYO flares and knives.",
+  date: Date.new(2018, 12, 29)
+)
+
+rhett_date.save!
+rhett_date.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1544180252/felix-mittermeier-1079133-unsplash.jpg'))
+
+paul_date = paul.experiences.new(
+  title: 'Come harvest some herbs with me!',
+  category: 'Adventure',
+  location: 'Mauerpark, Germany',
+  description: "Completely legal, I swear.",
+  date: Date.new(2018, 12, 26)
+)
+
+paul_date.save!
+paul_date.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1544180318/matthew-brodeur-297085-unsplash.jpg'))
+
+grissel_date = grissel.experiences.new(
+  title: 'Romantic weekend at Berghain.',
+  category: 'Wildcard',
+  location: 'Berghain, Berlin',
+  description: "Only party animals allowed! I am finally on vacation and I want 48 straight hours of techno!",
+  date: Date.new(2019, 04, 23)
+)
+
+grissel_date.save!
+grissel_date.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1544180316/alexander-popov-1128599-unsplash.jpg'))
+
+twister_date = clara.experiences.new(
+  title: 'Let`s play twister!',
+  category: 'DIY',
+  location: 'Prenzlauerberg, Germany',
+  description: "My boyfriend is out of town and I wanted something fun to do.",
+  date: Date.new(2019, 03, 13)
+)
+
+twister_date.save!
+twister_date.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1544180194/s-l1600.jpg'))
+
+paris_date = boris.experiences.new(
+  title: 'Road trip to Paris',
+  category: 'Tourism',
+  location: 'Paris, France',
+  description: "Three days was all I could bear with my Berlin employees. Going to drive my red and white wagon back to Paris on Monday and looking for someone to join for the ride.
+",
+  date: Date.new(2019, 12, 10)
+)
+
+paris_date.save!
+paris_date.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1544180565/dylan-fout-592027-unsplash.jpg'))
+
+sfighter_date = dimitri.experiences.new(
+  title: 'Beat me at Street Fighter',
+  category: 'Geek & Nerd',
+  location: 'Prenzlauerberg, Berlin',
+  description: "I bet you cannot beat me at Street Fighter II.",
+  date: Date.new(2019, 12, 10)
+)
+
+sfighter_date.save!
+sfighter_date.photos.create!(picture: open('https://res.cloudinary.com/dlatcqlhm/image/upload/v1544181854/ehonda-x-edayan.jpg'))
+
+
+puts "Database seeded with #{User.all.length} users and #{Experience.all.length} experiences"
+
+
+
