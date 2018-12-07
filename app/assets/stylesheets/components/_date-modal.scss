@@ -1,0 +1,28 @@
+.date-card {
+  border-radius: 4px;
+  h3 {
+    color: $text;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    span {
+      color: $red;
+    }
+  }
+}
+
+.date-user-photos {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px 38px;
+}
+
+.all-message-content {
+  .modal-dialog {
+    max-width: 478px;
+    position: relative;
+    top: calc(100vh - 87vh);
+  }
+}

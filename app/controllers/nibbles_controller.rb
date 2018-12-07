@@ -33,11 +33,7 @@ class NibblesController < ApplicationController
         end
         flash[:notice] = "Congratulations! You've got a date! 🎉"
       elsif params[:status] == 'declined'
-        flash[:notice] = "You've made your decision"
-        if @nibbles.length == 1
-          @nibbles.first.status = 'accepted'
-          @nibbles.first.save
-          flash[:notice] = "Congratulations! You've got a date! 🎉"
+        flash[:notice] = "No worries! There's plenty more fish in the sea."
         end
       end
       redirect_back(fallback_location: root_path)
