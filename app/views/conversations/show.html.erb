@@ -18,8 +18,26 @@
         <%= simple_form_for [@conversation, Message.new], url: new_message_path(@conversation), remote: true, html: {autocomplete: "off" } do |f| %>
           <%= f.input :sender_id, input_html: { value: current_user.id }, as: :hidden %>
           <%= f.input :body, label: false %>
-          <%= f.submit "Send", class: 'btn btn-primary' %>
+          <%= f.submit "Send", class: 'btn btn-primary pull-right' %>
         <% end %>
+        <div class="back-status-buttons">
+          <%= link_to inbox_path do %>
+            <i class="fas fa-chevron-left"></i> Back
+          <% end %>
+          <% if policy(@conversation.nibble).update? && @conversation.nibble.status == 'pending' %>
+            <div class="accepted-declined">
+              <%= link_to '', experience_nibble_path(@conversation.nibble.experience, @conversation.nibble, status: 'accepted'),
+              method: :patch, class: 'fas fa-check-circle', style: "color: #2E996E;margin: 0 10px;" %>
+              <%= link_to '', experience_nibble_path(@conversation.nibble.experience, @conversation.nibble, status: 'declined'),
+              method: :patch, class: 'fas fa-thumbs-down', style: "color: #9B2E2E;" %>
+            </div>
+          <% else %>
+            <p class="status <%= @conversation.nibble.status %>" id="status_<%= @conversation.nibble.id %> ">
+              <%= @conversation.nibble.status.capitalize %>
+            </p>
+          <% end %>
+          <div class="just"></div>
+        </div>
       </div>
       <!-- TO HERE -->
       </div>
