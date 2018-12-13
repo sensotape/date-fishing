@@ -3,16 +3,17 @@
 <head>
   <title>The page you were looking for doesn't exist (404)</title>
   <meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1">
-  <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
   <style>
 
   .rails-default-error-page {
-    color: #0FFF95;
+    color: rgba(220,220,220,0.8);
+    letter-spacing: .01em;
     margin: 0;
-    font-family: 'Share Tech Mono', 'monospace';
+    font-family: 'Quicksand', sans-serif;
     text-align: center;
     margin: 0;
-    text-decoration: none !important;
+    font-weight: lighter;
   }
 
   .rails-default-error-page div.banner {
@@ -26,43 +27,42 @@
     align-items: center;
     flex-direction: column;
     margin: 100px;
+    position: absolute;
+    left: 70px;
   }
 
   .rails-default-error-page .btn-error {
-    background: #2E996E;
-    border-radius: 0.1875rem;
-    text-transform: uppercase;
+    border-radius: 4px;
     color: #FFFFFF;
     height: 3.125rem;
     line-height: 3.125rem;
     width: 12.5rem;
     text-align: center;
-    letter-spacing: 0.125rem;
+    letter-spacing: .01em;
     font-size: 24px;
-
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 16px 28px;
+    border: 1px solid rgba(220,220,220,0.8);
+    margin-top: 30px;
   }
 
   .rails-default-error-page .btn-error:hover {
     background-color: #9B2E2E;
     cursor: pointer;
-  }
-
-  .btn-error:active {
-    background-color: #dd5754;
+    transform: scale(1.03);
   }
 
   </style>
-
 </head>
-
 <body class="rails-default-error-page">
   <!-- This file lives in public/404.html -->
-  <div class="banner" style="background-image: linear-gradient(-225deg, rgba(150,150,150,0.6) 0%, rgba(36,36,36,0.6) 50%), url('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1544095233/frank-busch-731207-unsplash.jpg');">
+  <div class="banner" style="background-image: linear-gradient(-225deg, rgba(175,175,175,0.6) 0%, rgba(36,36,36,0.6) 50%), url('https://res.cloudinary.com/dcjfhbk0f/image/upload/v1544095233/frank-busch-731207-unsplash.jpg');">
   <div class="banner-content">
     <div class="warning">
-      <img src="https://res.cloudinary.com/dcjfhbk0f/image/upload/v1544104692/404.png" alt="404">
+      <h1>404</h1>
     </div>
-    <h1>The page you were looking for doesn't exist.</h1>
+    <h2>Hope that wasn't the one that got away . . .</h2>
     <h3>You may have mistyped the address or the page may have moved.</h3>
     <div class="btn-container">
       <a href="/experiences" class="btn-error">Return to Dates</a>
