@@ -20,4 +20,8 @@ class UserPolicy < ApplicationPolicy
   def inbox?
     true
   end
+
+  def permitted_attributes
+    [:photos, :title, :category, :location, :description, :date]
+  end
 end

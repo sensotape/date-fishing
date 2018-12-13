@@ -24,6 +24,8 @@
 
             <strong>name</strong>
             <p><%= @user.full_name %></p><br>
+            <button class="button-main"><%= link_to "Edit My Profile", edit_user_path(current_user) %></button>
+
 
             <strong>image</strong><br>
             <% if @user.photos.length != 0 %>
@@ -41,7 +43,8 @@
             <p><%= @user.seeking %></p><br>
 
             <strong>DOB</strong>
-            <p><%= @user.birthday %></p><br>
+            <p><%= @user.birthday.month %></p><br>
+            <p><%= @user.birthday.day %></p>
           </div>
 
           <!-- PAGE 2 -->

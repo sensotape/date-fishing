@@ -22,6 +22,10 @@ class User < ApplicationRecord
   validates :seeking, presence: true, inclusion: { in: GENDERS }
   validates :bio, length: { maximum: 500 }
 
+  def humanize_date
+    "#{MONTHS[birthday.month]} #{birthday.day}"
+  end
+
   def full_name
     "#{first_name.capitalize} #{last_name.capitalize}"
   end
