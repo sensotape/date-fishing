@@ -1,5 +1,6 @@
 class ExperiencesController < ApplicationController
   before_action :set_experience, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     # search bar
@@ -15,7 +16,7 @@ class ExperiencesController < ApplicationController
     end
 
     @experiences = @experiences.where("date >= ?", Time.zone.now.beginning_of_day)
-    @experiences = @experiences.joins(:user).where("users.id != ?", current_user.id)
+    @experiences = @experiences.joins(:user).where("users.id != ?", current_user.id) unless current_user.nil?
 
     # REMOVED FOR DEMO DAY: FILTER BASED ON GENDER PREFERENCES
     # @experiences = @experiences.joins(:user).where("users.gender = ?", current_user.seeking)
