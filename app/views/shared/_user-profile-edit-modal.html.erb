@@ -1,0 +1,28 @@
+<div class='modal fade' id="edit-profile" role="dialog">
+  <div class="modal-dialog edit-profile-modal-dialog">
+    <div class="modal-content edit-profile-content modal-padding modal-background">
+      <button data-dismiss="modal" class="close">×</button>
+      <h2>Edit</h2>
+      <%= simple_form_for(current_user) do |f| %>
+        <%= f.error_notification %>
+        <h2>Edit</h2>
+        <div class="edit-profile-form">
+          <div class="form-inputs">
+            <%= f.input :first_name %>
+            <%= f.input :last_name %>
+
+            <%= f.input :birthday, as: :date, start_year: Date.today.year - 70, end_year: Date.today.year - 18 %>
+            <%= f.input :gender, collection: User::GENDERS %>
+            <%= f.input :seeking, collection: User::GENDERS %>
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit, "Edit Profile", class: "btn btn-primary" %>
+          </div>
+        <% end %>
+      </div>
+
+
+    </div>
+  </div>
+</div>
