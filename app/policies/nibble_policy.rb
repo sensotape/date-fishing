@@ -22,6 +22,6 @@ class NibblePolicy < ApplicationPolicy
   end
 
   def has_nibble
-    user.nibbles.where(experience: record.experience).present?
+    user.nibbles.where(experience: record.experience).present? unless user.nil?
   end
 end

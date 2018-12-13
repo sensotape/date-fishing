@@ -10,8 +10,8 @@
       <div class="flexbox-horizontal">
 
         <!-- LEFT OF LOGO -->
-        <%= link_to "EXPLORE", experiences_path, class: "item-padding item-margin link-item" %>
-        <%= link_to "CREATE", new_experience_path, class: "item-padding item-margin link-item", style: "margin-right: 20px" %>
+        <%= link_to "EXPLORE", experiences_path, class: "item-padding item-margin link-item body-text" %>
+        <%= link_to "CREATE", new_experience_path, class: "item-padding item-margin link-item body-text", style: "margin-right: 20px" %>
 
         <!-- LOGO -->
         <a href="/" class="navbar-logo center-text">
@@ -19,9 +19,9 @@
         </a>
 
         <!-- RIGHT OF LOGO -->
-        <%= link_to "MESSAGES", inbox_path, class: "item-padding item-margin link-item", style: "margin-left: 20px" %>
+        <%= link_to "MESSAGES", inbox_path, class: "item-padding item-margin link-item body-text", style: "margin-left: 20px" %>
         <%= image_tag "heart.svg", class: notif_message, id: "message-notification" %>
-        <%= link_to "PROFILE", user_path(current_user), class: "item-padding item-margin link-item" %>
+        <%= link_to "PROFILE", user_path(current_user), class: "item-padding item-margin link-item body-text" %>
         <%= image_tag "heart.svg", class: 'notification hidden', id: "profile-notification" %>
     </div>
 
@@ -30,9 +30,8 @@
 
       <div class="flexbox-horizontal">
 
-        <!-- SIGN UP -->
-        <span class="item-padding item-margin link-item" data-toggle="modal" data-target="#sign-up">SIGN UP</span>
-        <%= render 'shared/sign-up-modal' %>
+        <%= link_to "EXPLORE", experiences_path, class: "item-padding item-margin link-item body-text" %>
+        <%= link_to "RANDOM", experience_path(Experience.all.sample), class: "item-padding item-margin link-item body-text", style: "margin-right: 20px" %>
 
         <!-- LOGO -->
         <a href="/" class="navbar-logo center-text">
@@ -40,8 +39,12 @@
         </a>
 
         <!-- LOG IN -->
-        <span class="item-padding item-margin link-item" data-toggle="modal" data-target="#log-in">LOG IN</span>
+        <span class="item-padding item-margin link-item" data-toggle="modal" data-target="#log-in" style="margin-left: 20px">LOG IN</span>
         <%= render 'shared/log-in-modal' %>
+
+        <!-- SIGN UP -->
+        <span class="item-padding item-margin link-item" data-toggle="modal" data-target="#sign-up">SIGN UP</span>
+        <%= render 'shared/sign-up-modal' %>
 
       </div>
     <% end %>
