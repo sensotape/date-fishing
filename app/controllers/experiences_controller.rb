@@ -14,13 +14,14 @@ class ExperiencesController < ApplicationController
       save_filters
       apply_filters
     end
-
+    
     @experiences = @experiences.where("date >= ?", Time.zone.now.beginning_of_day)
-    @experiences = @experiences.joins(:user).where("users.id != ?", current_user.id) unless current_user.nil?
-
-    # REMOVED FOR DEMO DAY: FILTER BASED ON GENDER PREFERENCES
-    # @experiences = @experiences.joins(:user).where("users.gender = ?", current_user.seeking)
-    # @experiences = @experiences.joins(:user).where("users.seeking = ?", current_user.gender)
+    unless current_user.nil?
+      @experiences = @experiences.joins(:user).where(
+        "users.id != :id and users.gender = :gender and users.seeking = :seeking", 
+        {id: current_user.id, gender: current_user.seeking, seeking: current_user.gender}
+      )
+    end
     authorize @experiences
   end
 
