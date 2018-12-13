@@ -24,7 +24,8 @@
 
             <strong>name</strong>
             <p><%= @user.full_name %></p><br>
-
+            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#edit-profile">Edit My Profile</button>
+            <%= render 'shared/user-profile-edit-modal' %>
             <strong>image</strong><br>
             <% if @user.photos.length != 0 %>
             <%= cl_image_tag @user.photos.first.picture, class: 'avatar avatar-large' %><br><br>
@@ -41,7 +42,8 @@
             <p><%= @user.seeking %></p><br>
 
             <strong>DOB</strong>
-            <p><%= @user.birthday %></p><br>
+            <p><%= @user.birthday.month %></p><br>
+            <p><%= @user.birthday.day %></p>
           </div>
 
           <!-- PAGE 2 -->

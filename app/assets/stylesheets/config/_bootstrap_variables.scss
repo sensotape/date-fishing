@@ -65,7 +65,7 @@ $border-radius-small: 4px;
 a {
   transition: all 0.3s ease;
   &:hover {
-    transform: scale(1.03, 1.03);
+    transform: scale(1.03); //only one argument needed if same transformation applies to x and y axes
   }
 }
 
@@ -102,7 +102,7 @@ input.form-control {
 .btn {
   transition: all 0.3s ease;
   &:hover {
-    transform: scale(1.03, 1.03);
+    transform: scale(1.03);
   }
 }
 
