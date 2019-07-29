@@ -41,7 +41,7 @@ marcel = User.create!(
 )
 
 maylee = User.create!(
-  email: 'mayleesia@gmail.com',
+  email: 'mayleasid@gmail.com',
   first_name: 'May-Lee',
   last_name: 'Sia',
   password: '123456',
@@ -49,7 +49,7 @@ maylee = User.create!(
   bio: "Old enough to know better, young enough not to care :)",
   gender: 'Female',
   seeking: 'Male',
-  birthday: Date.new(1978, 5, 18),
+  birthday: Date.new(1908, 5, 18),
   admin: true
 )
 
